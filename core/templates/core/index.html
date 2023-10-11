@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DietHub</title>
+    <link rel="stylesheet" href="{% static 'estilos/estilo.css' %}" />
+    <link
+      rel="shortcut icon"
+      href="static/icons/logoIcon.svg"
+      type="image/x-icon"
+    />
+  </head>
+
+{% block main %}
+<body>
+    <main id="loginMain">
+        <section class="imagem-login">
+            <img src={% static 'imagens/Group 74.png' %} alt="DietHub">
+            <h1>Bem vindo(a)!</h1>
+            <img src={% static 'imagens/Eating healthy food-bro 1.png' %} alt="Mulher comendo">
+        </section>
+        <section id="login">
+            <h1>Login</h1>
+            <h3>Faça login para continuar</h3>
+            <br>
+            <form action="../index.html">
+                <div class="formItem">
+                    <label for="" id="label-email">Email:</label>
+                    <input type="email" placeholder="user@gmail.com">
+                </div>
+                <div class="formItem">
+                    <label for="" id="label-senha">Senha:</label>
+                    <input type="password">
+                    <br>
+                    <a href="esqueciSenha.html">Esqueci a senha</a>
+                </div>
+                <br>
+                <div id="formBtns">
+                    <button type="Entrar">Entrar</button>
+                </div>
+                <p>Ainda não é cadastrado? <a href="cadastro.html">Cadastre-se</a></p>
+            </form>
+        </section>
+    </main>
+</body>
+{% endblock %}
