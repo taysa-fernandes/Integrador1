@@ -1,22 +1,70 @@
-body{
-    font-family: 'Roboto';
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-#login h1,
-#label-email,
-#label-senha{
-    color:#0C9A61;
+
+.logo {
+    margin-bottom: 12px;
 }
-#login h3{
-    color:#898C93;
+
+.side-bar {
+    width: fit-content;
+    height: 100vh;
+    border-right: 1px solid #F4F3F3;
+    padding: 12px;
+    width: 13.44rem; /* 215px */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
 }
-#login a{
-    color: #FF8D61;
+
+ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+    width: 100%;
 }
-#login button{
-    color: #FFFFFF;
-    background-color: #0C9A61;
+
+.opcao-do-menu {
+    padding: 12px 30px;
+    border-radius: 10px;
+    color: #0C9A61;
+    gap: 8px;
 }
-#login{
-    border: 3px solid #E2E2E2;
-    border-radius: 5px;
+
+.opcao-do-menu:hover {
+    background-color: rgb(168, 168, 168, 12%);
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.opcao-do-menu-atual {
+    background-color: rgb(12, 154, 97, 14%);
+}
+
+.opcao-do-menu-atual:hover {
+    cursor: pointer;
+    background-color: rgb(12, 154, 97, 14%);
+}
+
+a {
+    text-decoration: none;
+    color: #A8A8A8;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.opcao-do-menu-atual a, .opcao-do-menu-atual i {
+    color: #0C9A61;
+    font-weight: bold;
+}
+
+i {
+    font-size: 20px;
 }
