@@ -10,3 +10,7 @@ MANIFEST
 htmlcov/
 coverage.xml
 .pytest_cache
+.env
+.venv
+venv/
+env/
