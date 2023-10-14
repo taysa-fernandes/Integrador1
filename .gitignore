@@ -1,18 +1,12 @@
-# Django #
-*.log
-*.pot
-*.pyc
-__pycache__
-db.sqlite3
-media
-# Installer logs 
-pip-log.txt 
-pip-delete-this-directory.txt 
-# Environments 
-.env 
-.venv 
-env/ 
-venv/ 
-ENV/ 
-env.bak/ 
-venv.bak/
+*.py[co]
+docs/build
+dist/
+build/
+MANIFEST
+.coverage
+.tox/
+.cache/
+*.egg-info/
+htmlcov/
+coverage.xml
+.pytest_cache
