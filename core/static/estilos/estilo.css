@@ -1,6 +1,7 @@
 body{
     font-family: 'Roboto';
 }
+/* login */
 #login h1,
 #label-email,
 #label-senha{
@@ -19,4 +20,37 @@ body{
 #login{
     border: 3px solid #E2E2E2;
     border-radius: 5px;
+    width: 525px;
+    height: 680px;
+    text-align: center;
+    align-items: center;
+}
+#login input {  
+    width: 417px;
+    height: 49px;
+}
+#login a{
+    margin-left: 60%;
+    margin-bottom: 20px;
+}
+/* login-main */
+#login-main{
+    display: flex;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.section {
+    margin: 10px; 
+}
+#logo{
+    margin-right:50%;
+}
+/* forms */
+.form-item {
+    margin-bottom: 10px;
+}
+#form-btns button {
+    width: 417px;
+    height: 49px;
 }

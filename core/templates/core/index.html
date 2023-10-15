@@ -3,32 +3,31 @@
 
 {% block main %}
 <body>
-    <main id="loginMain">
-        <section class="imagem-login">
-            <img src={% static 'imagens/Group 74.png' %} alt="DietHub">
+    <main id="login-main">
+        <section id="imagem-login" class="section">
+            <img src={% static 'imagens/Group 74.svg' %} alt="DietHub" id="logo">
             <h1>Bem vindo(a)!</h1>
-            <img src={% static 'imagens/Eating healthy food-bro 1.png' %} alt="Mulher comendo">
+            <img src={% static 'imagens/Eating healthy food-bro 1.svg' %} alt="Mulher comendo">
         </section>
-        <section id="login">
+        <section id="login" class="section">
             <h1>Login</h1>
             <h3>Faça login para continuar</h3>
             <br>
             <form action="../index.html">
-                <div class="formItem">
+                <div class="form-item">
                     <label for="" id="label-email">Email:</label>
                     <input type="email" placeholder="user@gmail.com">
                 </div>
-                <div class="formItem">
+                <div class="form-item">
                     <label for="" id="label-senha">Senha:</label>
                     <input type="password">
                     <br>
                     <a href="esqueciSenha.html">Esqueci a senha</a>
                 </div>
                 <br>
-                <div id="formBtns">
+                <div id="form-btns">
                     <button type="Entrar">Entrar</button>
                 </div>
-                <p>Ainda não é cadastrado? <a href="cadastro.html">Cadastre-se</a></p>
             </form>
         </section>
     </main>
