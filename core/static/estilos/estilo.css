@@ -1,7 +1,13 @@
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: space-between;
 }
 
 .logo {
@@ -50,6 +56,7 @@ ul {
 .opcao-do-menu-atual:hover {
     cursor: pointer;
     background-color: rgb(12, 154, 97, 14%);
+    transition: all 0.5s;
 }
 
 a {
@@ -65,6 +72,70 @@ a {
     font-weight: bold;
 }
 
-i {
+.ph {
     font-size: 20px;
+    color: #A8A8A8;
 }
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1.94rem 3.31rem; /* 31px 53px */
+}
+
+.informacoes-do-usuario{
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 4px;
+    border-radius: 10px;
+}
+
+.informacoes-do-usuario:hover {
+    cursor: pointer;
+    background-color: rgb(255, 141, 97, 14%);
+    transition: all 0.5s;
+}
+
+.texto-informacoes-do-usuario span{
+    display: block;
+    margin-top: 4px;
+    text-align: right;
+    font-weight: bold;
+}
+
+.nome-do-usuario {
+    font-size: 0.75rem; /* 12px */
+    color: black;
+}
+
+.tipo-de-usuario {
+    font-size: 0.69rem;
+    color: #FF8D61;
+}
+
+.breadcrumb {
+    font-size: 0.75rem; /* 12px */
+    padding: 6px;
+    border-radius: 10px;
+}
+
+.breadcrumb:hover {
+    background-color: rgb(168, 168, 168, 14%);
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.breadcrumb i {
+    font-size: 1rem;
+}
+
+
+
+main {
+    width: 100%;
+    font-family: 'Inter', sans-serif;
+}
+
