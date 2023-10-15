@@ -1,0 +1,77 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block main %}
+<body>
+        <main id="visualizar-dieta">
+            <section id="container">
+                <section id="imagem-logo" class="topo-visualizar">
+                    <img src={% static 'imagens/Group 74.svg' %} alt="DietHub" id="logo">
+                </section>
+                <section id="perfil"class="topo-visualizar">
+                    <p>Karla Nunes</p>
+                    <p id="paciente">Paciente</p>
+                </section>
+            </section>
+            <section id="informacoes">
+                <h1>Informações gerais</h1>
+                <h4>Aqui haverá uma breve descrição do nutricionista  sobre as condições do paciente.
+                     Pode ser um diagnóstico, comentários, informações gerais, etc.</h4> 
+                <section id="container-2">
+                    <div id="objetivo" class="quadros">
+                        <p class="labels">Seu objetivo</p>
+                        <p><strong>Perder gordura</strong></p>
+                    </div>
+                    <div id="diagnostico" class="quadros">
+                        <p class="labels">Diagnóstico</p>
+                        <p><strong>Obesidade</strong></p>
+                    </div>
+                    <div id="status" class="quadros">
+                        <p class="labels">status</p>
+                        <p><strong>Dieta em andamento</strong></p>
+                    </div>
+                </section>
+            </section>
+            <section id="dieta">
+                <section id="container-3">
+                    <div class="topo-dieta">
+                        <h1>Sua dieta</h1>
+                    </div>
+                    <div id="form-btns" class="topo-dieta">
+                        <button type="Diario-alimentar">Diário Alimentar</button>
+                    </div>
+                </section>
+                <div id="cafe">
+                    <h3>Café da manhã</h3>
+                    <div id="alimento-1">
+                        <h3>Alimento 1: </h3>
+                        <p>Salada de frutas</p>
+                    </div>
+                    <div id="alimento-2">
+                        <h3>Alimento 2: </h3>
+                        <p>Vitamina</p>
+                    </div>
+                    <div id="substituto-1">
+                        <h3>Substituto: </h3>
+                        <p>Vitamina</p> 
+                    </div>
+                    <div id="substituto-2">
+                        <h3>Substituto: </h3>
+                        <p>Salada de frutas</p>
+                    </div>
+                </div>
+            </section>
+            <section id="calorias">
+                <h1>Calorias</h1>
+                <h4>Registre o diário alimentar para visualizar quantas calorias você já consumiu</h4>
+                <div id="consumiu">
+                    <h4>Você já consumiu:</h4>
+                    <p><strong>100kcal</strong></p>
+                </div>
+            </section>
+            <section id="button-diario">
+                <a href="diarioAlimentar.html">Diário Alimentar</a>
+            </section>
+        </main>
+</body>
+{% endblock %}

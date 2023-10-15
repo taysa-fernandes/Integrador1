@@ -54,3 +54,58 @@ body{
     width: 417px;
     height: 49px;
 }
+/* visualizar dieta */
+#paciente{
+    color:#FF8D61;
+}
+#container{
+    display: flex;
+}
+#topo-visualizar {
+    margin-bottom: 300px; 
+}
+#informacoes h4,
+#calorias h4,
+#consumiu h4{
+    color: #A8A8A8;
+}
+#informacoes,
+#objetivo,
+#diagnostico,
+#status{
+    border: 3px solid #E2E2E2;
+    border-radius: 5px;
+}
+.labels{
+    color: #A8A8A8;
+}
+#container-2{
+    display: flex;
+}
+.quadros{
+    margin-bottom: 20px; 
+}
+#conatainer-3{
+    display: flex;
+}
+.topo-dieta{
+    margin-bottom: 40px;
+}
+#container-3 button{
+    width: 132px;
+    height: 36px;
+    background-color: #0C9A61;
+    color:#FFFFFF;
+}
+#cafe{
+    border: 3px solid #E2E2E2;
+    border-radius: 5px;
+}
+#consumiu{
+    border: 3px solid #FF8D61;
+    border-radius: 5px;
+    background-color: #FF8D61;
+}
+#button-diario a{
+    color:#0C9A61;
+}
