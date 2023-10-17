@@ -2,5 +2,5 @@ from django.shortcuts import render
 
 def index(request):
     return render(request, 'core/index.html')
-def diario(request):
+def dieta(request):
     return render(request, 'core/visualizarDieta.html')
