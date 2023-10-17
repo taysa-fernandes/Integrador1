@@ -132,10 +132,18 @@ header {
     font-size: 1rem;
 }
 
-
-
 main {
     width: 100%;
     font-family: 'Inter', sans-serif;
 }
 
+.conteudo-principal h1 {
+    font-size: 1.5rem; /* 24px */
+    height: 100%;
+}
+
+.cabecalho-conteudo-principal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
