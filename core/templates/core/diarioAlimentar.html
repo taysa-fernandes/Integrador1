@@ -1,0 +1,85 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block main %}
+<body>
+        <main id="visualizar-diario">
+            <section id="container">
+                <section id="imagem-logo" class="topo-visualizar">
+                    <img src={% static 'imagens/Group 74.svg' %} alt="DietHub" id="logo">
+                </section>
+                <section id="perfil"class="topo-visualizar">
+                    <p>Karla Nunes</p>
+                    <p id="paciente">Paciente</p>
+                </section>
+            </section>
+            <section id="main-diario">
+                <h1>Diário alimentar</h1>
+                <p>Faça seu registro no diário alimentar. Clique no dia desejado</p>
+            </section>
+            <section id="diario">
+                <div id="datas">
+                    <h1 class="dia-semana">Terça</h1>
+                    <h1 class="data">26</h1>
+                </div>
+                <div class="registros">
+                    <p>Ainda não há registros para esse dia</p>
+                </div>
+                <div class="button-registrar">
+                    <a href="registrar.html">+ Registrar</a>
+                </div>
+            </section>
+            <section id="diario-2">
+                <div class="datas">
+                    <h1 class="dia-semana">Terça</h1>
+                    <h1 class="data">26</h1>
+                </div>
+                <div class="registros">
+                    <p>Ainda não há registros para esse dia</p>
+                </div>
+                <div class="button-registrar">
+                    <a href="registrar.html">+ Registrar</a>
+                </div>
+            </section>
+            <section id="diario-3">
+                <div class="datas">
+                    <h1 class="dia-semana">Terça</h1>
+                    <h1 class="data">26</h1>
+                </div>
+                <div class="registros">
+                    <p>Ainda não há registros para esse dia</p>
+                </div>
+                <div class="button-registrar">
+                    <a href="registrar.html">+ Registrar</a>
+                </div>
+            </section>
+                <div class="mes">
+                    <p><strong>Setembro</strong></p>
+                </div>
+            <section id="diario-4">
+                <div id="datas">
+                    <h1 class="dia-semana">Terça</h1>
+                    <h1 class="data">26</h1>
+                </div>
+                <div class="registros">
+                    <p>Ainda não há registros para esse dia</p>
+                </div>
+                <div class="button-registrar">
+                    <a href="registrar.html">+ Registrar</a>
+                </div>
+            </section>
+            <section id="diario-5">
+                <div id="datas">
+                    <h1 class="dia-semana">Terça</h1>
+                    <h1 class="data">26</h1>
+                </div>
+                <div class="registros">
+                    <p>Ainda não há registros para esse dia</p>
+                </div>
+                <div class="button-registrar">
+                    <a href="registrar.html">+ Registrar</a>
+                </div>
+            </section>
+        </main>
+</body>
+{% endblock %}

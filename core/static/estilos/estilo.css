@@ -54,3 +54,24 @@ body{
     width: 417px;
     height: 49px;
 }
+#main-diario p{
+    color:#A8A8A8;
+}
+.button-registrar a{
+    color:#FF8D61;
+}
+.registros p{
+    color: #A8A8A8;
+}
+#diario,
+#diario-2,
+#diario-3,
+#diario-4,
+#diario-5{
+    display: flex;
+}
+.dia-semana,
+.registros,
+.button-registrar{
+    margin-bottom: 20px;
+}
