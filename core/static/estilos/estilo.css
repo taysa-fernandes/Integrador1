@@ -87,9 +87,14 @@ body{
 }
 #container-3{
     display: flex;
+    justify-content: space-between;
 }
-.topo-dieta{
-    margin-bottom: 400px;
+.topo-dieta h1{
+    margin-left: 33px;
+}
+.topo-dieta button{
+    border-radius: 8px;
+    border: none;
 }
 #container-3 button{
     width: 132px;
@@ -97,25 +102,67 @@ body{
     background-color: #0C9A61;
     color:#FFFFFF;
 }
-#cafe{
-    border: 3px solid #E2E2E2;
-    border-radius: 5px;
-}
 #consumiu{
-    border: 3px solid #FF8D61;
-    border-radius: 5px;
-    background-color: #FF8D61;
+    border: 1px solid #FF8D61;
+    border-radius: 10px;
+    background: rgba(255, 141, 97, 0.14);
+}
+#consumiu h4,
+#consumiu p{
+    margin-left: 20px;
 }
 #button-diario a{
     color:#0C9A61;
     text-align: left;
     margin-left: 90%;
 }
+#button-diario{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+}
 #parte-1,
 #parte-2{
     display: flex;
+    gap: 195px;
 }
 .alimentos-1,
 .alimentos-2{
     margin-bottom: 30px;
+}
+#cafe-da-manha{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+}
+#cafe-da-manha h3{
+    color:#0C9A61;
+}
+#cafe-da-manha,
+#parte-1,
+#parte-2{
+    margin-left: 58px;
+}
+#calorias,
+#cafe{
+    border-radius: 10px;
+    border: 1px solid #F4F3F3;
+    background: #FFFFFF;
+}
+#alimento-1 h3,
+#substituto-1 h3,
+#alimento-2 h3,
+#substituto-2 h3{
+    margin-bottom: 10px;
+}
+#alimento-1 p,
+#substituto-1 p,
+#alimento-2 p,
+#substituto-2 p{
+    margin-top: 0px;
+}
+#informacoes-dieta{
+    width: 761px;
 }
