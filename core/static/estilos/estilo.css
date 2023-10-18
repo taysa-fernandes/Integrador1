@@ -60,37 +60,80 @@ body{
 }
 #container{
     display: flex;
+    justify-content: space-between;
 }
 #topo-visualizar {
     margin-bottom: 300px; 
+}
+#informacoes h1{
+    border: 1px solid #F4F3F3;
+    background:  #FFFFFF;
+    gap: 19px;
+    font-size: 22px;
+    padding-bottom: 20px;
+    margin-left: 0px;
+    padding-left: 33.3px;
+    padding-top: 10px;
 }
 #informacoes h4,
 #calorias h4,
 #consumiu h4{
     color: #A8A8A8;
 }
-#informacoes,
+#informacoes h4{
+    border: 1px solid #F4F3F3;
+    background:  #FFFFFF;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    padding-left: 24.6px;
+    padding-bottom: 26px;
+    padding-top: 26px;
+}
+#informacoes-dieta{
+    border: 1px solid #F4F3F3;
+    background:  #FFFFFF;
+}
 #objetivo,
 #diagnostico,
 #status{
-    border: 3px solid #E2E2E2;
-    border-radius: 5px;
+    border: 1px solid #F4F3F3;
+    background:  #FFFFFF;
+    gap: 10px;
+}
+#objetivo{
+    padding-right: 93px;
+}
+#diagnostico{
+    padding-right: 125px;
+}
+#status{
+    padding-right: 66px;
 }
 .labels{
     color: #A8A8A8;
+    margin-left: 24.60px;
+}
+#container-2 strong{
+    margin-left: 24.60px;
 }
 #container-2{
     display: flex;
 }
 .quadros{
     margin-bottom: 20px; 
+
 }
 #container-3{
     display: flex;
     justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 .topo-dieta h1{
     margin-left: 33px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 18px;
 }
 .topo-dieta button{
     border-radius: 8px;
