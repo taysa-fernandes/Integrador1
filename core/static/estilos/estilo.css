@@ -103,7 +103,7 @@ header {
     display: block;
     margin-top: 4px;
     text-align: right;
-    font-weight: bold;
+    font-weight:conteudo-principal bold;
 }
 
 .nome-do-usuario {
@@ -147,3 +147,67 @@ main {
     justify-content: space-between;
     align-items: center;
 }
+
+#collapse {
+    margin: 100px auto;
+    max-width: 830px;
+}
+
+#collapse li {
+    list-style: none;
+    width: 100%;
+    margin-bottom: 10px;
+    background: #FFF;
+    border-radius: 10px;
+    border: 1px solid #EAEAEA;
+}
+
+#collapse-header {
+    background-color: #F9FAFB;
+}
+
+#collapse li label {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    color: #141623;
+    height: 60px;
+    background-color: #F9FAFB;
+}
+
+.informacoes-do-paciente {
+    display: flex;
+    align-items: center;
+}
+
+#collapse li label span {
+    transform: rotate(90deg);
+    font-size: 22px;
+    color: #333;
+}
+
+#collapse label + input[type="radio"] {
+    display: none;
+}
+
+#collapse .content {
+    padding: 0 10px;
+    line-height: 36px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s;
+}
+
+#collapse label + input[type="radio"]:checked +  .content {
+    max-height: 400px;
+
+}
+
+
+
+
+

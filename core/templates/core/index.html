@@ -21,13 +21,57 @@
       </div>
     </header>
     <section class="conteudo-principal">
-      <div class="cabecalho-conteudo-principal">
+      {% comment %} <div class="cabecalho-conteudo-principal">
         <h1>Seus pacientes</h1>
     
         <button>Novo paciente</button>  
-      <div>
+      <div> {% endcomment %}
 
-        {%block collapse %} {{block.super}} {%endblock%}
+        <div>
+          <ul id="collapse">
+            <li>
+              <label for="first">
+                <div class="informacoes-do-paciente">
+                  <img src={% static 'imagens/usuario.svg' %} alt="Logo DietHub">
+                  Paciente 1 <i class="ph ph-caret-down"></i>
+                </div>
+              </label>
+              <input type="radio" name="collapse" id="first" checked />
+          
+              <div class="content">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum has been the industry's standard dummy text ever since the
+                1500s, when an unknown printer took a galley of type and scrambled it to
+                make a type specimen book.
+              </div>
+            </li>
+          
+            <li>
+              <label for="second">Paciente 2<i class="ph ph-caret-down"></i></label>
+              <input type="radio" name="collapse" id="second" />
+          
+              <div class="content">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum has been the industry's standard dummy text ever since the
+                1500s, when an unknown printer took a galley of type and scrambled it to
+                make a type specimen book.
+              </div>
+            </li>
+          
+            <li>
+              <label for="third">Paciente 3 <i class="ph ph-caret-down"></i></label>
+              <input type="radio" name="collapse" id="third" />
+          
+              <div class="content">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum has been the industry's standard dummy text ever since the
+                1500s, when an unknown printer took a galley of type and scrambled it to
+                make a type specimen book.
+              </div>
+            </li>
+          </ul>
+        </div>
+      
     </section>
   </main>
 {% endblock %}
