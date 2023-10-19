@@ -74,6 +74,7 @@ body{
     margin-left: 0px;
     padding-left: 33.3px;
     padding-top: 10px;
+    font-family: 'Inter',sans-serif;
 }
 #informacoes h4,
 #calorias h4,
@@ -88,6 +89,8 @@ body{
     padding-left: 24.6px;
     padding-bottom: 26px;
     padding-top: 26px;
+    font-family: 'Inter',sans-serif;
+    font-size: 12px;
 }
 #informacoes-dieta{
     border: 1px solid #F4F3F3;
@@ -99,9 +102,16 @@ body{
     border: 1px solid #F4F3F3;
     background:  #FFFFFF;
     gap: 10px;
+    font-family: 'Inter',sans-serif;
+    font-size: 10px;
 }
 #objetivo{
     padding-right: 93px;
+}
+#objetivo strong,
+#diagnostico strong
+#status strong{
+    font-size: 12px;
 }
 #diagnostico{
     padding-right: 125px;
@@ -109,6 +119,7 @@ body{
 #status{
     padding-right: 66px;
 }
+
 .labels{
     color: #A8A8A8;
     margin-left: 24.60px;
@@ -128,16 +139,20 @@ body{
     justify-content: space-between;
     margin-top: 20px;
     margin-bottom: 20px;
+    margin-right: 57px;
 }
 .topo-dieta h1{
     margin-left: 33px;
     margin-top: 0px;
     margin-bottom: 0px;
     font-size: 18px;
+    font-family: 'Inter', sans-serif;
 }
 .topo-dieta button{
     border-radius: 8px;
     border: none;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
 }
 #container-3 button{
     width: 132px;
@@ -150,6 +165,14 @@ body{
     border-radius: 10px;
     background: rgba(255, 141, 97, 0.14);
 }
+#consumiu h4{
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+}
+#consumiu strong{
+    font-family: 'Inter',sans-serif;
+    font-size: 14px;
+}
 #consumiu h4,
 #consumiu p{
     margin-left: 20px;
@@ -157,18 +180,29 @@ body{
 #button-diario a{
     color:#0C9A61;
     text-align: left;
-    margin-left: 90%;
+    padding-left: 300px;
+}
+#conteudo-calorias{
+    border-radius: 10px;
+    border: 1px solid #F4F3F3;
+    background:  #FFFFFF;
 }
 #button-diario{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 5px;
+    margin-top: 17px;
 }
 #parte-1,
 #parte-2{
     display: flex;
-    gap: 195px;
+    justify-content: space-between;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+}
+#parte-1 h3,
+#parte-2 h3{
+    font-size: 14px;
 }
 .alimentos-1,
 .alimentos-2{
@@ -178,17 +212,32 @@ body{
     display: flex;
     align-items: center;
     gap: 10px;
-
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color:#0C9A61;
 }
 #cafe-da-manha h3{
-    color:#0C9A61;
+    font-size: 14px;
 }
 #cafe-da-manha,
 #parte-1,
 #parte-2{
     margin-left: 58px;
 }
-#calorias,
+#calorias{
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+}
+#conteudo-calorias{
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-bottom: 40px;
+}
+#calorias h4{
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+}
+
 #cafe{
     border-radius: 10px;
     border: 1px solid #F4F3F3;
@@ -206,6 +255,18 @@ body{
 #substituto-2 p{
     margin-top: 0px;
 }
+#substituto-1,
+.alimentos-1,
+#substituto-2,
+.alimentos-2{
+    width: 50%;
+}
 #informacoes-dieta{
     width: 761px;
+}
+#conteudo-dieta{
+    display: flex;
+    gap:23px;
+    margin: auto;
+    justify-content: center;
 }
