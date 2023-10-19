@@ -217,12 +217,26 @@ form {
 }
 #objetivo{
     padding-right: 93px;
+    padding-bottom: 27px;
+    padding-top: 40px;
 }
+#objetivo p, 
+#diagnostico p,
+#status p{
+    padding-bottom: 16px;
+}
+#diagnostico,
+#status{
+    padding-bottom: 27px;
+    padding-top: 40px;
+}
+
 #objetivo strong,
-#diagnostico strong
+#diagnostico strong,
 #status strong{
     font-size: 12px;
 }
+
 #diagnostico{
     padding-right: 125px;
 }
@@ -242,6 +256,7 @@ form {
 }
 .quadros{
     margin-bottom: 20px; 
+    width: 100%;
 
 }
 #container-3{
@@ -274,10 +289,15 @@ form {
     border: 1px solid #FF8D61;
     border-radius: 10px;
     background: rgba(255, 141, 97, 0.14);
+    padding-top: 12px;
+    padding-bottom: 17px;
+    padding-left: 20px;
+    padding-right: 127px;
 }
 #consumiu h4{
     font-family: 'Inter', sans-serif;
     font-size: 13px;
+
 }
 #consumiu strong{
     font-family: 'Inter',sans-serif;
@@ -292,11 +312,7 @@ form {
     text-align: left;
     padding-left: 300px;
 }
-#conteudo-calorias{
-    border-radius: 10px;
-    border: 1px solid #F4F3F3;
-    background:  #FFFFFF;
-}
+
 #button-diario{
     display: flex;
     align-items: center;
@@ -309,10 +325,12 @@ form {
     justify-content: space-between;
     font-family: 'Inter', sans-serif;
     font-size: 14px;
+    color: #000;
 }
 #parte-1 h3,
 #parte-2 h3{
     font-size: 14px;
+    color: #000;
 }
 .alimentos-1,
 .alimentos-2{
@@ -325,9 +343,12 @@ form {
     font-family: 'Inter', sans-serif;
     font-size: 14px;
     color:#0C9A61;
+    padding-bottom: 25px;
 }
 #cafe-da-manha h3{
     font-size: 14px;
+    color: #0C9A61;
+    margin-bottom: 0;
 }
 #cafe-da-manha,
 #parte-1,
@@ -342,6 +363,15 @@ form {
     padding-left: 24px;
     padding-right: 24px;
     padding-bottom: 40px;
+    border-radius: 10px;
+    border: 1px solid #F4F3F3;
+    background:  #FFFFFF;
+}
+#conteudo-calorias h1{
+    padding-bottom: 12px;
+}
+#conteudo-calorias h4{
+    padding-bottom: 21px;
 }
 #calorias h4{
     font-family: 'Inter', sans-serif;
@@ -352,6 +382,7 @@ form {
     border-radius: 10px;
     border: 1px solid #F4F3F3;
     background: #FFFFFF;
+    padding-top: 18px;
 }
 #alimento-1 h3,
 #substituto-1 h3,
