@@ -1,6 +1,20 @@
-body{
-    font-family: 'Roboto';
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
 }
+
+body{
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    width: 100vw;
+}
+
+h1 {
+    font-family: "Inter", sans-serif;
+}
+
 /* login */
 #login h1,
 #label-email,
@@ -17,40 +31,136 @@ body{
     color: #FFFFFF;
     background-color: #0C9A61;
 }
-#login{
-    border: 3px solid #E2E2E2;
-    border-radius: 5px;
-    width: 525px;
-    height: 680px;
+.login-container{
+    border: 2px solid #E2E2E2;
     text-align: center;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    font-family: "Roboto", sans-serif;
+}
+
+h2 {
+    margin-bottom: 36px;
+    font-size: 32px;
+    color: #0C9A61;
+}
+
+h3 {
+    color: #898C93;
+    font-size: 20px;
+    margin-bottom: 27px;
+}
+
+.conteudo-login-container {
+    display: flex;
+    flex-direction: column;
     align-items: center;
-}
-#login input {  
+    justify-content: center;
+    margin: 52px;
     width: 417px;
+    height: 100%;
+}
+
+label {
+    font-size: 20px;
+    color: #0C9A61;
+    font-weight: 800;
+    margin-bottom: 4px;
+}
+
+#login input::placeholder {
+    color: #E2E2E2;
+}
+
+#login input {  
+    width: 100%;
     height: 49px;
+    border: 1px solid #F4F3F3;
+    border-radius: 10px;
+    font-size: 20px;
+    padding: 12px 22px;
+    color: #E2E2E2;
 }
-#login a{
-    margin-left: 60%;
-    margin-bottom: 20px;
+
+#login input:focus {
+    outline: #0C9A61 solid 1px;
+    color: #000;
 }
+
+#input-esqueci-senha {
+    margin-top: 8px;
+    font-size: 18px;
+    font-weight: 800;
+    text-decoration: none;
+    float: right;
+}
+
 /* login-main */
 #login-main{
     display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 114px;
     text-align: center;
-    margin-bottom: 30px;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
 }
 
-.section {
-    margin: 10px; 
+#imagem-login {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
-#logo{
-    margin-right:50%;
+
+#logo-container{
+    /* margin-right:50%;
+    margin-bottom: 70px; */
+    width: 207px;
+    height: auto;
 }
+
+#logo {
+    width: 100%;
+    height: 100%;
+}
+
+
+#container-mensagem-de-bem-vindo{
+    width: 100%;
+}
+
 /* forms */
-.form-item {
-    margin-bottom: 10px;
+
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
 }
-#form-btns button {
-    width: 417px;
-    height: 49px;
+
+.form-item {
+    margin-top: 38px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 100%;
+}
+#botao-entrar {
+    width: 100%;
+    padding: 13px;
+    border: none;
+    border-radius: 10px;
+    font-size: 22px;
+    font-weight: 800;
+    margin-top: 53px;
+    margin-bottom: 124px;
+    font-family: "Roboto", sans-serif;
+}
+
+#botao-entrar:hover {
+    cursor: pointer;
 }

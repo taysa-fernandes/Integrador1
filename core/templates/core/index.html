@@ -1,35 +1,39 @@
-{% extends "core/base.html" %}
-{% load static %}
-
-{% block main %}
+{% extends "core/base.html" %} {% load static %} {% block main %}
 <body>
-    <main id="login-main">
-        <section id="imagem-login" class="section">
-            <img src={% static 'imagens/Group 74.svg' %} alt="DietHub" id="logo">
-            <h1>Bem vindo(a)!</h1>
-            <img src={% static 'imagens/Eating healthy food-bro 1.svg' %} alt="Mulher comendo">
-        </section>
-        <section id="login" class="section">
-            <h1>Login</h1>
-            <h3>Faça login para continuar</h3>
-            <br>
-            <form action="../index.html">
-                <div class="form-item">
-                    <label for="" id="label-email">Email:</label>
-                    <input type="email" placeholder="user@gmail.com">
-                </div>
-                <div class="form-item">
-                    <label for="" id="label-senha">Senha:</label>
-                    <input type="password">
-                    <br>
-                    <a href="esqueciSenha.html">Esqueci a senha</a>
-                </div>
-                <br>
-                <div id="form-btns">
-                    <button type="Entrar">Entrar</button>
-                </div>
-            </form>
-        </section>
-    </main>
+  <main id="login-main">
+    <div id="imagem-login" class="section">
+      <div id="logo-container">
+        <img src={% static 'imagens/Group 74.svg' %} alt="DietHub" id="logo">
+      </div>
+
+      <div id="container-mensagem-de-bem-vindo">
+        <h1>Bem vindo(a)!</h1>
+        <img src={% static 'imagens/Eating healthy food-bro 1.svg' %}
+        alt="Mulher comendo">
+      </div>
+    </div>
+
+    <div id="login" class="login-container">
+      <div class="conteudo-login-container">
+        <h2>Login</h2>
+        <h3>Faça login para continuar</h3>
+        <form action="../index.html">
+          <div class="form-item">
+            <label for="" id="label-email">Email:</label>
+            <input type="email" placeholder="user@gmail.com" />
+          </div>
+          <div class="form-item">
+            <label for="" id="label-senha">Senha:</label>
+            <input type="password" />
+          </div>
+
+          <a id="input-esqueci-senha" href="esqueciSenha.html"
+            >Esqueci a senha</a
+          >
+          <button id="botao-entrar" type="Entrar">Entrar</button>
+        </form>
+      </div>
+    </div>
+  </main>
 </body>
 {% endblock %}
