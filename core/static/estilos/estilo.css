@@ -132,3 +132,7 @@ body{
     height: 51px;
     background: #F4F3F3;
 }
+#main-diario,
+#conteudo-diario {
+    margin: auto;
+}
