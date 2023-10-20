@@ -167,7 +167,7 @@ main {
 }
 
 #collapse li label {
-    padding: 10px;
+    padding: 12px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -177,11 +177,117 @@ main {
     color: #141623;
     height: 60px;
     background-color: #F9FAFB;
+    border-radius: 10px;
 }
 
 .informacoes-do-paciente {
     display: flex;
     align-items: center;
+    font-weight: 600;
+    width: 100%;
+    gap: 9px;
+}
+
+.informacoes-do-paciente img {
+    width: 28px;
+    height: auto;
+}
+
+.detalhes-do-paciente span {
+    font-size: 12px;
+    color: #000;
+}
+
+.titulo-collapse {
+    font-weight: 700;
+}
+
+.informacoes-gerais-do-paciente {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    margin-bottom: 12px;
+}
+
+.detalhes-collapse {
+    display: flex;
+    flex-direction: column;
+}
+
+hr.solid {
+    border-top: 1px solid #F4F3F3;
+    margin: 12px 0;
+}
+
+#botao-criar-dieta {
+    border: none;
+    display: flex;
+    align-items: center;
+    color: #0C9A61;
+    font-weight: 700;
+    gap: 2px;
+    background: transparent;
+}
+
+#botao-criar-dieta:hover {
+    cursor: pointer;
+}
+
+#botao-criar-dieta i {
+    color: #0C9A61;
+    font-size: 14px;
+}
+
+.aguardando-acao {
+    color: #A8A8A8;
+    font-weight: 600;
+}
+
+.footer-collapse-pacientes {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    float: right;
+    margin-bottom: 19px;
+}
+
+.footer-collapse-pacientes button {
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-weight: bold;
+    background-color: transparent;
+}
+
+.footer-collapse-pacientes #botao-editar {
+    border-radius: 10px;
+    border: 1px solid #5550BC;
+    color: #5550BC;
+    padding: 8px 12px;
+}
+
+.footer-collapse-pacientes #botao-editar:hover {
+    cursor: pointer;
+    background-color: rgba(85, 80, 188,14%);
+}
+
+
+.footer-collapse-pacientes #botao-excluir {
+    color: #FF1E1E;
+}
+
+.footer-collapse-pacientes #botao-excluir:hover {
+    cursor: pointer;
+}
+
+.footer-collapse-pacientes #botao-excluir i {
+    color: #FF1E1E;
+}
+
+.footer-collapse-pacientes #botao-editar i {
+    color: #5550BC;
 }
 
 #collapse li label span {
@@ -195,11 +301,12 @@ main {
 }
 
 #collapse .content {
-    padding: 0 10px;
+    padding: 0 40px;
     line-height: 36px;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.5s;
+    font-size: 14px;
 }
 
 #collapse label + input[type="radio"]:checked +  .content {
