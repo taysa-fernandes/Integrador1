@@ -149,6 +149,22 @@ form {
     align-items: start;
     width: 100%;
 }
+.opcao-alimento label{
+    display: flex;
+    flex-direction: column;
+}
+.opcao-alimento span{
+    padding-bottom: 6px;
+}
+.container-opcao{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.opcao-alimento{
+    display: flex;
+    gap: 10px;
+}
 #botao-entrar {
     width: 100%;
     padding: 13px;
@@ -450,6 +466,7 @@ form {
     display: flex;
     align-items: center;
     gap: 9px;
+    padding-bottom: 24px;
 }
 .button-registrar h2{
     color: #000;
@@ -478,7 +495,7 @@ form {
     padding-left: 20px;
     padding-bottom: 21px;
     padding-right: 82px;
-    width: 572px;
+    max-width: 572px;
     margin-left: 32px;
 }
 .progresso-do-cafe label,
@@ -512,4 +529,14 @@ form {
     font-size: 20px;
     width: 103px;
     height: 43px;
+}
+.container-global-opcao{
+    display: flex;
+    justify-content: space-between;
+}
+.buttons-progresso{
+    float: right;
+}
+.main-progresso{
+    max-width: 715px;
 }
