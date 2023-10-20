@@ -1,10 +1,7 @@
-{% extends "core/collapse.html" %}
+{% extends "core/collapse.html" %} 
+{% comment %} {% extends "core/collapse.html" %} {% endcomment %}
 
 {% load static %} 
-
-{% block main_css %}
-  <link rel="stylesheet" type="text/css" href="{% static 'estilos/estilo-main.css' %}" />
-{%endblock%}
 
 {% block main %}
 <main>
@@ -35,6 +32,8 @@
         Novo paciente
       </button>
     </div>
+
+    {% block collapse %} {{block.super}} {% endblock %}
   </section>
 </main>
 {% endblock %}
