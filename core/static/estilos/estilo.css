@@ -103,7 +103,7 @@ header {
     display: block;
     margin-top: 4px;
     text-align: right;
-    font-weight:conteudo-principal bold;
+    font-weight:bold;
 }
 
 .nome-do-usuario {
@@ -137,20 +137,51 @@ main {
     font-family: 'Inter', sans-serif;
 }
 
+.conteudo-principal {
+    display: flex;
+    flex-direction: column;
+    gap: 51px;
+    width: 100%;
+    max-width: 1031px;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
 .conteudo-principal h1 {
     font-size: 1.5rem; /* 24px */
     height: 100%;
+    display: inline;
 }
 
 .cabecalho-conteudo-principal {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
 }
 
-#collapse {
-    margin: 100px auto;
-    max-width: 830px;
+.botao-padrao {
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 12px;
+    border-radius: 8px;
+    background-color: #0C9A61;
+    color: #FFF;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    gap: 4px;
+}
+
+.botao-padrao:hover {
+    cursor: pointer;
+}
+
+.botao-padrao i {
+    color: #FFF;
 }
 
 #collapse li {
@@ -195,7 +226,6 @@ main {
 
 .detalhes-do-paciente span {
     font-size: 12px;
-    color: #000;
 }
 
 .titulo-collapse {
@@ -289,12 +319,12 @@ hr.solid {
 .footer-collapse-pacientes #botao-editar i {
     color: #5550BC;
 }
-
+/* 
 #collapse li label span {
     transform: rotate(90deg);
     font-size: 22px;
     color: #333;
-}
+} */
 
 #collapse label + input[type="radio"] {
     display: none;

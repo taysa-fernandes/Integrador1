@@ -1,261 +1,263 @@
-{% extends "core/collapse.html" %} 
-{% load static %}
-{% block main %}
-  <main>
-    <header>
-      <nav class="breadcrumbs">
-        <div class="breadcrumb">
-          <a href="#">
-            <i class="ph ph-house-line"></i>
-            <span>Home /</span>
-          </a>
-        </div>
-      </nav>
-
-      <div class="informacoes-do-usuario">
-        <div class="texto-informacoes-do-usuario">
-          <span class="nome-do-usuario">Claudinei Camilo</span>
-          <span class="tipo-de-usuario">Nutricionista</span>
-        </div>
-        <img src={% static 'imagens/usuario.svg' %} alt="Logo DietHub">
+{% extends "core/collapse.html" %} {% load static %} {% block main %}
+<main>
+  <header>
+    <nav class="breadcrumbs">
+      <div class="breadcrumb">
+        <a href="#">
+          <i class="ph ph-house-line"></i>
+          <span>Home /</span>
+        </a>
       </div>
-    </header>
-    <section class="conteudo-principal">
-      {% comment %} <div class="cabecalho-conteudo-principal">
-        <h1>Seus pacientes</h1>
-    
-        <button>Novo paciente</button>  
-      <div> {% endcomment %}
+    </nav>
 
-        <div>
-          <ul id="collapse">
-            <li>
-              <label for="first">
-                <div class="informacoes-do-paciente">
-                  <img src={% static 'imagens/usuario.svg' %} alt="Logo DietHub">
-                  Paciente 1 
-                </div>
-                <i class="ph ph-caret-down"></i>
-              </label>
-              <input type="radio" name="collapse" id="first" checked />
-          
-              <div class="content">
-                <div class="informacoes-gerais-do-paciente">
-                  <div class="detalhes-collapse">
-                    <span class="titulo-collapse">Nome</span>
-                    <span class="dados-do-cliente">Paciente 1</span>
-                  </div>
-                  
-                  <div class="detalhes-collapse">
-                    <span class="titulo-collapse">Email</span>
-                    <span class="dados-do-cliente">paciente1@gmail.com</span>
-                  </div>
+    <div class="informacoes-do-usuario">
+      <div class="texto-informacoes-do-usuario">
+        <span class="nome-do-usuario">Claudinei Camilo</span>
+        <span class="tipo-de-usuario">Nutricionista</span>
+      </div>
+      <img src={% static 'imagens/usuario.svg' %} alt="Logo DietHub">
+    </div>
+  </header>
+  <section class="conteudo-principal">
+    <div class="cabecalho-conteudo-principal">
+      <h1>Seus pacientes</h1>
 
-                  <div class="detalhes-collapse">
-                    <span class="titulo-collapse">CPF</span>
-                    <span class="dados-do-cliente">123.456.789-00</span>
-                  </div>
+      <button class="botao-padrao">
+        <i class="ph ph-user-circle-plus"></i>
+        Novo paciente
+      </button>
+    </div>
 
-                  <div class="detalhes-collapse">
-                    <span class="titulo-collapse">Whatsapp</span>
-                    <a href="#" class="dados-do-cliente" id="botao-entrar-em-contato">
-                      <img src={% static 'imagens/icone-whatsapp.svg' %} alt="icone-whatsapp">
-                      Entrar em contato
-                    </a>
-                  </div>
-                </div>
+    <ul id="collapse">
+      <li>
+        <label for="first">
+          <div class="informacoes-do-paciente">
+            <img src={% static 'imagens/usuario.svg' %} alt="Logo DietHub">
+            Paciente 1
+          </div>
+          <i class="ph ph-caret-down"></i>
+        </label>
+        <input type="radio" name="collapse" id="first" checked />
 
-                <hr class="solid">
+        <div class="content">
+          <div class="informacoes-gerais-do-paciente">
+            <div class="detalhes-collapse">
+              <span class="titulo-collapse">Nome</span>
+              <span class="dados-do-cliente">Paciente 1</span>
+            </div>
 
-                <div class="informacoes-gerais-do-paciente">                  
-                  <div class="detalhes-collapse">
-                    <span class="titulo-collapse">Dieta</span>
-                    <span class="aguardando-acao">Aguardando resposta do formulário de pré-consulta</span>
-                  </div>
+            <div class="detalhes-collapse">
+              <span class="titulo-collapse">Email</span>
+              <span class="dados-do-cliente">paciente1@gmail.com</span>
+            </div>
 
-                  <button id="botao-criar-dieta">
-                    <i class="ph ph-plus"></i>
-                    <span>
-                      Criar dieta
-                    </span>
-                  </button>
-                </div>
+            <div class="detalhes-collapse">
+              <span class="titulo-collapse">CPF</span>
+              <span class="dados-do-cliente">123.456.789-00</span>
+            </div>
 
-                <hr class="solid">
+            <div class="detalhes-collapse">
+              <span class="titulo-collapse">Whatsapp</span>
+              <a href="#" class="dados-do-cliente" id="botao-entrar-em-contato">
+                <img src={% static 'imagens/icone-whatsapp.svg' %}
+                alt="icone-whatsapp"> Entrar em contato
+              </a>
+            </div>
+          </div>
 
-                <div class="informacoes-gerais-do-paciente">                  
-                  <div class="detalhes-collapse">
-                    <span class="titulo-collapse">Diário alimentar</span>
-                    <span class="aguardando-acao">Aguardando resposta do formulário de pré-consulta</span>
-                  </div>
-                </div>
+          <hr class="solid" />
 
-                <div class="footer-collapse-pacientes">
-                  <button id="botao-editar">
-                    <i class="ph ph-pencil-simple-line"></i>
-                    Editar
-                  </button>
-                  <button id="botao-excluir">
-                    <i class="ph ph-trash"></i>
-                    Excluir
-                  </button>
-                </div>
+          <div class="informacoes-gerais-do-paciente">
+            <div class="detalhes-collapse">
+              <span class="titulo-collapse">Dieta</span>
+              <span class="aguardando-acao"
+                >Aguardando resposta do formulário de pré-consulta</span
+              >
+            </div>
 
-              </div>
-            </li>
-          
-            <li>
-              <label for="second">
-                <div class="informacoes-do-paciente">
-                  <img src={% static 'imagens/usuario.svg' %} alt="Logo DietHub">
-                  Paciente 2
-                </div>
-                <i class="ph ph-caret-down"></i>
-              </label>
-              <input type="radio" name="collapse" id="second" />
-          
-              <div class="content">
-                <div class="informacoes-gerais-do-paciente">
-                  <div class="detalhes-collapse">
-                    <span class="titulo-collapse">Nome</span>
-                    <span class="dados-do-cliente">Paciente 1</span>
-                  </div>
-                  
-                  <div class="detalhes-collapse">
-                    <span class="titulo-collapse">Email</span>
-                    <span class="dados-do-cliente">paciente1@gmail.com</span>
-                  </div>
+            <button id="botao-criar-dieta">
+              <i class="ph ph-plus"></i>
+              <span> Criar dieta </span>
+            </button>
+          </div>
 
-                  <div class="detalhes-collapse">
-                    <span class="titulo-collapse">CPF</span>
-                    <span class="dados-do-cliente">123.456.789-00</span>
-                  </div>
+          <hr class="solid" />
 
-                  <div class="detalhes-collapse">
-                    <span class="titulo-collapse">Whatsapp</span>
-                    <a href="#" class="dados-do-cliente" id="botao-entrar-em-contato">
-                      <img src={% static 'imagens/icone-whatsapp.svg' %} alt="icone-whatsapp">
-                      Entrar em contato
-                    </a>
-                  </div>
-                </div>
+          <div class="informacoes-gerais-do-paciente">
+            <div class="detalhes-collapse">
+              <span class="titulo-collapse">Diário alimentar</span>
+              <span class="aguardando-acao"
+                >Aguardando resposta do formulário de pré-consulta</span
+              >
+            </div>
+          </div>
 
-                <hr class="solid">
-
-                <div class="informacoes-gerais-do-paciente">                  
-                  <div class="detalhes-collapse">
-                    <span class="titulo-collapse">Dieta</span>
-                    <span class="aguardando-acao">Aguardando resposta do formulário de pré-consulta</span>
-                  </div>
-
-                  <button id="botao-criar-dieta">
-                    <i class="ph ph-plus"></i>
-                    <span>
-                      Criar dieta
-                    </span>
-                  </button>
-                </div>
-
-                <hr class="solid">
-
-                <div class="informacoes-gerais-do-paciente">                  
-                  <div class="detalhes-collapse">
-                    <span class="titulo-collapse">Diário alimentar</span>
-                    <span class="aguardando-acao">Aguardando resposta do formulário de pré-consulta</span>
-                  </div>
-                </div>
-
-                <div class="footer-collapse-pacientes">
-                  <button id="botao-editar">
-                    <i class="ph ph-pencil-simple-line"></i>
-                    Editar
-                  </button>
-                  <button id="botao-excluir">
-                    <i class="ph ph-trash"></i>
-                    Excluir
-                  </button>
-                </div>
-
-              </div>
-            </li>
-          
-            <li>
-              <label for="third">
-                <div class="informacoes-do-paciente">
-                  <img src={% static 'imagens/usuario.svg' %} alt="Logo DietHub">
-                  Paciente 3 
-                </div>
-                <i class="ph ph-caret-down"></i>
-              </label>
-              <input type="radio" name="collapse" id="third" />
-          
-              <div class="content">
-                <div class="informacoes-gerais-do-paciente">
-                  <div class="detalhes-collapse">
-                    <span class="titulo-collapse">Nome</span>
-                    <span class="dados-do-cliente">Paciente 1</span>
-                  </div>
-                  
-                  <div class="detalhes-collapse">
-                    <span class="titulo-collapse">Email</span>
-                    <span class="dados-do-cliente">paciente1@gmail.com</span>
-                  </div>
-
-                  <div class="detalhes-collapse">
-                    <span class="titulo-collapse">CPF</span>
-                    <span class="dados-do-cliente">123.456.789-00</span>
-                  </div>
-
-                  <div class="detalhes-collapse">
-                    <span class="titulo-collapse">Whatsapp</span>
-                    <a href="#" class="dados-do-cliente" id="botao-entrar-em-contato">
-                      <img src={% static 'imagens/icone-whatsapp.svg' %} alt="icone-whatsapp">
-                      Entrar em contato
-                    </a>
-                  </div>
-                </div>
-
-                <hr class="solid">
-
-                <div class="informacoes-gerais-do-paciente">                  
-                  <div class="detalhes-collapse">
-                    <span class="titulo-collapse">Dieta</span>
-                    <span class="aguardando-acao">Aguardando resposta do formulário de pré-consulta</span>
-                  </div>
-
-                  <button id="botao-criar-dieta">
-                    <i class="ph ph-plus"></i>
-                    <span>
-                      Criar dieta
-                    </span>
-                  </button>
-                </div>
-
-                <hr class="solid">
-
-                <div class="informacoes-gerais-do-paciente">                  
-                  <div class="detalhes-collapse">
-                    <span class="titulo-collapse">Diário alimentar</span>
-                    <span class="aguardando-acao">Aguardando resposta do formulário de pré-consulta</span>
-                  </div>
-                </div>
-
-                <div class="footer-collapse-pacientes">
-                  <button id="botao-editar">
-                    <i class="ph ph-pencil-simple-line"></i>
-                    Editar
-                  </button>
-                  <button id="botao-excluir">
-                    <i class="ph ph-trash"></i>
-                    Excluir
-                  </button>
-                </div>
-
-              </div>
-            </li>
-          </ul>
+          <div class="footer-collapse-pacientes">
+            <button id="botao-editar">
+              <i class="ph ph-pencil-simple-line"></i>
+              Editar
+            </button>
+            <button id="botao-excluir">
+              <i class="ph ph-trash"></i>
+              Excluir
+            </button>
+          </div>
         </div>
-      
-    </section>
-  </main>
+      </li>
+
+      <li>
+        <label for="second">
+          <div class="informacoes-do-paciente">
+            <img src={% static 'imagens/usuario.svg' %} alt="Logo DietHub">
+            Paciente 2
+          </div>
+
+          <i class="ph ph-caret-down"></i>
+        </label>
+        <input type="radio" name="collapse" id="second" />
+
+        <div class="content">
+          <div class="informacoes-gerais-do-paciente">
+            <div class="detalhes-collapse">
+              <span class="titulo-collapse">Nome</span>
+              <span class="dados-do-cliente">Paciente 1</span>
+            </div>
+
+            <div class="detalhes-collapse">
+              <span class="titulo-collapse">Email</span>
+              <span class="dados-do-cliente">paciente1@gmail.com</span>
+            </div>
+
+            <div class="detalhes-collapse">
+              <span class="titulo-collapse">CPF</span>
+              <span class="dados-do-cliente">123.456.789-00</span>
+            </div>
+
+            <div class="detalhes-collapse">
+              <span class="titulo-collapse">Whatsapp</span>
+              <a href="#" class="dados-do-cliente" id="botao-entrar-em-contato">
+                <img src={% static 'imagens/icone-whatsapp.svg' %}
+                alt="icone-whatsapp"> Entrar em contato
+              </a>
+            </div>
+          </div>
+
+          <hr class="solid" />
+
+          <div class="informacoes-gerais-do-paciente">
+            <div class="detalhes-collapse">
+              <span class="titulo-collapse">Dieta</span>
+              <span class="aguardando-acao"
+                >Aguardando resposta do formulário de pré-consulta</span
+              >
+            </div>
+
+            <button id="botao-criar-dieta">
+              <i class="ph ph-plus"></i>
+              <span> Criar dieta </span>
+            </button>
+          </div>
+
+          <hr class="solid" />
+
+          <div class="informacoes-gerais-do-paciente">
+            <div class="detalhes-collapse">
+              <span class="titulo-collapse">Diário alimentar</span>
+              <span class="aguardando-acao"
+                >Aguardando resposta do formulário de pré-consulta</span
+              >
+            </div>
+          </div>
+
+          <div class="footer-collapse-pacientes">
+            <button id="botao-editar">
+              <i class="ph ph-pencil-simple-line"></i>
+              Editar
+            </button>
+            <button id="botao-excluir">
+              <i class="ph ph-trash"></i>
+              Excluir
+            </button>
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <label for="third">
+          <div class="informacoes-do-paciente">
+            <img src={% static 'imagens/usuario.svg' %} alt="Logo DietHub">
+            Paciente 3
+          </div>
+          <i class="ph ph-caret-down"></i>
+        </label>
+        <input type="radio" name="collapse" id="third" />
+
+        <div class="content">
+          <div class="informacoes-gerais-do-paciente">
+            <div class="detalhes-collapse">
+              <span class="titulo-collapse">Nome</span>
+              <span class="dados-do-cliente">Paciente 1</span>
+            </div>
+
+            <div class="detalhes-collapse">
+              <span class="titulo-collapse">Email</span>
+              <span class="dados-do-cliente">paciente1@gmail.com</span>
+            </div>
+
+            <div class="detalhes-collapse">
+              <span class="titulo-collapse">CPF</span>
+              <span class="dados-do-cliente">123.456.789-00</span>
+            </div>
+
+            <div class="detalhes-collapse">
+              <span class="titulo-collapse">Whatsapp</span>
+              <a href="#" class="dados-do-cliente" id="botao-entrar-em-contato">
+                <img src={% static 'imagens/icone-whatsapp.svg' %}
+                alt="icone-whatsapp"> Entrar em contato
+              </a>
+            </div>
+          </div>
+
+          <hr class="solid" />
+
+          <div class="informacoes-gerais-do-paciente">
+            <div class="detalhes-collapse">
+              <span class="titulo-collapse">Dieta</span>
+              <span class="aguardando-acao"
+                >Aguardando resposta do formulário de pré-consulta</span
+              >
+            </div>
+
+            <button id="botao-criar-dieta">
+              <i class="ph ph-plus"></i>
+              <span> Criar dieta </span>
+            </button>
+          </div>
+
+          <hr class="solid" />
+
+          <div class="informacoes-gerais-do-paciente">
+            <div class="detalhes-collapse">
+              <span class="titulo-collapse">Diário alimentar</span>
+              <span class="aguardando-acao"
+                >Aguardando resposta do formulário de pré-consulta</span
+              >
+            </div>
+          </div>
+
+          <div class="footer-collapse-pacientes">
+            <button id="botao-editar">
+              <i class="ph ph-pencil-simple-line"></i>
+              Editar
+            </button>
+            <button id="botao-excluir">
+              <i class="ph ph-trash"></i>
+              Excluir
+            </button>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </section>
+</main>
 {% endblock %}
