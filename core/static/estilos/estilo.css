@@ -411,15 +411,45 @@ form {
     margin: auto;
     justify-content: center;
 }
-.topo-progresso h1{
+.topo-progresso-h1,
+.topo-progresso-h3{
+    margin-left: 36px;
+    margin-top: 32px;
+}
+.topo-progresso-h1{
+    display: flex;
+    justify-content: space-between;
+    margin-right: 24px;
+    margin-bottom: 21px;
+}
+.topo-progresso-h1 h1{
     color: #000;
     font-family: 'Inter', sans-serif;
     font-size: 20px;
 }
-.topo-progresso h3{
+.topo-progresso-h3{
+    margin-top: 0px;
+}
+.topo-progresso-h3 h3{
     color: #A8A8A8;
     font-family: 'Inter', sans-serif;
     font-size: 14px;
+}
+.button-registrar{
+    margin-left: 36px;
+    margin-bottom: 50px;
+    display: flex;
+    gap:322px;
+}
+.adicionar-info{
+    gap: 6px;
+    align-items: center;
+    display: flex;
+}
+.cafe-manha-icone{
+    display: flex;
+    align-items: center;
+    gap: 9px;
 }
 .button-registrar h2{
     color: #000;
@@ -435,6 +465,21 @@ form {
     color: #FF8D61;
     font-family: 'Inter', sans-serif;
     font-size: 14px;
+}
+.progresso-do-cafe{
+    margin-bottom: 21px;
+}
+.progresso-do-cafe,
+.progresso-do-almoco{
+    border-radius: 10px;
+    border: 1px solid #F4F3F3;
+    background:  #FFFFFF;
+    padding-top: 22px;
+    padding-left: 20px;
+    padding-bottom: 21px;
+    padding-right: 82px;
+    width: 572px;
+    margin-left: 32px;
 }
 .progresso-do-cafe label,
 .progresso-do-almoco label{
