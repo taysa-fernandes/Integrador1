@@ -411,3 +411,60 @@ form {
     margin: auto;
     justify-content: center;
 }
+.topo-progresso h1{
+    color: #000;
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+}
+.topo-progresso h3{
+    color: #A8A8A8;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+}
+.button-registrar h2{
+    color: #000;
+    font-family: 'Inter', sans-serif;
+    font-size: 36px;
+}
+.button-registrar a{
+    text-decoration: none;
+}
+.button-registrar a,
+#label-de-cafe,
+#label-de-almoco{
+    color: #FF8D61;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+}
+.progresso-do-cafe label,
+.progresso-do-almoco label{
+    color: #000;
+    font-family: 'Inter',sans-serif;
+    font-size: 14px;
+}
+.progresso-do-cafe input,
+.progresso-do-almoco input{
+    width: 24px;
+    height: 24px;
+    color: #0C9A61;
+}
+#botao-cancelar{
+    border-radius: 10px;
+    border: 1px solid #F4F3F3;
+    background:  #FFFFFF;
+    width: 103px;
+    height: 43px;
+    color:  #141623;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+}
+#botao-salvar{
+    border-radius: 10px;
+    background:  #0C9A61;
+    border: none;
+    color:  #FFFFFF;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    width: 103px;
+    height: 43px;
+}
