@@ -1,10 +1,10 @@
 from django.contrib import admin
 from django.urls import path
-from  core.views import index,dieta,progresso
+from  core.views import index,dieta,progresso,diario
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
     path('',index),
     path('dieta',dieta),
-    path('progresso',progresso)
+    path('progresso',progresso),
+    path('diario',diario)
 ]
