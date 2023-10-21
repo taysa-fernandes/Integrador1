@@ -1,0 +1,61 @@
+.formulario {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    width: 100%;
+    padding-top: 24px;
+}
+
+.perguntas {
+    font-family: "Inter", sans-serif;
+    font-weight: bold;
+}
+
+.descricao-pergunta {
+    font-size: 12px;
+    color: #A8A8A8;
+}
+
+.pergunta {
+    font-size: 14px;
+    color: black;
+}
+
+.resposta-multipla-escolha {
+    border: 1px solid #F4F3F3;
+    margin-bottom: 16px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 417px;
+    padding: 10px 13px;
+}
+
+.opcao {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0;
+}
+
+.nome-opcao {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: black;
+}
+
+.botao-ativar-escolha {
+    font-family: 'Roboto', sans-serif;
+    border: none;
+    border-radius: 6px;
+    color: #FFF;
+    font-size: 12px;
+    font-weight: 400;
+    background-color: #0C9A61;
+    padding: 6px 32px;
+    width: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

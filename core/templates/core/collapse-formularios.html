@@ -1,0 +1,46 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block collapse %}
+  <ul id="collapse">
+    <li>
+      <label for="first">
+        <div class="informacoes-do-paciente">Formulário 1</div>
+        <i class="ph ph-caret-down"></i>
+      </label>
+      <input type="radio" name="collapse" id="first" checked />
+
+      <div class="content">
+        <div class="formulario">
+          <div class="perguntas">
+            <p class="descricao-pergunta">Pergunta 1</p>
+            <p class="pergunta">Qual o seu principal objetivo?</p>
+          </div>
+
+          <div class="resposta-multipla-escolha">
+            <div class="opcao">
+              <span class="nome-opcao">Emagrecer</span>
+              <button class="botao-ativar-escolha">Ativar</button>
+            </div>
+
+            <div class="opcao">
+              <span class="nome-opcao">Ganhar massa</span>
+              <button class="botao-ativar-escolha">Ativar</button>
+            </div>
+
+            <div class="opcao">
+              <span class="nome-opcao">Apenas manter a saúde</span>
+              <button class="botao-ativar-escolha">Ativar</button>
+            </div>
+
+            <div class="opcao">
+              <span class="nome-opcao">Perder gordura</span>
+              <button class="botao-ativar-escolha">Ativar</button>
+            </div>
+          </div>
+        </div>
+
+        <hr class="solid" />
+      </div>
+    </li>
+  </ul>
+{% endblock %}
