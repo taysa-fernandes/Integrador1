@@ -5,6 +5,6 @@ from  core.views import index,dieta,progresso,diario
 urlpatterns = [
     path('',index),
     path('dieta',dieta),
-    path('progresso',progresso),
-    path('diario',diario)
+    path('progresso',progresso, name="progresso"),
+    path('diario',diario,name="diario"),
 ]

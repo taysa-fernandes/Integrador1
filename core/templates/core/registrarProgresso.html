@@ -2,8 +2,7 @@
 {% load static %}
 
 {% block main %}
-<body>
-    <main class="main-progresso">
+    <dialog class="main-progresso" id="myModal">
         <div class="topo-progresso-h1">
             <h1>Registrar progresso</h1>
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -13,7 +12,7 @@
         <div class="topo-progresso-h3">
             <h3>Faça seu registro de hoje no diário alimentar</h3>
         </div>
-        <div class="button-registrar">
+        <div class="button-registrar-progresso">
             <h2>26/09</h2>
             <div class="adicionar-info">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -87,6 +86,5 @@
             <button id="botao-salvar" type="Salvar">Salvar</button>
         </div>
         </div>
-    </main>
-</body>
+    </dialog>
 {% endblock %}

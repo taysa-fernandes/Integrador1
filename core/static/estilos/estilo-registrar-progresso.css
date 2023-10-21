@@ -25,21 +25,21 @@
     font-family: 'Inter', sans-serif;
     font-size: 14px;
 }
-.button-registrar{
+.button-registrar-progresso{
     margin-left: 36px;
     margin-bottom: 50px;
     display: flex;
     gap:322px;
 }
-.button-registrar h2{
+.button-registrar-progresso h2{
     color: #000;
     font-family: 'Inter', sans-serif;
     font-size: 36px;
 }
-.button-registrar a{
+.button-registrar-progresso a{
     text-decoration: none;
 }
-.button-registrar a,
+.button-registrar-progresso a,
 #label-de-cafe,
 #label-de-almoco{
     color: #FF8D61;
@@ -116,6 +116,8 @@
 }
 .buttons-progresso{
     float: right;
+    padding-top: 37px;
+
 }
 #botao-cancelar{
     border-radius: 10px;
@@ -126,4 +128,5 @@
     color:  #141623;
     font-family: 'Roboto', sans-serif;
     font-size: 20px;
+    margin-right: 24px;
 }
