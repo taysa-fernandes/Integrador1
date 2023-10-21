@@ -149,22 +149,6 @@ form {
     align-items: start;
     width: 100%;
 }
-.opcao-alimento label{
-    display: flex;
-    flex-direction: column;
-}
-.opcao-alimento span{
-    padding-bottom: 6px;
-}
-.container-opcao{
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-}
-.opcao-alimento{
-    display: flex;
-    gap: 10px;
-}
 #botao-entrar {
     width: 100%;
     padding: 13px;
@@ -427,6 +411,9 @@ form {
     margin: auto;
     justify-content: center;
 }
+.main-progresso{
+    max-width: 715px;
+}
 .topo-progresso-h1,
 .topo-progresso-h3{
     margin-left: 36px;
@@ -457,17 +444,6 @@ form {
     display: flex;
     gap:322px;
 }
-.adicionar-info{
-    gap: 6px;
-    align-items: center;
-    display: flex;
-}
-.cafe-manha-icone{
-    display: flex;
-    align-items: center;
-    gap: 9px;
-    padding-bottom: 24px;
-}
 .button-registrar h2{
     color: #000;
     font-family: 'Inter', sans-serif;
@@ -482,6 +458,11 @@ form {
     color: #FF8D61;
     font-family: 'Inter', sans-serif;
     font-size: 14px;
+}
+.adicionar-info{
+    gap: 6px;
+    align-items: center;
+    display: flex;
 }
 .progresso-do-cafe{
     margin-bottom: 21px;
@@ -510,15 +491,31 @@ form {
     height: 24px;
     color: #0C9A61;
 }
-#botao-cancelar{
-    border-radius: 10px;
-    border: 1px solid #F4F3F3;
-    background:  #FFFFFF;
-    width: 103px;
-    height: 43px;
-    color:  #141623;
-    font-family: 'Roboto', sans-serif;
-    font-size: 20px;
+.cafe-manha-icone{
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding-bottom: 24px;
+}
+.container-global-opcao{
+    display: flex;
+    justify-content: space-between;
+}
+.container-opcao{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.opcao-alimento label{
+    display: flex;
+    flex-direction: column;
+}
+.opcao-alimento span{
+    padding-bottom: 6px;
+}
+.opcao-alimento{
+    display: flex;
+    gap: 10px;
 }
 #botao-salvar{
     border-radius: 10px;
@@ -530,13 +527,16 @@ form {
     width: 103px;
     height: 43px;
 }
-.container-global-opcao{
-    display: flex;
-    justify-content: space-between;
-}
 .buttons-progresso{
     float: right;
 }
-.main-progresso{
-    max-width: 715px;
+#botao-cancelar{
+    border-radius: 10px;
+    border: 1px solid #F4F3F3;
+    background:  #FFFFFF;
+    width: 103px;
+    height: 43px;
+    color:  #141623;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
 }

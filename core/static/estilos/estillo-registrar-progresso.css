@@ -1,0 +1,129 @@
+.main-progresso{
+    max-width: 715px;
+}
+.topo-progresso-h1,
+.topo-progresso-h3{
+    margin-left: 36px;
+    margin-top: 32px;
+}
+.topo-progresso-h1{
+    display: flex;
+    justify-content: space-between;
+    margin-right: 24px;
+    margin-bottom: 21px;
+}
+.topo-progresso-h1 h1{
+    color: #000;
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+}
+.topo-progresso-h3{
+    margin-top: 0px;
+}
+.topo-progresso-h3 h3{
+    color: #A8A8A8;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+}
+.button-registrar{
+    margin-left: 36px;
+    margin-bottom: 50px;
+    display: flex;
+    gap:322px;
+}
+.button-registrar h2{
+    color: #000;
+    font-family: 'Inter', sans-serif;
+    font-size: 36px;
+}
+.button-registrar a{
+    text-decoration: none;
+}
+.button-registrar a,
+#label-de-cafe,
+#label-de-almoco{
+    color: #FF8D61;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+}
+.adicionar-info{
+    gap: 6px;
+    align-items: center;
+    display: flex;
+}
+.progresso-do-cafe{
+    margin-bottom: 21px;
+}
+.progresso-do-cafe,
+.progresso-do-almoco{
+    border-radius: 10px;
+    border: 1px solid #F4F3F3;
+    background:  #FFFFFF;
+    padding-top: 22px;
+    padding-left: 20px;
+    padding-bottom: 21px;
+    padding-right: 82px;
+    max-width: 572px;
+    margin-left: 32px;
+}
+.progresso-do-cafe label,
+.progresso-do-almoco label{
+    color: #000;
+    font-family: 'Inter',sans-serif;
+    font-size: 14px;
+}
+.progresso-do-cafe input,
+.progresso-do-almoco input{
+    width: 24px;
+    height: 24px;
+    color: #0C9A61;
+}
+.cafe-manha-icone{
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding-bottom: 24px;
+}
+.container-global-opcao{
+    display: flex;
+    justify-content: space-between;
+}
+.container-opcao{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.opcao-alimento label{
+    display: flex;
+    flex-direction: column;
+}
+.opcao-alimento span{
+    padding-bottom: 6px;
+}
+.opcao-alimento{
+    display: flex;
+    gap: 10px;
+}
+#botao-salvar{
+    border-radius: 10px;
+    background:  #0C9A61;
+    border: none;
+    color:  #FFFFFF;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    width: 103px;
+    height: 43px;
+}
+.buttons-progresso{
+    float: right;
+}
+#botao-cancelar{
+    border-radius: 10px;
+    border: 1px solid #F4F3F3;
+    background:  #FFFFFF;
+    width: 103px;
+    height: 43px;
+    color:  #141623;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+}
