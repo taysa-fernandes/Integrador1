@@ -91,6 +91,12 @@
     align-items: center;
     gap: 4px;
 }
+.ph-notepad{
+    color:#A8A8A8;
+}
+.ph-plus{
+    color: #FF8D61;
+}
 .button-registrar button{
     border: none;
     background: #ffff;

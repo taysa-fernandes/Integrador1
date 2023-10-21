@@ -343,6 +343,9 @@ form {
 .alimentos-2{
     margin-bottom: 30px;
 }
+.ph-caret-right{
+    color: #0C9A61;
+}
 #cafe-da-manha{
     display: flex;
     align-items: center;
