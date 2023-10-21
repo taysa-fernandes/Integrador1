@@ -85,3 +85,26 @@ textarea::placeholder {
 textarea:focus {
     outline: #0C9A61 solid 1px;
 }
+
+input[type="number"] {
+    border-radius: 6px;
+    border: 1px solid #F4F3F3;
+    padding: 7px;
+    font-family: 'Inter', sans-serif;
+    color: black;
+    font-weight: 500;
+}
+
+input[type="number"]:focus {
+    outline: #0C9A61 solid 1px;
+}
+
+input[type="number"]::placeholder {
+    color: #A8A8A8;
+    font-weight: bold;
+}
+
+#botao-editar a {
+    text-decoration: none;
+    color: #5550BC;
+}

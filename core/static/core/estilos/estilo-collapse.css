@@ -157,6 +157,5 @@ hr.solid {
 }
 
 #collapse label+input[type="radio"]:checked+.content {
-    max-height: 400px;
-
+    max-height: 100vh;
 }
