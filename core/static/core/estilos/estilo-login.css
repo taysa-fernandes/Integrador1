@@ -42,7 +42,7 @@ h1 {
     display: flex;
     justify-content: center;
     font-family: "Roboto", sans-serif;
-    max-height: 680px;
+    max-height: 630px;
 }
 
 h2 {
@@ -53,7 +53,7 @@ h2 {
 
 h3 {
     color: #898C93;
-    font-size: 20px;
+    font-size: 16px;
     margin-bottom: 27px;
 }
 
@@ -83,19 +83,21 @@ label {
     height: 49px;
     border: 1px solid #F4F3F3;
     border-radius: 10px;
-    font-size: 20px;
+    font-size: 16px;
     padding: 12px 22px;
     color: #E2E2E2;
+    margin-bottom: 8px;
 }
 
 #login input:focus {
     outline: #0C9A61 solid 1px;
     color: #000;
+    border-radius: 10px;
 }
 
 #input-esqueci-senha {
     margin-top: 8px;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 800;
     text-decoration: none;
     float: right;
@@ -148,12 +150,13 @@ form {
 }
 
 .form-item {
-    margin-top: 38px;
-    margin-bottom: 10px;
+    margin-top: 30px;
+    margin-bottom: 2px;
     display: flex;
     flex-direction: column;
     align-items: start;
     width: 100%;
+    padding: 1px;
 }
 
 #botao-entrar {
@@ -161,7 +164,7 @@ form {
     padding: 13px;
     border: none;
     border-radius: 10px;
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 800;
     margin-top: 53px;
     margin-bottom: 124px;
