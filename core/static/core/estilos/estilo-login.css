@@ -169,6 +169,13 @@ form {
     margin-top: 53px;
     margin-bottom: 124px;
     font-family: "Roboto", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#botao-entrar a {
+    color: #FFF;
 }
 
 #botao-entrar:hover {

@@ -1,11 +1,11 @@
 from django.shortcuts import render
 
 def index(request):
-    return render(request, 'core/home.html')
-
-
-def login(request):
     return render(request, 'core/login.html')
+
+
+def home(request):
+    return render(request, 'core/home.html')
 
 def meus_formularios(request):
     return render(request, 'core/meus-formularios.html')
