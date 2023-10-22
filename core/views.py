@@ -5,3 +5,6 @@ def index(request):
 
 def meus_formularios(request):
     return render(request, 'core/meus-formularios.html')
+
+def novo_formulario(request):
+    return render(request, 'core/novo-formulario.html')

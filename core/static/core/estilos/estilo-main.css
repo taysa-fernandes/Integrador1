@@ -11,6 +11,12 @@ header {
     /* 31px 53px */
 }
 
+.breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
 .breadcrumb {
     font-size: 0.75rem;
     /* 12px */
@@ -65,7 +71,6 @@ header {
 .conteudo-principal {
     display: flex;
     flex-direction: column;
-    gap: 51px;
     width: 100%;
     max-width: 1031px;
     align-items: center;
@@ -85,6 +90,7 @@ header {
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    margin-bottom: 51px;
 }
 
 .botao-padrao {
@@ -107,5 +113,9 @@ header {
 }
 
 .botao-padrao i {
+    color: #FFF;
+}
+
+.botao-padrao a {
     color: #FFF;
 }
