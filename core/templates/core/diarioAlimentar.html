@@ -34,7 +34,7 @@
                         </div>
                         <div class="button-registrar">
                             <i class="ph ph-plus"></i>
-                            <button id="abrirModal">Registrar</button>
+                            <button id="abrirModal" type="button">Registrar</button>
                         </div>
                     </div>
                 </section>
@@ -53,7 +53,7 @@
                         </div>
                         <div class="button-registrar">
                             <i class="ph ph-plus"></i>
-                            <button  id="abrirModal">Registrar</button>
+                            <button  id="abrirModal" type="button">Registrar</button>
                         </div>
                     </div>
                 </section>
@@ -72,7 +72,7 @@
                         </div>
                         <div class="button-registrar">
                             <i class="ph ph-plus"></i>
-                            <button id="abrirModal">Registrar</button>
+                            <button id="abrirModal" type="button">Registrar</button>
                         </div>
                     </div>
                 </section>
@@ -94,7 +94,7 @@
                         </div>
                         <div class="button-registrar">
                             <i class="ph ph-plus"></i>
-                            <button  id="abrirModal">Registrar</button>
+                            <button  id="abrirModal" type="button">Registrar</button>
                         </div>
                     </div>
                 </section>
@@ -113,28 +113,19 @@
                         </div>
                         <div class="button-registrar">
                             <i class="ph ph-plus"></i>
-                            <button  id="abrirModal">Registrar</button>
+                            <button  id="abrirModal" type="button">Registrar</button>
                         </div>
                     </div>
                 </section>
             </div>
         </main>
-        {% include 'core/registrarProgresso.html' %}
 </body>
 {% endblock %}
-{% comment %} <script>
-    document.getElementById('abrirModal').addEventListener('click', function() {
-        openModal();
-    });
-
-    function openModal() {
-        var modal = document.getElementById('myModal');
-        modal.style.display = 'block'; 
-    }
-</script> {% endcomment %}
+{% include 'core/registrarProgresso.html' %}
 <script>
     const openModal = document.getElementById("abrirModal");
+    const modal = document.getElementById("myModal");
     openModal.addEventListener("click", () => {
-        dialog.showModal();
+        modal.showModal();
       });
 </script>
