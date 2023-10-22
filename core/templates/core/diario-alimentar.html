@@ -3,15 +3,19 @@
 
 {% block main %}
   <main id="visualizar-diario">
-    <section id="container">
-      <section id="imagem-logo" class="topo-visualizar">
-        <img src="{% static 'imagens/logo-diet-hub.svg' %}" alt="DietHub" id="logo" />
-      </section>
-      <section id="perfil" class="topo-visualizar">
-        <p>Karla Nunes</p>
-        <p id="paciente">Paciente</p>
-      </section>
-    </section>
+    {% block header %}
+      <header>
+        <a href="#" class="logo"><img src="{% static 'imagens/logo-diet-hub.svg' %} " alt="Logo DietHub" /></a>
+
+        <div class="informacoes-do-usuario">
+          <div class="texto-informacoes-do-usuario">
+            <span class="nome-do-usuario">Taysa</span>
+            <span class="tipo-de-usuario">Paciente</span>
+          </div>
+          <img src="{% static 'imagens/usuario.svg' %}" alt="Logo DietHub" />
+        </div>
+      </header>
+    {% endblock %}
 
     <section id="main-diario">
       <h1>Diário alimentar</h1>
