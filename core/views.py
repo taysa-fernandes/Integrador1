@@ -3,7 +3,6 @@ from django.shortcuts import render
 def index(request):
     return render(request, 'core/login.html')
 
-
 def home(request):
     return render(request, 'core/home.html')
 
@@ -18,3 +17,6 @@ def dieta(request):
 
 def alimentos(request):
     return render(request, 'core/alimentos.html')
+
+def cadastrar_paciente(request):
+    return render(request, 'core/cadastrarPaciente.html')
