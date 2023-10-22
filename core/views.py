@@ -8,3 +8,6 @@ def meus_formularios(request):
 
 def novo_formulario(request):
     return render(request, 'core/novo-formulario.html')
+
+def dieta(request):
+    return render(request, 'core/visualizarDieta.html')
