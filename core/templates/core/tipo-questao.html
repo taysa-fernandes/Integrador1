@@ -1,0 +1,26 @@
+{% extends 'core/base.html' %}
+{% load static%}
+
+{% block main%}
+<body>
+    <main class="tipo-questao">
+        <div class="topo-questao">
+            <h1>Tipo da questão</h1>
+            <i class="ph ph-x"></i>
+        </div>
+        <div class="questoes">
+            <label>Nome</label>
+            <select>
+                <option value="default">Ex: John Doe</option>
+                <option>Aberta</option>
+                <option>Opção única</option>
+                <option>Múltipla escolha</option>
+              </select>
+        </div>
+        <div class="buttons-tipo-questao">
+            <button id="botao-cancelar" type="button">Cancelar</button>
+            <button id="botao-salvar" type="button">Salvar</button>
+        </div>
+    </main>
+</body>
+{% endblock%}

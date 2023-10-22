@@ -18,3 +18,6 @@ def dieta(request):
 
 def alimentos(request):
     return render(request, 'core/alimentos.html')
+
+def tipo_questao(request):
+    return render(request, 'core/tipo-questao.html')
