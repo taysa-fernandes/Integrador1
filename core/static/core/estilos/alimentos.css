@@ -1,0 +1,20 @@
+.ph-cookie {
+    color: #0C9A61;
+    width: 20px;
+    height: 20px;
+}
+
+.nav-tipos-de-alimentos {
+    margin-bottom: 48px;
+    width: 100%;
+}
+
+.nav-tipos-de-alimentos a {
+    display: inline;
+    margin-right: 20px;
+}
+
+.nav-tipos-de-alimentos hr {
+    margin-top: 8px;
+    border: 1px solid #EAEAEA;
+}
