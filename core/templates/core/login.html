@@ -1,11 +1,10 @@
-{% extends "core/base.html" %} {% load static %} {% block main %}
-<body>
+{% extends 'core/base.html' %} {% load static %} {% block main %}
   <main id="loginMain">
     <section class="imagem-login">
-      <img src={% static 'imagens/logo-diet-hub.svg' %} alt="DietHub">
+      <img src="{% static 'imagens/logo-diet-hub.svg' %}" alt="DietHub" />
       <h1>Bem vindo(a)!</h1>
-      <img src={% static 'imagens/Eating healthy food-bro 1.png' %} alt="Mulher
-      comendo">
+      <img src="{% static 'imagens/eating-healthy-food-bro.svg' %}" alt="Mulher
+      comendo" />
     </section>
     <section id="login">
       <h1>Login</h1>
@@ -26,9 +25,10 @@
         <div id="formBtns">
           <button type="Entrar">Entrar</button>
         </div>
-        <p>Ainda não é cadastrado? <a href="cadastro.html">Cadastre-se</a></p>
+        <p>
+          Ainda não é cadastrado? <a href="cadastro.html">Cadastre-se</a>
+        </p>
       </form>
     </section>
   </main>
-</body>
 {% endblock %}
