@@ -1,0 +1,121 @@
+main {
+    width: 100%;
+    font-family: 'Inter', sans-serif;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1.94rem 3.31rem;
+    /* 31px 53px */
+}
+
+.breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.breadcrumb {
+    font-size: 0.75rem;
+    /* 12px */
+    padding: 6px;
+    border-radius: 10px;
+}
+
+.breadcrumb:hover {
+    background-color: rgb(168, 168, 168, 14%);
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.breadcrumb i {
+    font-size: 1rem;
+}
+
+
+.informacoes-do-usuario {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 4px;
+    border-radius: 10px;
+}
+
+.informacoes-do-usuario:hover {
+    cursor: pointer;
+    background-color: rgb(255, 141, 97, 14%);
+    transition: all 0.5s;
+}
+
+.texto-informacoes-do-usuario span {
+    display: block;
+    margin-top: 4px;
+    text-align: right;
+    font-weight: bold;
+}
+
+.nome-do-usuario {
+    font-size: 0.75rem;
+    /* 12px */
+    color: black;
+}
+
+.tipo-de-usuario {
+    font-size: 0.69rem;
+    color: #FF8D61;
+}
+
+.conteudo-principal {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1031px;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.conteudo-principal h1 {
+    font-size: 1.5rem;
+    /* 24px */
+    height: 100%;
+    display: inline;
+}
+
+.cabecalho-conteudo-principal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 51px;
+}
+
+.botao-padrao {
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 12px;
+    border-radius: 8px;
+    background-color: #0C9A61;
+    color: #FFF;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    gap: 4px;
+}
+
+.botao-padrao:hover {
+    cursor: pointer;
+}
+
+.botao-padrao i {
+    color: #FFF;
+}
+
+.botao-padrao a {
+    color: #FFF;
+}

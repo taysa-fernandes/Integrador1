@@ -1,0 +1,90 @@
+{% extends 'core/meus-formularios.html' %}
+
+{% load static %}
+
+{% block main %}
+  <main>
+    <header>
+      <nav class="breadcrumbs">
+        <div class="breadcrumb">
+          <a href="/">
+            <i class="ph ph-house-line"></i>
+            <span>Home /</span>
+          </a>
+        </div>
+
+        <div class="breadcrumb">
+          <a href="/meus-formularios">
+            <i class="ph ph-notepad"></i>
+            <span>Meus formulários /</span>
+          </a>
+        </div>
+
+        <div class="breadcrumb">
+          <a href="/novo-formulario">
+            <i class="ph ph-notepad"></i>
+            <span>Novo formulário /</span>
+          </a>
+        </div>
+      </nav>
+
+      <div class="informacoes-do-usuario">
+        <div class="texto-informacoes-do-usuario">
+          <span class="nome-do-usuario">Claudinei Camilo</span>
+          <span class="tipo-de-usuario">Nutricionista</span>
+        </div>
+        <img src="{% static 'imagens/usuario.svg' %}" alt="Logo DietHub" />
+      </div>
+    </header>
+    <section class="conteudo-principal">
+      <div class="cabecalho-conteudo-principal">
+        <h1>Novo formulário</h1>
+      </div>
+
+      <div class="novo-formulario">
+        <div id="container-tipo-formulario">
+          <div class="tipo-formulario">
+            <input type="radio" name="pre-consulta" id="pre-consulta" />
+            <label for="pre-consulta">Pré-consulta</label>
+          </div>
+
+          <div class="tipo-formulario">
+            <input type="radio" name="pos-consulta" id="pos-consulta" />
+            <label for="pos-consulta">Pós-consulta</label>
+          </div>
+        </div>
+
+        <div class="container-pergunta">
+          <div class="form-item">
+            <label for="pergunta">Pergunta:</label>
+            <input type="text" placeholder="Ex: Você tem alguma restrição alimentar?" name="pergunta" />
+          </div>
+
+          <div class="form-item">
+            <label for="resposta">Resposta:</label>
+            <textarea name="resposta" placeholder="A resposta do paciente será inserida aqui" id="resposta" cols="30" rows="10"></textarea>
+          </div>
+
+          <div class="footer-pergunta">
+            <div class="checkbox">
+              <input type="checkbox" name="tipo-pergunta" id="tipo-pergunta" />
+              <label for="tipo-pergunta">Pergunta obrigatória</label>
+            </div>
+
+            <button class="botao-excluir">
+              <i class="ph ph-trash"></i>
+              Excluir
+            </button>
+          </div>
+        </div>
+
+        <button id="botao-nova-questao">
+          <i class="ph ph-plus"></i>
+          Nova questão
+        </button>
+
+        <button id="botao-salvar">Salvar alterações</button>
+      </div>
+    </section>
+  </main>
+{% endblock %}

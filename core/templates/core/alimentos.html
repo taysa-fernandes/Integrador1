@@ -1,0 +1,93 @@
+{% extends 'core/collapse-alimentos.html' %}
+
+{% load static %}
+
+{% block sidebar %}
+  <nav class="side-bar">
+    <a href="#" class="logo"><img src="{% static 'imagens/logo-diet-hub.svg' %} " alt="Logo DietHub" /></a>
+
+    <ul>
+      <li class="opcao-do-menu">
+        <a href="/">
+          <i class="ph ph-house-line"></i>
+          <span>Home</span>
+        </a>
+      </li>
+
+      <li class="opcao-do-menu">
+        <a href="/meus-formularios">
+          <i class="ph ph-notepad"></i>
+          <span>Formulários</span>
+        </a>
+      </li>
+
+      <li class="opcao-do-menu opcao-do-menu-atual">
+        <a href="/alimentos">
+          <i class="ph ph-apple-logo"></i>
+          <span>Alimentos</span>
+        </a>
+      </li>
+
+      <li class="opcao-do-menu">
+        <a href="#">
+          <i class="ph ph-gear-six"></i>
+          <span>Configurações</span>
+        </a>
+      </li>
+
+      <li class="opcao-do-menu">
+        <a href="#">
+          <i class="ph ph-moon-stars"></i>
+          <span>Tema dark</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+{% endblock %}
+
+{% block main %}
+  <main>
+    <header>
+      <nav class="breadcrumbs">
+        <div class="breadcrumb">
+          <a href="/">
+            <i class="ph ph-house-line"></i>
+            <span>Home /</span>
+          </a>
+        </div>
+
+        <div class="breadcrumb">
+          <a href="/alimentos">
+            <i class="ph ph-apple-logo"></i>
+            <span>Alimentos /</span>
+          </a>
+        </div>
+      </nav>
+
+      <div class="informacoes-do-usuario">
+        <div class="texto-informacoes-do-usuario">
+          <span class="nome-do-usuario">Claudinei Camilo</span>
+          <span class="tipo-de-usuario">Nutricionista</span>
+        </div>
+        <img src="{% static 'imagens/usuario.svg' %}" alt="Logo DietHub" />
+      </div>
+    </header>
+    <section class="conteudo-principal">
+      <div class="cabecalho-conteudo-principal">
+        <h1>Alimentos</h1>
+
+        <button class="botao-padrao">Novo alimento</button>
+      </div>
+
+      <div class="nav-tipos-de-alimentos">
+        <a href="/alimentos/comuns">Comuns</a>
+        <a href="/alimentos/substitutos">Substitutos</a>
+        <hr />
+      </div>
+
+      {% block collapse_alimentos %}
+        {{ block.super }}
+      {% endblock %}
+    </section>
+  </main>
+{% endblock %}
