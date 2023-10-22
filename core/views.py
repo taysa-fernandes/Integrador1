@@ -23,3 +23,6 @@ def diario(request):
 
 def alimentos(request):
     return render(request, 'core/alimentos.html')
+
+def cadastrar_paciente(request):
+    return render(request, 'core/cadastrarPaciente.html')

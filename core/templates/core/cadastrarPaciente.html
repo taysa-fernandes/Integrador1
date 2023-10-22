@@ -1,0 +1,48 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block main %}
+<body>
+    <main class="cadastro de paciente">
+        <div class="conteudo-topo-paciente">
+            <h1>Criar paciente</h1>
+            <i class="ph ph-x"></i>
+        </div>
+        <div class="nome-paciente">
+            <label>Nome</label>
+            <br>
+            <input type="text" placeholder="Ex: John Doe" />
+        </div>
+        <div class="row-3-labels">
+            <label>Idade</label>
+            <br>
+            <input type="text" placeholder="Ex: 21" />
+            <br>
+            <label>Peso (em Kg)</label>
+            <br>
+            <input type="text" placeholder="Ex: 50kg" />
+            <br>
+            <label>Altura (m)</label>
+            <br>
+            <input type="text" placeholder="Ex: 50m" />
+        </div>
+        <div class="email-paciente">
+            <label>Email</label>
+            <br>
+            <input type="text" placeholder="Ex: tylerjoseph@gmail.com" />
+        </div>
+        <div class="row-2-labels">
+            <label>CPF</label>
+            <br>
+            <input type="text" placeholder="123.456.789-00" />
+            <br>
+            <label>Whatsapp</label>
+            <br>
+            <input type="text" placeholder="(99) 99999-9999" />
+        </div>
+        <div class="buttons-cadastrar-paciente">
+            <button id="botao-cancelar" type="Cancelar">Cancelar</button>
+            <button id="botao-salvar" type="Salvar">Salvar</button>
+        </div>
+    </main>
+</body>
+{% endblock %}
