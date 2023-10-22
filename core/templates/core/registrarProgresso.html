@@ -1,82 +1,81 @@
-{% extends "core/base.html" %}
+{% extends 'core/visualizarDieta.html' %}
 {% load static %}
 
-{% block main %}
-    <dialog class="main-progresso" id="myModal">
-        <div class="topo-progresso-h1">
-            <h1>Registrar progresso</h1>
-            <button id="fecharModal"><i class="ph ph-x"></i></button>
+{% block modal_registrar_progresso %}
+  <dialog class="main-progresso" id="myModal">
+    <div class="topo-progresso-h1">
+      <h1>Registrar progresso</h1>
+      <button id="fecharModal"><i class="ph ph-x"></i></button>
+    </div>
+    <div class="topo-progresso-h3">
+      <h3>Faça seu registro de hoje no diário alimentar</h3>
+    </div>
+    <div class="button-registrar-progresso">
+      <h2>26/09</h2>
+      <div class="adicionar-info">
+        <i class="ph ph-plus"></i>
+        <a href="adicionarInformacao.html">Adicionar informação</a>
+      </div>
+    </div>
+    <div class="progresso-do-cafe">
+      <div class="cafe-manha-icone">
+        <i class="ph ph-coffee"></i>
+        <p id="label-de-cafe">Café da manhã</p>
+      </div>
+      <div class="container-global-opcao">
+        <div class="container-opcao">
+          <div class="opcao-alimento">
+            <input type="radio" name="opcao-1" value="Salada de frutas (50kcal)" />
+            <label><span>Opção 1:</span><span>Salada de frutas (50kcal)</span></label>
+          </div>
+          <div class="opcao-alimento">
+            <input type="radio" name="opcao-2" value="Vitamina (50kcal)" />
+            <label><span>Opção 2:</span><span>Vitamina (50kcal)</span></label>
+          </div>
         </div>
-        <div class="topo-progresso-h3">
-            <h3>Faça seu registro de hoje no diário alimentar</h3>
+        <div class="container-opcao">
+          <div class="opcao-alimento">
+            <input type="radio" name="substituto-2" value="Salada de frutas (50kcal)" />
+            <label><span>Substituto:</span><span>Salada de frutas (50kcal)</span></label>
+          </div>
+          <div class="opcao-alimento">
+            <input type="radio" name="substituto-1" value="Vitamina (50kcal)" />
+            <label><span>Substituto:</span><span>Vitamina (50kcal)</span></label>
+          </div>
         </div>
-        <div class="button-registrar-progresso">
-            <h2>26/09</h2>
-            <div class="adicionar-info">
-                <i class="ph ph-plus"></i>
-                <a href="adicionarInformacao.html">Adicionar informação</a>
-            </div>
+      </div>
+    </div>
+    <div class="progresso-do-almoco">
+      <div class="cafe-manha-icone">
+        <i class="ph ph-coffee"></i>
+        <p id="label-de-almoco">Almoço</p>
+      </div>
+      <div class="container-global-opcao">
+        <div class="container-opcao">
+          <div class="opcao-alimento">
+            <input type="radio" name="opcao-1" value="Salada de frutas (50kcal)" />
+            <label><span>Opção 1:</span><span>Salada de frutas (50kcal)</span></label>
+          </div>
+          <div class="opcao-alimento">
+            <input type="radio" name="opcao-2" value="Vitamina (50kcal)" />
+            <label><span>Opção 2:</span><span>Vitamina (50kcal)</span></label>
+          </div>
         </div>
-        <div class="progresso-do-cafe">
-            <div class="cafe-manha-icone">
-                <i class="ph ph-coffee"></i>
-                <p id="label-de-cafe">Café da manhã</p>
-            </div>
-            <div class="container-global-opcao">
-                <div class="container-opcao">
-                    <div class="opcao-alimento">
-                        <input type="radio" name="opcao-1" value="Salada de frutas (50kcal)"/>
-                        <label><span>Opção 1:</span><span>Salada de frutas (50kcal)</span></label>
-                    </div>
-                    <div class="opcao-alimento">
-                        <input type="radio" name="opcao-2" value="Vitamina (50kcal)"/>
-                        <label><span>Opção 2:</span><span>Vitamina (50kcal)</span></label>
-                    </div>
-                </div>
-                <div class="container-opcao">
-                    <div class="opcao-alimento">
-                        <input type="radio" name="substituto-2" value="Salada de frutas (50kcal)"/>
-                        <label><span>Substituto:</span><span>Salada de frutas (50kcal)</span></label>
-                    </div>
-                    <div class="opcao-alimento">
-                        <input type="radio" name="substituto-1" value="Vitamina (50kcal)"/>
-                        <label><span>Substituto:</span><span>Vitamina (50kcal)</span></label>
-                    </div>
-                </div>
-            </div>
+        <div class="container-opcao">
+          <div class="opcao-alimento">
+            <input type="radio" name="substituto-1" value="Vitamina (50kcal)" />
+            <label><span>Substituto:</span><span>Vitamina (50kcal)</span></label>
+          </div>
+          <div class="opcao-alimento">
+            <input type="radio" name="substituto-2" value="Salada de frutas (50kcal)" />
+            <label><span>Substituto:</span><span>Salada de frutas (50kcal)</span></label>
+          </div>
         </div>
-        <div class="progresso-do-almoco">
-            <div class="cafe-manha-icone">
-                <i class="ph ph-coffee"></i>
-                <p id="label-de-almoco">Almoço</p>
-            </div>
-            <div class="container-global-opcao">
-                <div class="container-opcao">
-                    <div class="opcao-alimento">
-                        <input type="radio" name="opcao-1" value="Salada de frutas (50kcal)"/>
-                        <label><span>Opção 1:</span><span>Salada de frutas (50kcal)</span></label>
-                    </div>
-                    <div class="opcao-alimento">
-                        <input type="radio" name="opcao-2" value="Vitamina (50kcal)"/>
-                        <label><span>Opção 2:</span><span>Vitamina (50kcal)</span></label>
-                    </div>
-                </div>
-                <div class="container-opcao">
-                    <div class="opcao-alimento">
-                        <input type="radio" name="substituto-1" value="Vitamina (50kcal)"/>
-                        <label><span>Substituto:</span><span>Vitamina (50kcal)</span></label>
-                    </div>
-                    <div class="opcao-alimento">
-                        <input type="radio" name="substituto-2" value="Salada de frutas (50kcal)"/> 
-                        <label><span>Substituto:</span><span>Salada de frutas (50kcal)</span></label>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="buttons-progresso">
-            <button id="botao-cancelar" type="button">Cancelar</button>
-            <button id="botao-salvar" type="button">Salvar</button>
-        </div>
-        </div>
-    </dialog>
+      </div>
+    </div>
+    <div class="buttons-progresso">
+      <button id="botao-cancelar" type="button">Cancelar</button>
+      <button id="botao-salvar" type="button">Salvar</button>
+    </div>
+  </dialog>
 {% endblock %}
