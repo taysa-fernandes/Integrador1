@@ -11,6 +11,9 @@
     font-family: 'Inter',sans-serif;
     font-size: 20px;
 }
+.topo-cadastrar-dieta .ph-x{
+    color: #000000;
+}
 .cadastrar-dieta{
     max-width: 709px;
     max-height: 677px;
