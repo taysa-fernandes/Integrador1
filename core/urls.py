@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path
-from  core.views import home, index, meus_formularios, novo_formulario, dieta, alimentos
+from  core.views import home, index, meus_formularios, novo_formulario, dieta, alimentos,cadastrar_dieta
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -9,5 +9,6 @@ urlpatterns = [
     path('meus-formularios/',meus_formularios),
     path('novo-formulario/', novo_formulario),
     path('dieta',dieta),
-    path('alimentos/', alimentos)
+    path('alimentos/', alimentos),
+    path('cadastrar-dieta',cadastrar_dieta)
 ]

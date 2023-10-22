@@ -1,0 +1,48 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block main%}
+<body>
+    <main class="cadastrar-dieta">
+        <div class="topo-cadastrar-dieta">
+            <h1>Criar dieta</h1>
+            <i class="ph ph-x"></i>
+        </div>
+        <div class="refeicoes-dieta">
+            <p>Refeição I</p>
+            <hr>
+            <p>Refeição II</p>
+            <hr>
+            <p>Refeição III</p>
+            <hr>
+        </div>
+        <div class="opcao-1-dieta">
+            <label>Opção 1:</label>
+            <p>Salada de frutas</p>
+            <label>Substituto: </label>
+            <p>Vitamina</p>
+        </div>
+        <div class="opcao-2-dieta">
+            <label>Opção 2:</label>
+            <p>Salada de frutas</p>
+            <label>Substituto: </label>
+            <p>Vitamina</p>
+        </div>
+        <div class="opcao-3-dieta">
+            <label>Opção 3:</label>
+            <p>Salada de frutas</p>
+            <label>Substituto: </label>
+            <p>Vitamina</p>
+        </div>
+        <div class="adicionar-alimento">
+            <i class="ph ph-plus"></i>
+            <button type="button">Adicionar alimento</button>
+        </div>
+        <div class="buttons-cadastrar-dieta">
+            <button id="botao-cancelar" type="Cancelar">Cancelar</button>
+            <button id="botao-salvar" type="Salvar">Salvar</button>
+        </div>
+    </div>
+</main>
+</body>
+{% endblock%}

@@ -18,3 +18,6 @@ def dieta(request):
 
 def alimentos(request):
     return render(request, 'core/alimentos.html')
+
+def cadastrar_dieta(request):
+    return render(request, 'core/cadastrar-dieta.html')
