@@ -5,6 +5,7 @@
     display: flex;
     justify-content: space-between;
     margin-left: 52px;
+    margin-top: 36px;
 }
 .conteudo-topo-alimento h1{
     font-family: 'Roboto', sans-serif;
@@ -28,6 +29,7 @@
 }
 .buttons-cadastrar-alimento{
     float: right;
+    margin-right: 46px;
 }
 #botao-cancelar{
     border-radius: 10px;
@@ -59,6 +61,8 @@
 }
 .row{
     display: flex;
+    justify-content: space-between;
+    margin-bottom: 46px;
 }
 .row input{
     width: 246px;
@@ -71,7 +75,17 @@
     color: #A8A8A8;
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
+    padding-left: 16px;
 }
 .checkbox-substituto{
     padding-bottom: 38px;
+}
+.porcao-alimento{
+    display: flex;
+    flex-direction:column;
+}
+.inputs-alimento{
+    display: flex;
+    flex-direction:column;
+    margin-right: 46px;
 }
