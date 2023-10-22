@@ -53,7 +53,7 @@
                         </div>
                         <div class="button-registrar">
                             <i class="ph ph-plus"></i>
-                            <button  id="abrirModal" type="button">Registrar</button>
+                            <button id="abrirModal" type="button">Registrar</button>
                         </div>
                     </div>
                 </section>
@@ -94,7 +94,7 @@
                         </div>
                         <div class="button-registrar">
                             <i class="ph ph-plus"></i>
-                            <button  id="abrirModal" type="button">Registrar</button>
+                            <button id="abrirModal" type="button">Registrar</button>
                         </div>
                     </div>
                 </section>
@@ -113,19 +113,25 @@
                         </div>
                         <div class="button-registrar">
                             <i class="ph ph-plus"></i>
-                            <button  id="abrirModal" type="button">Registrar</button>
+                            <button id="abrirModal" type="button">Registrar</button>
                         </div>
                     </div>
                 </section>
             </div>
         </main>
+        {% include 'core/registrarProgresso.html' %} 
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const openModal = document.getElementById("abrirModal");
+                const modal = document.getElementById("myModal");
+                const closeButton = document.getElementById("fecharModal")
+                openModal.addEventListener("click", () => {
+                    modal.showModal();
+                });
+                closeButton.addEventListener("click", () => {
+                    modal.close();
+                });
+            });
+        </script>
 </body>
 {% endblock %}
-{% include 'core/registrarProgresso.html' %}
-<script>
-    const openModal = document.getElementById("abrirModal");
-    const modal = document.getElementById("myModal");
-    openModal.addEventListener("click", () => {
-        modal.showModal();
-      });
-</script>
