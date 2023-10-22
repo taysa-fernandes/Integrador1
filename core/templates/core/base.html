@@ -1,4 +1,4 @@
-{%load static%}
+{% load static %}
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -10,61 +10,34 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
 
     <link rel="icon" type="image/x-icon" href="imagens/favicon.ico" />
 
-    <link rel="stylesheet" href="{% static 'estilos/estilo.css' %}" />
+    <link rel="stylesheet" href="{% static 'core/estilos/estilo.css' %}" />
+
+    <link rel="stylesheet" href="{% static 'core/estilos/estilo-login.css' %}" />
+
+    <link rel="stylesheet" type="text/css" href="{% static 'core/estilos/estilo-collapse.css' %}" />
+
+    <link rel="stylesheet" type="text/css" href="{% static 'core/estilos/estilo-main.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'core/estilos/collapse-formularios.css' %}" />
+
+    <link rel="stylesheet" type="text/css" href="{% static 'core/estilos/novo-formulario.css' %}" />
+
+    <link rel="stylesheet" type="text/css" href="{% static 'core/estilos/alimentos.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'core/estilos/dieta.css' %}" />
 
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
   </head>
 
   <body>
-    <nav class="side-bar">
-      <a href="#" class="logo">
-        <img src={% static 'imagens/logo-diet-hub.svg' %} alt="Logo DietHub">
-      </a>
+    {% block sidebar %}
 
-      <ul>
-        <li class="opcao-do-menu opcao-do-menu-atual">
-          <a href="#">
-            <i class="ph ph-house-line"></i>
-            <span>Home</span>
-          </a>
-        </li>
+    {% endblock %}
 
-        <li class="opcao-do-menu">
-          <a href="#">
-            <i class="ph ph-notepad"></i>
-            <span> Formulários </span>
-          </a>
-        </li>
+    {% block main %}
 
-        <li class="opcao-do-menu">
-          <a href="#">
-            <i class="ph ph-apple-logo"></i>
-            <span>Alimentos</span>
-          </a>
-        </li>
-
-        <li class="opcao-do-menu">
-          <a href="#">
-            <i class="ph ph-gear-six"></i>
-            <span>Configurações</span>
-          </a>
-        </li>
-
-        <li class="opcao-do-menu">
-          <a href="#">
-            <i class="ph ph-moon-stars"></i>
-            <span>Tema dark</span>
-          </a>
-        </li>
-      </ul>
-    </nav>
-    {% block main %} {% endblock %}
+    {% endblock %}
   </body>
 </html>
