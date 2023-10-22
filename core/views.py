@@ -11,3 +11,6 @@ def novo_formulario(request):
 
 def dieta(request):
     return render(request, 'core/visualizarDieta.html')
+
+def alimentos(request):
+    return render(request, 'core/alimentos.html')
