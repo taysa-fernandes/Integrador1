@@ -1,4 +1,4 @@
-{%load static%}
+{% load static %}
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -7,17 +7,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DietHub</title>
-    <link rel="stylesheet" href="{% static 'estilos/estilo.css' %}" />
     <link rel="stylesheet" href="{% static 'estilos/estilo-cadastrar-alimento.css' %}" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Roboto:wght@400;500;700;900&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+
+    <link rel="icon" type="image/x-icon" href="imagens/favicon.ico" />
+
+    <link rel="stylesheet" href="{% static 'core/estilos/estilo.css' %}" />
+
+    <link rel="stylesheet" href="{% static 'core/estilos/estilo-login.css' %}" />
+
+    <link rel="stylesheet" type="text/css" href="{% static 'core/estilos/estilo-collapse.css' %}" />
+
+    <link rel="stylesheet" type="text/css" href="{% static 'core/estilos/estilo-main.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'core/estilos/collapse-formularios.css' %}" />
+
+    <link rel="stylesheet" type="text/css" href="{% static 'core/estilos/novo-formulario.css' %}" />
+
+    <link rel="stylesheet" type="text/css" href="{% static 'core/estilos/alimentos.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'core/estilos/dieta.css' %}" />
 
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
   </head>
-  {% block main %} {% endblock %}
+
+  <body>
+    {% block sidebar %}
+
+    {% endblock %}
+
+    {% block main %}
+
+    {% endblock %}
+  </body>
 </html>
