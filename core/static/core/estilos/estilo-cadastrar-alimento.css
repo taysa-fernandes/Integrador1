@@ -1,11 +1,13 @@
 .cadastro-alimento{
     max-width: 640px;
+    border: none;
 }
 .conteudo-topo-alimento{
     display: flex;
     justify-content: space-between;
     margin-left: 52px;
     margin-top: 36px;
+    margin-right: 26px;
 }
 .conteudo-topo-alimento .ph-x{
     color: #000000;
@@ -18,7 +20,7 @@
 .labels-iniciais,
 .row,
 .checkbox-substituto{
-    margin-left: 46px;
+    padding-left: 46px;
 }
 .cadastro-alimento label{
     color: #000;
@@ -56,6 +58,9 @@
     width: 103px;
     height: 43px;
 }
+.labels-iniciais{
+    padding-right: 46px;
+}
 .labels-iniciais input{
     width: 548px;
     height: 44px;
@@ -67,7 +72,7 @@
 .row{
     display: flex;
     justify-content: space-between;
-    margin-bottom: 46px;
+    padding-bottom: 46px;
 }
 .row input{
     width: 246px;
