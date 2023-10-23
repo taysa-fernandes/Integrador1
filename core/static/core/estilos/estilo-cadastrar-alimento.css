@@ -9,6 +9,10 @@
     margin-top: 36px;
     margin-right: 26px;
 }
+.conteudo-topo-alimento button{
+    border: none;
+    background-color: #FFFFFF;
+}
 .conteudo-topo-alimento .ph-x{
     color: #000000;
 }
