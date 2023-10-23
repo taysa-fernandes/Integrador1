@@ -3,100 +3,91 @@
 
 {% block main %}
   <main>
-    <div id="visualizar-dieta">
-      {% block header %}
-        <header>
-          <a href="#" class="logo"><img src="{% static 'imagens/logo-diet-hub.svg' %} " alt="Logo DietHub" /></a>
+    {% block header %}
+      <header>
+        <a href="#" class="logo"><img src="{% static 'imagens/logo-diet-hub.svg' %} " alt="Logo DietHub" /></a>
 
-          <div class="informacoes-do-usuario">
-            <div class="texto-informacoes-do-usuario">
-              <span class="nome-do-usuario">Taysa</span>
-              <span class="tipo-de-usuario">Paciente</span>
-            </div>
-            <img src="{% static 'imagens/usuario.svg' %}" alt="Logo DietHub" />
+        <div class="informacoes-do-usuario">
+          <div class="texto-informacoes-do-usuario">
+            <span class="nome-do-usuario">Taysa</span>
+            <span class="tipo-de-usuario">Paciente</span>
           </div>
-        </header>
-      {% endblock %}
-      <div id="conteudo-dieta">
-        <section id="informacoes-dieta">
-          <section id="informacoes">
-            <h1>Informações gerais</h1>
-            <h4>Aqui haverá uma breve descrição do nutricionista sobre as condições do paciente. Pode ser um diagnóstico, comentários, informações gerais, etc.</h4>
-            <section id="container-2">
-              <div id="objetivo" class="quadros">
-                <p class="labels">Seu objetivo</p>
-                <p>
-                  <strong>Perder gordura</strong>
-                </p>
-              </div>
-              <div id="diagnostico" class="quadros">
-                <p class="labels">Diagnóstico</p>
-                <p>
-                  <strong>Obesidade</strong>
-                </p>
-              </div>
-              <div id="status" class="quadros">
-                <p class="labels">status</p>
-                <p>
-                  <strong>Dieta em andamento</strong>
-                </p>
-              </div>
-            </section>
-          </section>
-          <section id="dieta">
-            <section id="container-3">
-              <div class="topo-dieta">
-                <h1>Sua dieta</h1>
-              </div>
-              <div id="form-btns" class="topo-dieta">
-                <button type="button" id="botao-diario-alimentar">Diário Alimentar</button>
-              </div>
-            </section>
-            <div id="cafe">
-              <section id="cafe-da-manha">
-                <i class="ph ph-coffee"></i>
-                <h3>Café da manhã</h3>
-              </section>
-              <section id="parte-1">
-                <div id="alimento-1" class="alimentos-1">
-                  <h3>Alimento 1:</h3>
-                  <p>Salada de frutas</p>
-                </div>
-                <div id="substituto-1" class="alimentos-1">
-                  <h3>Substituto:</h3>
-                  <p>Vitamina</p>
-                </div>
-              </section>
-              <section id="parte-2">
-                <div id="alimento-2" class="alimentos-2">
-                  <h3>Alimento 2:</h3>
-                  <p>Vitamina</p>
-                </div>
-                <div id="substituto-2" class="alimentos-2">
-                  <h3>Substituto:</h3>
-                  <p>Salada de frutas</p>
-                </div>
-              </section>
+          <img src="{% static 'imagens/usuario.svg' %}" alt="Logo DietHub" />
+        </div>
+      </header>
+    {% endblock %}
+    <div class="conteudo-dieta">
+      <section class="informacoes-gerais">
+        <section id="informacoes">
+          <h1>Informações gerais</h1>
+          <hr class="divisor" />
+          <h4>Aqui haverá uma breve descrição do nutricionista sobre as condições do paciente. Pode ser um diagnóstico, comentários, informações gerais, etc.</h4>
+          <section id="container-2">
+            <div id="objetivo" class="quadros">
+              <p class="labels">Seu objetivo</p>
+              <p class="conteudo-quadro">Perder gordura</p>
+            </div>
+            <div id="diagnostico" class="quadros">
+              <p class="labels">Diagnóstico</p>
+              <p class="conteudo-quadro">Obesidade</p>
+            </div>
+            <div id="status" class="quadros">
+              <p class="labels">status</p>
+              <p class="conteudo-quadro">Dieta em andamento</p>
             </div>
           </section>
         </section>
-        <section id="calorias">
-          <div id="conteudo-calorias">
-            <h1>Calorias</h1>
-            <h4>Registre o diário alimentar para visualizar quantas calorias você já consumiu</h4>
-            <div id="consumiu">
-              <h4>Você já consumiu:</h4>
-              <p>
-                <strong>100kcal</strong>
-              </p>
+        <section id="dieta">
+          <section id="container-3">
+            <div class="topo-dieta">
+              <h1>Sua dieta</h1>
             </div>
-          </div>
-          <div id="button-diario">
-            <a href="{% url 'diario' %}">Diário Alimentar</a>
-            <i class="ph ph-caret-right"></i>
+            <div id="form-btns" class="topo-dieta">
+              <button type="button" id="botao-diario-alimentar">Diário Alimentar</button>
+            </div>
+          </section>
+          <div id="cafe">
+            <section id="cafe-da-manha">
+              <i class="ph ph-coffee"></i>
+              <h3>Café da manhã</h3>
+            </section>
+            <section id="parte-1">
+              <div id="alimento-1" class="alimentos-1">
+                <h3>Alimento 1:</h3>
+                <p>Salada de frutas</p>
+              </div>
+              <div id="substituto-1" class="alimentos-1">
+                <h3>Substituto:</h3>
+                <p>Vitamina</p>
+              </div>
+            </section>
+            <section id="parte-2">
+              <div id="alimento-2" class="alimentos-2">
+                <h3>Alimento 2:</h3>
+                <p>Vitamina</p>
+              </div>
+              <div id="substituto-2" class="alimentos-2">
+                <h3>Substituto:</h3>
+                <p>Salada de frutas</p>
+              </div>
+            </section>
           </div>
         </section>
-      </div>
+      </section>
+      <section id="calorias">
+        <div id="conteudo-calorias">
+          <p id="titulo-calorias">Calorias</p>
+          <p id="descricao-calorias">Registre o diário alimentar para visualizar quantas calorias você já consumiu</p>
+          <div id="calorias-consumidas">
+            <p id="texto-voce-consumiu">Você já consumiu:</p>
+            <p id="numero-de-calorias-consumidas">100kcal</p>
+          </div>
+        </div>
+        <button id="botao-diario-alimentar-secundario">
+          Diário Alimentar
+          <i class="ph ph-caret-right"></i>
+        </button>
+      </section>
     </div>
   </main>
 
