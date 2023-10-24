@@ -1,0 +1,126 @@
+.container-campos-paciente label{
+    color: #000;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+}
+.conteudo-topo-paciente{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 52px;
+    margin-top: 28px;
+    margin-bottom: 32px;
+    margin-right: 26px;
+}
+.conteudo-topo-paciente button{
+    border: none;
+    background-color: #FFFFFF;
+}
+.conteudo-topo-paciente .ph-x{
+    color: #000000;
+}
+.conteudo-topo-paciente h1{
+    color: #000;
+    font-family: 'Roboto', sans-serif;
+    font-size: 28px;
+}
+.cadastro-de-paciente{
+    max-width: 640px;
+    max-height: 559px;
+    border: none;
+}
+.nome-paciente{
+    margin-left: 46px;
+}
+.nome-paciente input{
+    border-radius: 8px;
+    border: 1px solid  #F4F3F3;
+    width: 548px;
+    height: 44px;
+    margin-top: 8px;
+    margin-bottom: 20px;
+}
+.row-2-labels{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 46px;
+    gap: 28px;
+}
+.row-2-labels input{
+    width: 265px;
+    height: 44px;
+    border-radius: 8px;
+    border: 1px solid  #F4F3F3;
+}
+.cpf-paciente{
+    display: flex;
+    flex-direction:column;
+}
+.whatsapp-paciente{
+    display: flex;
+    flex-direction:column;
+    margin-right: 48px;
+}
+.row-3-labels{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 46px;
+}
+.row-3-labels input{
+    width: 138px;
+    height: 40px;
+    border-radius: 8px;
+    border: 1px solid  #F4F3F3;
+    margin-top: 8px;
+}
+.idade-paciente{
+    display: flex;
+    flex-direction:column;
+}
+.peso-paciente{
+    display: flex;
+    flex-direction:column;
+}
+.altura-paciente{
+    display: flex;
+    flex-direction:column;
+}
+.altura-paciente input{
+    margin-right: 48px;
+}
+.email-paciente{
+    margin-left: 46px;
+}
+.email-paciente input{
+    width: 547px;
+    height: 44px;
+    border-radius: 8px;
+    border: 1px solid  #F4F3F3;
+    margin-top: 8px;
+    margin-bottom: 20px;
+}
+.buttons-cadastrar-paciente{
+    float: right;
+    margin-right: 46px;
+    display: flex;
+    gap: 20px;
+}
+.buttons-cadastrar-paciente #botao-salvar{
+    border-radius: 10px;
+    background:  #0C9A61;
+    border: none;
+    color:  #FFFFFF;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    width: 103px;
+    height: 43px;
+}
+.buttons-cadastrar-paciente #botao-cancelar{
+    border-radius: 10px;
+    border: 1px solid #F4F3F3;
+    background:  #FFFFFF;
+    width: 103px;
+    height: 43px;
+    color:  #141623;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+}
