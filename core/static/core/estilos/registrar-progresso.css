@@ -49,6 +49,10 @@ dialog {
     right: 0;
 }
 
+#fecharModal:hover {
+    cursor: pointer;
+}
+
 .titulo-alimento {
     color: black;
     font-weight: bold;
