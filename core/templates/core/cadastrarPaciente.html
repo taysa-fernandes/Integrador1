@@ -1,10 +1,10 @@
 {% extends 'core/base.html' %}
 {% load static %}
 {% block main %}
-    <main class="cadastro-de-paciente">
+    <dialog class="cadastro-de-paciente" id="myModal">
         <div class="conteudo-topo-paciente">
             <h1>Criar paciente</h1>
-            <i class="ph ph-x"></i>
+            <button id="fecharModal"><i class="ph ph-x"></i></button>
         </div>
         <div class="container-campos-paciente">
             <div class="nome-paciente">
@@ -51,5 +51,5 @@
             <button id="botao-cancelar" type="Cancelar">Cancelar</button>
             <button id="botao-salvar" type="Salvar">Salvar</button>
         </div>
-    </main>
+    </dialog>
 {% endblock %}

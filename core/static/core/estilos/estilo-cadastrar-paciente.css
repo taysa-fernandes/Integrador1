@@ -11,6 +11,13 @@
     margin-bottom: 32px;
     margin-right: 26px;
 }
+.conteudo-topo-paciente button{
+    border: none;
+    background-color: #FFFFFF;
+}
+.conteudo-topo-paciente .ph-x{
+    color: #000000;
+}
 .conteudo-topo-paciente h1{
     color: #000;
     font-family: 'Roboto', sans-serif;
@@ -19,6 +26,7 @@
 .cadastro-de-paciente{
     max-width: 640px;
     max-height: 559px;
+    border: none;
 }
 .nome-paciente{
     margin-left: 46px;
