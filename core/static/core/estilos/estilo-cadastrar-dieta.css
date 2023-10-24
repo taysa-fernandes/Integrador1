@@ -11,12 +11,17 @@
     font-family: 'Inter',sans-serif;
     font-size: 20px;
 }
+.topo-cadastrar-dieta button{
+    border: none;
+    background-color: #FFFFFF;
+}
 .topo-cadastrar-dieta .ph-x{
     color: #000000;
 }
 .cadastrar-dieta{
     max-width: 709px;
     max-height: 677px;
+    border: none;
 }
 .refeicoes-dieta hr{
     width: 146px;

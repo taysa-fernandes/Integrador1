@@ -2,11 +2,10 @@
 {% load static %}
 
 {% block main%}
-<body>
-    <main class="cadastrar-dieta">
+    <dialog class="cadastrar-dieta" id="myModal2">
         <div class="topo-cadastrar-dieta">
             <h1>Criar dieta</h1>
-            <i class="ph ph-x"></i>
+            <button id="fecharModal2"><i class="ph ph-x"></i></button>
         </div>
         <div class="refeicoes-dieta">
             <div class="refeicao-1-dieta">
@@ -64,6 +63,5 @@
             <button id="botao-salvar" type="Salvar">Salvar</button>
         </div>
     </div>
-</main>
-</body>
+</dialog>
 {% endblock%}

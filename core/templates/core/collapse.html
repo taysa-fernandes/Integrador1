@@ -1,6 +1,8 @@
 {% extends 'core/base.html' %}
 {% load static %}
 {% block collapse %}
+<body>
+  <main>
   <ul id="collapse">
     <li>
       <label for="first">
@@ -42,7 +44,7 @@
             <span class="aguardando-acao">Aguardando resposta do formulário de pré-consulta</span>
           </div>
 
-          <button id="botao-criar-dieta">
+          <button class="botao-criar-dieta" id="abrirModal2">
             <i class="ph ph-plus"></i>
             <span>Criar dieta</span>
           </button>
@@ -111,7 +113,7 @@
             <span class="aguardando-acao">Aguardando resposta do formulário de pré-consulta</span>
           </div>
 
-          <button id="botao-criar-dieta">
+          <button class="botao-criar-dieta" id="abrirModal">
             <i class="ph ph-plus"></i>
             <span>Criar dieta</span>
           </button>
@@ -179,7 +181,7 @@
             <span class="aguardando-acao">Aguardando resposta do formulário de pré-consulta</span>
           </div>
 
-          <button id="botao-criar-dieta">
+          <button class="botao-criar-dieta" id="abrirModal">
             <i class="ph ph-plus"></i>
             <span>Criar dieta</span>
           </button>
@@ -207,4 +209,7 @@
       </div>
     </li>
   </ul>
+  </main>
+  {% include 'core/cadastrar-dieta.html' %} 
+</body>
 {% endblock %}

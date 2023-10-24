@@ -9,3 +9,14 @@ document.addEventListener("DOMContentLoaded", function() {
         modal.close();
     });
 });
+document.addEventListener("DOMContentLoaded", function() {
+    const openModal2 = document.getElementById("abrirModal2");
+    const modal2 = document.getElementById("myModal2");
+    const closeButton2 = document.getElementById("fecharModal2")
+    openModal2.addEventListener("click", () => {
+        modal2.showModal();
+    });
+    closeButton2.addEventListener("click", () => {
+        modal2.close();
+    });
+});
