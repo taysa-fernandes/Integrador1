@@ -26,7 +26,7 @@ h1 {
     color: #898C93;
 }
 
-#login a {
+#input-esqueci-senha {
     color: #FF8D61;
 }
 
@@ -161,20 +161,20 @@ form {
 
 #botao-entrar {
     width: 100%;
-    padding: 13px;
-    border: none;
-    border-radius: 10px;
-    font-size: 18px;
-    font-weight: 800;
     margin-top: 53px;
+    font-weight: 800;
     margin-bottom: 124px;
     font-family: "Roboto", sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-#botao-entrar a {
+    padding: 13px;
+    border-radius: 10px;
+    border: none;
+    font-size: 18px;
+    width: 100%;
+    height: 100%;
+    background-color: #0C9A61;
     color: #FFF;
 }
 
