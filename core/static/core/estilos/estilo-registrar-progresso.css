@@ -3,6 +3,16 @@
     border: none;
     margin: auto;
     border-radius: 10px;
+    position: relative;
+}
+
+#fecharModal {
+    position: absolute;
+    border: none;
+    top: 0;
+    right: 0;
+    margin: 24px 29px;
+    background-color: transparent;
 }
 
 .topo-progresso-h1,
