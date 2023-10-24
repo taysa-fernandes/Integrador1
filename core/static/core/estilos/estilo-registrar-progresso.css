@@ -4,6 +4,7 @@
     margin: auto;
     border-radius: 10px;
     position: relative;
+    padding: 34px 54px;
 }
 
 #fecharModal {
@@ -15,17 +16,12 @@
     background-color: transparent;
 }
 
-.topo-progresso-h1,
-.topo-progresso-h3 {
-    margin-left: 36px;
-    margin-top: 32px;
-}
-
 .topo-progresso-h1 {
     display: flex;
-    justify-content: space-between;
-    margin-right: 24px;
-    margin-bottom: 21px;
+    flex-direction: column;
+    width: 100%;
+    align-items: start;
+    gap: 21px;
 }
 
 .topo-progresso-h1 h1 {
@@ -49,18 +45,19 @@
     font-size: 14px;
 }
 
-.button-registrar-progresso {
-    margin-left: 36px;
-    margin-bottom: 50px;
+.informacao {
     display: flex;
-    gap: 322px;
-    margin-right: 73px;
+    align-items: center;
+    justify-content: space-between;
+    margin: 40px 0;
+    width: 100%;
 }
 
-.button-registrar-progresso h2 {
-    color: #000;
-    font-family: 'Inter', sans-serif;
+#data {
     font-size: 36px;
+    color: black;
+    font-weight: bold;
+    font-family: 'Inter', sans-serif;
 }
 
 .button-registrar-progresso a {
@@ -75,10 +72,25 @@
     font-size: 14px;
 }
 
-.adicionar-info {
-    gap: 6px;
-    align-items: center;
+.botao-adicionar-info {
     display: flex;
+    align-items: center;
+    gap: 4px;
+    border: none;
+    background-color: transparent;
+    color: #FF8D61;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: 'Inter', sans-serif;
+
+}
+
+.botao-adicionar-info:hover {
+    cursor: pointer;
+}
+
+.botao-adicionar-info i {
+    color: #FF8D61;
 }
 
 .progresso-do-cafe {
