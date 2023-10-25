@@ -41,6 +41,7 @@
     flex-direction: column;
     align-items: center;
     gap: 24px;
+    height: 100%;
 }
 
 .dia {
@@ -114,6 +115,16 @@
     display: flex;
     align-items: center;
     gap: 4px;
+    border: none;
+    background-color: transparent;
+    color: #FF8D61;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.button-registrar:hover {
+    cursor: pointer;
 }
 
 .ph-notepad {
@@ -122,14 +133,6 @@
 
 .ph-plus {
     color: #FF8D61;
-}
-
-.button-registrar button {
-    border: none;
-    background: #ffff;
-    color: #FF8D61;
-    font-family: 'Inter', sans-serif;
-    font-size: 12px;
 }
 
 .mes {
