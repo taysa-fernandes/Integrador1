@@ -1,48 +1,97 @@
-.topo-cadastrar-dieta{
+dialog.cadastrar-dieta {
+    font-family: 'Inter', sans-serif;
+    position: relative;
+    padding: 27px 40px;
+    border: none;
+}
+
+#fecharModal2 {
+    position: absolute;
+    margin: 22px 30px;
+    top: 0;
+    right: 0;
+    border: none;
+    background-color: transparent;
+}
+
+#fecharModal2:hover {
+    cursor: pointer;
+}
+
+.conteudo-modal-criar-dieta {
     display: flex;
-    justify-content: space-between;
-    margin-left: 52px;
-    margin-top: 28px;
-    margin-bottom: 32px;
-    margin-right: 26px;
+    flex-direction: column;
+    width: 100%;
+    align-items: start;
 }
-.topo-cadastrar-dieta h1{
+
+.titulo-modal-criar-dieta {
     color: #000;
-    font-family: 'Inter',sans-serif;
     font-size: 20px;
+    font-weight: bold;
 }
-.topo-cadastrar-dieta button{
+
+.topo-cadastrar-dieta button {
     border: none;
     background-color: #FFFFFF;
 }
-.topo-cadastrar-dieta .ph-x{
+
+.topo-cadastrar-dieta .ph-x {
     color: #000000;
 }
-.cadastrar-dieta{
-    max-width: 709px;
-    max-height: 677px;
-    border: none;
+
+.refeicao {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    border-bottom: 4px solid #A8A8A8;
+    color: #A8A8A8;
+    width: 130px;
+    align-items: start;
 }
-.refeicoes-dieta hr{
-    width: 146px;
+
+.refeicao:hover {
+    cursor: pointer;
+}
+
+#refeicao-atual {
+    border-bottom: 4px solid #0C9A61;
     color: #0C9A61;
 }
-.refeicoes-dieta{
+
+.container-opcoes {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    width: 100%;
+}
+
+.menu-refeicoes {
+    display: flex;
+    width: 100%;
+    gap: 16px;
+    align-items: start;
+    margin: 43px 0;
+    font-weight: bold;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+}
+
+.refeicoes-dieta {
     display: flex;
     gap: 16px;
     margin-bottom: 43px;
 }
-.refeicao-1-dieta{
-    color: #0C9A61;
-}
-.container-opcoes-dietas label{
+
+.container-opcoes-dietas label {
     color: #000;
     font-family: 'Inter', sans-serif;
     font-size: 16px;
 }
-.container-opcoes-dietas p{
+
+.container-opcoes-dietas p {
     border-radius: 10px;
-    border: 1px solid  #F4F3F3;
+    border: 1px solid #F4F3F3;
     background: #FFFFFF;
     width: 305px;
     height: 50px;
@@ -51,61 +100,87 @@
     padding-bottom: 15px;
     margin-right: 22px;
 }
-.opcaos-dieta{
-    display: flex;
-}
-.opcaos-dieta p{
-    margin-top: 11px;
-    margin-bottom: 32px;
-}
-.adicionar-alimento{
+
+.adicionar-alimento {
     display: flex;
     gap: 7px;
     align-items: center;
 }
-.adicionar-alimento .ph-plus{
+
+.item-dieta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 22px;
+}
+
+.alimento {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+    width: 100%;
+}
+
+.titulo-alimento {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: black;
+}
+
+.input-nome-alimento {
+    font-weight: 400;
+    border: 1px solid #F4F3F3;
+    border-radius: 10px;
+}
+
+.adicionar-alimento .ph-plus {
     color: #FF8D61;
 }
-.adicionar-alimento button{
+
+#adicionar-alimento {
     border: none;
-    background-color: #FFFFFF;
+    background-color: transparent;
     color: #FF8D61;
     font-family: 'Inter', sans-serif;
-    font-size: 18px;
-}
-.buttons-cadastrar-dieta #botao-salvar{
-    border-radius: 10px;
-    background:  #0C9A61;
-    border: none;
-    color:  #FFFFFF;
-    font-family: 'Roboto', sans-serif;
-    font-size: 20px;
-    width: 103px;
-    height: 43px;
-}
-.buttons-cadastrar-dieta{
-    float: right;
-    padding-top: 37px;
+    font-size: 16px;
+    font-weight: bold;
     display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: 32px;
+}
 
+#adicionar-alimento:hover {
+    cursor: pointer;
 }
-.buttons-cadastrar-dieta #botao-cancelar{
+
+.footer-modal-dieta {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 24px;
+}
+
+.footer-modal-dieta button {
+    border: none;
+    background-color: transparent;
     border-radius: 10px;
+    padding: 10px 24px;
+    font-size: 16px;
+}
+
+.footer-modal-dieta button:hover {
+    cursor: pointer;
+}
+
+#botao-salvar-dieta {
+    background-color: #0C9A61;
+    color: #FFFFFF;
+}
+
+#botao-cancelar-dieta {
+    color: black;
     border: 1px solid #F4F3F3;
-    background:  #FFFFFF;
-    width: 103px;
-    height: 43px;
-    color:  #141623;
-    font-family: 'Roboto', sans-serif;
-    font-size: 20px;
-    margin-right: 24px;
-}
-.refeicoes-dieta,
-.container-opcoes-dietas,
-.adicionar-alimento{
-    margin-left: 47px;
-}
-.container-opcoes-dietas,
-.buttons-cadastrar-dieta{
-    margin-right: 34px;
 }

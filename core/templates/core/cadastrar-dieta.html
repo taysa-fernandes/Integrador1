@@ -1,67 +1,62 @@
 {% extends 'core/base.html' %}
 {% load static %}
 
-{% block main%}
-    <dialog class="cadastrar-dieta" id="myModal2">
-        <div class="topo-cadastrar-dieta">
-            <h1>Criar dieta</h1>
-            <button id="fecharModal2"><i class="ph ph-x"></i></button>
+{% block main %}
+  <dialog class="cadastrar-dieta" id="myModal2">
+    <button id="fecharModal2"><i class="ph ph-x"></i></button>
+    <div class="conteudo-modal-criar-dieta">
+      <p class="titulo-modal-criar-dieta">Criar dieta</p>
+      <div class="menu-refeicoes">
+        <div class="refeicao" id="refeicao-atual">
+          <p>Refeição I</p>
         </div>
-        <div class="refeicoes-dieta">
-            <div class="refeicao-1-dieta">
-                <p>Refeição I</p>
-                <hr>
-            </div>
-            <div class="refeicao-2-dieta">
-                <p>Refeição II</p>
-                <hr>
-            </div>
-            <div class="refeicao-2-dieta">
-                <p>Refeição III</p>
-                <hr>
-            </div>
+        <div class="refeicao">
+          <p>Refeição II</p>
         </div>
-        <div class="container-opcoes-dietas">
-            <div class="opcaos-dieta">
-                <div class="opcao-1-dieta">
-                    <label>Opção 1:</label>
-                    <p>Salada de frutas</p>
-                </div>
-                <div class="substituto-1-dieta">
-                    <label>Substituto: </label>
-                    <p>Vitamina</p>
-                </div>
-            </div>
-            <div class="opcaos-dieta">
-                <div class="opcao-2-dieta">
-                    <label>Opção 2:</label>
-                    <p>Salada de frutas</p>
-                </div>
-                <div class="substituto-2-dieta">
-                    <label>Substituto: </label>
-                    <p>Vitamina</p>
-                </div>
-            </div>
-            <div class="opcaos-dieta">
-                <div class="opcao-3-dieta">
-                    <label>Opção 3:</label>
-                    <p>Salada de frutas</p>
-                </div>
-                <div class="substituto-3-dieta">
-                    <label>Substituto: </label>
-                    <p>Vitamina</p>
-                    </div>
-                </div>
-            </div>
+        <div class="refeicao">
+          <p>Refeição III</p>
         </div>
-        <div class="adicionar-alimento">
-            <i class="ph ph-plus"></i>
-            <button type="button">Adicionar alimento</button>
+      </div>
+      <div class="container-opcoes">
+        <div class="item-dieta">
+          <div class="alimento">
+            <label class="titulo-alimento">Opção 1:</label>
+            <input class="input-nome-alimento" type="text" value="Salada de frutas" />
+          </div>
+          <div class="alimento">
+            <label class="titulo-alimento">Substituto:</label>
+            <input class="input-nome-alimento" type="text" value="Vitamina" />
+          </div>
         </div>
-        <div class="buttons-cadastrar-dieta">
-            <button id="botao-cancelar" type="Cancelar">Cancelar</button>
-            <button id="botao-salvar" type="Salvar">Salvar</button>
+        <div class="item-dieta">
+          <div class="alimento">
+            <label class="titulo-alimento">Opção 2:</label>
+            <input class="input-nome-alimento" type="text" value="Salada de frutas" />
+          </div>
+          <div class="alimento">
+            <label class="titulo-alimento">Substituto:</label>
+            <input class="input-nome-alimento" type="text" value="Vitamina" />
+          </div>
         </div>
+        <div class="item-dieta">
+          <div class="alimento">
+            <label class="titulo-alimento">Opção 1:</label>
+            <input class="input-nome-alimento" type="text" value="Salada de frutas" />
+          </div>
+          <div class="alimento">
+            <label class="titulo-alimento">Substituto:</label>
+            <input class="input-nome-alimento" type="text" value="Vitamina" />
+          </div>
+        </div>
+      </div>
+      <button type="button" id="adicionar-alimento">
+        <i class="ph ph-plus"></i>
+        Adicionar alimento
+      </button>
+      <div class="footer-modal-dieta">
+        <button id="botao-cancelar-dieta" type="Cancelar">Cancelar</button>
+        <button id="botao-salvar-dieta" type="Salvar">Salvar</button>
+      </div>
     </div>
-</dialog>
-{% endblock%}
+  </dialog>
+{% endblock %}
