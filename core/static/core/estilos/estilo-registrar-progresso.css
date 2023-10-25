@@ -9,6 +9,12 @@
     padding: 34px 54px;
 }
 
+.conteudo-modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
 #fecharModal {
     position: absolute;
     border: none;
@@ -51,7 +57,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 40px 0;
+    margin: 20px 0;
     width: 100%;
 }
 
@@ -116,64 +122,81 @@
     color: #0C9A61;
 }
 
-.cafe-manha-icone {
+.titulo-card {
+    width: 100%;
+    text-align: left;
     display: flex;
     align-items: center;
     gap: 9px;
-    padding-bottom: 24px;
+    margin-bottom: 24px;
 }
 
-.container-global-opcao {
+.conteudo-card {
+    width: 100%;
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
+    gap: 73px;
 }
 
 .container-opcao {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
+    align-items: start;
+    gap: 15px;
+}
+
+.opcao-alimento {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
 }
 
 .opcao-alimento label {
     display: flex;
     flex-direction: column;
+    gap: 6px;
 }
 
-.opcao-alimento span {
-    padding-bottom: 6px;
+.titulo-opcao {
+    font-weight: bold;
 }
 
-.opcao-alimento {
-    display: flex;
-    gap: 10px;
+.alimento {
+    font-weight: 400;
 }
 
-#botao-salvar {
+
+#botao-salvar-progresso {
     border-radius: 10px;
     background: #0C9A61;
     border: none;
     color: #FFFFFF;
     font-family: 'Roboto', sans-serif;
-    font-size: 20px;
-    width: 103px;
-    height: 43px;
 }
 
-.buttons-progresso {
-    float: right;
-    padding-top: 37px;
+.footer-modal {
+    display: flex;
+    align-items: center;
+    justify-content: end;
 
+}
+
+.footer-modal button {
+    border: none;
+    font-size: 18px;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    padding: 8px 20px;
 }
 
 #botao-cancelar {
     border-radius: 10px;
     border: 1px solid #F4F3F3;
     background: #FFFFFF;
-    width: 103px;
-    height: 43px;
     color: #141623;
-    font-family: 'Roboto', sans-serif;
-    font-size: 20px;
     margin-right: 24px;
 }
 
