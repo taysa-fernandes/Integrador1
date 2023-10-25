@@ -6,12 +6,6 @@ def index(request):
 def dieta(request):
     return render(request, 'core/visualizar-dieta.html')
 
-def progresso(request):
-    return render(request, 'core/registrar-progresso.html')
-
-def diario(request):
-    return render(request, 'core/diario-alimentar.html')
-
 def home(request):
     return render(request, 'core/home.html')
 
@@ -23,6 +17,12 @@ def novo_formulario(request):
 
 def cadastrar_alimento(request):
     return render(request, 'core/cadastrarAlimento.html')
+
+def progresso(request):
+    return render(request, 'core/registrarProgresso.html')
+
+def diario(request):
+    return render(request, 'core/diarioAlimentar.html')
 
 def alimentos(request):
     return render(request, 'core/alimentos.html')

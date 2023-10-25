@@ -1,0 +1,137 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block main %}
+  <body>
+    <main id="visualizar-diario">
+      <header>
+        <a href="#" class="logo"><img src="{% static 'imagens/logo-diet-hub.svg' %} " alt="Logo DietHub" /></a>
+
+        <div class="informacoes-do-usuario">
+          <div class="texto-informacoes-do-usuario">
+            <span class="nome-do-usuario">Karla Nunes</span>
+            <span class="tipo-de-usuario">Paciente</span>
+          </div>
+          <img src="{% static 'imagens/usuario.svg' %}" alt="Logo DietHub" />
+        </div>
+      </header>
+      <section id="main-diario">
+        <h1>Diário alimentar</h1>
+        <p>Faça seu registro no diário alimentar. Clique no dia desejado</p>
+      </section>
+      <div id="conteudo-diario">
+        <section class="dia">
+          <div class="datas">
+            <div class="container-datas">
+              <h1 class="dia-semana" id="selecionado-semana">Terça</h1>
+              <h1 class="data" id="selecionado-dia">26</h1>
+            </div>
+            {% comment %} <hr class="linha-vertical" /> {% endcomment %}
+          </div>
+          <div class="registros">
+            <i class="ph ph-notepad"></i>
+            <p>Ainda não há registros para esse dia</p>
+          </div>
+          <button class="button-registrar" id="abrirModal" type="button">
+            <i class="ph ph-plus"></i>
+            Registrar
+          </button>
+        </section>
+        <section class="dia">
+          <div class="datas">
+            <div class="container-datas">
+              <h1 class="dia-semana">Terça</h1>
+              <h1 class="data">26</h1>
+            </div>
+            {% comment %} <hr class="linha-vertical" /> {% endcomment %}
+          </div>
+          <div class="container-registros">
+            <div class="registros">
+              <i class="ph ph-notepad"></i>
+              <p>Ainda não há registros para esse dia</p>
+            </div>
+            <button class="button-registrar" id="abrirModal" type="button">
+              <i class="ph ph-plus"></i>
+              Registrar
+            </button>
+          </div>
+        </section>
+        <section class="dia">
+          <div class="datas">
+            <div class="container-datas">
+              <h1 class="dia-semana">Terça</h1>
+              <h1 class="data">26</h1>
+            </div>
+            {% comment %} <hr class="linha-vertical" /> {% endcomment %}
+          </div>
+          <div class="container-registros">
+            <div class="registros">
+              <i class="ph ph-notepad"></i>
+              <p>Ainda não há registros para esse dia</p>
+            </div>
+            <button class="button-registrar" id="abrirModal" type="button">
+              <i class="ph ph-plus"></i>
+              Registrar
+            </button>
+          </div>
+        </section>
+        <div class="mes">
+          <p>Setembro</p>
+        </div>
+        <section class="dia">
+          <div class="datas">
+            <div class="container-datas">
+              <h1 class="dia-semana">Terça</h1>
+              <h1 class="data">26</h1>
+            </div>
+            {% comment %} <hr class="linha-vertical" /> {% endcomment %}
+          </div>
+          <div class="container-registros">
+            <div class="registros">
+              <i class="ph ph-notepad"></i>
+              <p>Ainda não há registros para esse dia</p>
+            </div>
+            <button class="button-registrar" id="abrirModal" type="button">
+              <i class="ph ph-plus"></i>
+              Registrar
+            </button>
+          </div>
+        </section>
+        <section class="dia">
+          <div class="datas">
+            <div class="container-datas">
+              <h1 class="dia-semana">Terça</h1>
+              <h1 class="data">26</h1>
+            </div>
+            {% comment %} <hr class="linha-vertical" /> {% endcomment %}
+          </div>
+          <div class="container-registros">
+            <div class="registros">
+              <i class="ph ph-notepad"></i>
+              <p>Ainda não há registros para esse dia</p>
+            </div>
+
+            <button class="button-registrar" id="abrirModal" type="button">
+              <i class="ph ph-plus"></i>
+              Registrar
+            </button>
+          </div>
+        </section>
+      </div>
+    </main>
+    {% include 'core/registrarProgresso.html' %}
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const openModal = document.getElementById('abrirModal')
+        const modal = document.getElementById('myModal')
+        const closeButton = document.getElementById('fecharModal')
+        openModal.addEventListener('click', () => {
+          modal.showModal()
+        })
+        closeButton.addEventListener('click', () => {
+          modal.close()
+        })
+      })
+    </script>
+  </body>
+{% endblock %}

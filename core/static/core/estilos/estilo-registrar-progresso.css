@@ -1,0 +1,213 @@
+.main-progresso {
+    max-width: 715px;
+    width: fit-content;
+    border: none;
+    margin: auto;
+    border-radius: 10px;
+    position: relative;
+    width: 100%;
+    padding: 34px 54px;
+}
+
+.conteudo-modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#fecharModal {
+    position: absolute;
+    border: none;
+    top: 0;
+    right: 0;
+    margin: 24px 29px;
+    background-color: transparent;
+}
+
+.topo-progresso-h1 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: start;
+    gap: 21px;
+}
+
+.topo-progresso-h1 h1 {
+    color: #000;
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+}
+
+.topo-progresso-h1 button {
+    border: none;
+    background-color: #FFFFFF;
+}
+
+.topo-progresso-h3 {
+    margin-top: 0px;
+}
+
+.topo-progresso-h3 h3 {
+    color: #A8A8A8;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+}
+
+.informacao {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 0;
+    width: 100%;
+}
+
+#data {
+    font-size: 36px;
+    color: black;
+    font-weight: bold;
+    font-family: 'Inter', sans-serif;
+}
+
+.button-registrar-progresso a {
+    text-decoration: none;
+}
+
+.button-registrar-progresso a,
+#label-de-cafe,
+#label-de-almoco {
+    color: #FF8D61;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+}
+
+.botao-adicionar-info {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    border: none;
+    background-color: transparent;
+    color: #FF8D61;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: 'Inter', sans-serif;
+
+}
+
+.botao-adicionar-info:hover {
+    cursor: pointer;
+}
+
+.botao-adicionar-info i {
+    color: #FF8D61;
+}
+
+.card {
+    width: 100%;
+    max-width: 572px;
+    padding: 22px 20px;
+    border-radius: 10px;
+    border: 1px solid #F4F3F3;
+    margin: 0 auto 21px;
+}
+
+.card label {
+    color: #000;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+}
+
+.card input {
+    width: 24px;
+    height: 24px;
+    color: #0C9A61;
+}
+
+.titulo-card {
+    width: 100%;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 24px;
+}
+
+.conteudo-card {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 73px;
+}
+
+.container-opcao {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: start;
+    gap: 15px;
+}
+
+.opcao-alimento {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+}
+
+.opcao-alimento label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.titulo-opcao {
+    font-weight: bold;
+}
+
+.alimento {
+    font-weight: 400;
+}
+
+
+#botao-salvar-progresso {
+    border-radius: 10px;
+    background: #0C9A61;
+    border: none;
+    color: #FFFFFF;
+    font-family: 'Roboto', sans-serif;
+}
+
+.footer-modal {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+
+}
+
+.footer-modal button {
+    border: none;
+    font-size: 18px;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    padding: 8px 20px;
+}
+
+#botao-cancelar {
+    border-radius: 10px;
+    border: 1px solid #F4F3F3;
+    background: #FFFFFF;
+    color: #141623;
+    margin-right: 24px;
+}
+
+.ph-coffee {
+    color: #FF8D61;
+}
+
+.main-progresso dialog {
+    margin: 0 auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
