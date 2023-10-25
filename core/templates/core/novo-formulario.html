@@ -3,6 +3,7 @@
 {% load static %}
 
 {% block main %}
+<body>
   <main>
     <header>
       <nav class="breadcrumbs">
@@ -78,7 +79,7 @@
           </div>
         </div>
 
-        <button id="botao-nova-questao">
+        <button class="botao-nova-questao" id="abrirModal">
           <i class="ph ph-plus"></i>
           Nova questão
         </button>
@@ -87,4 +88,6 @@
       </div>
     </section>
   </main>
+  {% include 'core/tipo-questao.html' %} 
+</body>
 {% endblock %}

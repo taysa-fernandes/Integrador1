@@ -162,7 +162,7 @@ input[type="checkbox"]:checked::after {
     font-size: 20px;
 }
 
-#botao-nova-questao {
+.botao-nova-questao {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -182,11 +182,11 @@ input[type="checkbox"]:checked::after {
     border-radius: 10px;
 }
 
-#botao-nova-questao i {
+.botao-nova-questao i {
     color: #A8A8A8;
 }
 
-#botao-nova-questao:hover {
+.botao-nova-questao:hover {
     cursor: pointer;
     background-color: rgb(168, 168, 168, 14%);
 }

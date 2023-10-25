@@ -9,6 +9,11 @@
 .tipo-questao{
     max-width: 640px;
     max-height: 373px;
+    border: none;
+}
+.topo-questao button{
+    border: none;
+    background-color: #FFFFFF;
 }
 .topo-questao .ph-x{
     color: #000000;

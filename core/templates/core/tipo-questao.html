@@ -2,11 +2,10 @@
 {% load static%}
 
 {% block main%}
-<body>
-    <main class="tipo-questao">
+    <dialog class="tipo-questao" id="myModal">
         <div class="topo-questao">
             <h1>Tipo da questão</h1>
-            <i class="ph ph-x"></i>
+            <button id="fecharModal"><i class="ph ph-x"></i></button>
         </div>
         <div class="questoes">
             <label>Nome</label>
@@ -21,6 +20,5 @@
             <button id="botao-cancelar" type="button">Cancelar</button>
             <button id="botao-salvar" type="button">Salvar</button>
         </div>
-    </main>
-</body>
+    </dialog>
 {% endblock%}
