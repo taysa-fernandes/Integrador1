@@ -112,7 +112,7 @@ hr.solid {
     margin: 12px 0;
 }
 
-#botao-criar-dieta {
+.botao-criar-dieta {
     border: none;
     display: flex;
     align-items: center;
@@ -122,11 +122,11 @@ hr.solid {
     background: transparent;
 }
 
-#botao-criar-dieta:hover {
+.botao-criar-dieta:hover {
     cursor: pointer;
 }
 
-#botao-criar-dieta i {
+.botao-criar-dieta i {
     color: #0C9A61;
     font-size: 14px;
 }

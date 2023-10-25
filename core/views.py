@@ -24,5 +24,8 @@ def alimentos(request):
 def tipo_questao(request):
     return render(request, 'core/tipo-questao.html')
 
+def cadastrar_dieta(request):
+    return render(request, 'core/cadastrar-dieta.html')
+
 def cadastrar_paciente(request):
     return render(request, 'core/cadastrarPaciente.html')

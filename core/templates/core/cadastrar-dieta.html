@@ -1,0 +1,67 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block main%}
+    <dialog class="cadastrar-dieta" id="myModal2">
+        <div class="topo-cadastrar-dieta">
+            <h1>Criar dieta</h1>
+            <button id="fecharModal2"><i class="ph ph-x"></i></button>
+        </div>
+        <div class="refeicoes-dieta">
+            <div class="refeicao-1-dieta">
+                <p>Refeição I</p>
+                <hr>
+            </div>
+            <div class="refeicao-2-dieta">
+                <p>Refeição II</p>
+                <hr>
+            </div>
+            <div class="refeicao-2-dieta">
+                <p>Refeição III</p>
+                <hr>
+            </div>
+        </div>
+        <div class="container-opcoes-dietas">
+            <div class="opcaos-dieta">
+                <div class="opcao-1-dieta">
+                    <label>Opção 1:</label>
+                    <p>Salada de frutas</p>
+                </div>
+                <div class="substituto-1-dieta">
+                    <label>Substituto: </label>
+                    <p>Vitamina</p>
+                </div>
+            </div>
+            <div class="opcaos-dieta">
+                <div class="opcao-2-dieta">
+                    <label>Opção 2:</label>
+                    <p>Salada de frutas</p>
+                </div>
+                <div class="substituto-2-dieta">
+                    <label>Substituto: </label>
+                    <p>Vitamina</p>
+                </div>
+            </div>
+            <div class="opcaos-dieta">
+                <div class="opcao-3-dieta">
+                    <label>Opção 3:</label>
+                    <p>Salada de frutas</p>
+                </div>
+                <div class="substituto-3-dieta">
+                    <label>Substituto: </label>
+                    <p>Vitamina</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="adicionar-alimento">
+            <i class="ph ph-plus"></i>
+            <button type="button">Adicionar alimento</button>
+        </div>
+        <div class="buttons-cadastrar-dieta">
+            <button id="botao-cancelar" type="Cancelar">Cancelar</button>
+            <button id="botao-salvar" type="Salvar">Salvar</button>
+        </div>
+    </div>
+</dialog>
+{% endblock%}
