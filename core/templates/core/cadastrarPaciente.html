@@ -1,55 +1,48 @@
 {% extends 'core/base.html' %}
 {% load static %}
 {% block main %}
-    <dialog class="cadastro-de-paciente" id="myModal">
-        <div class="conteudo-topo-paciente">
-            <h1>Criar paciente</h1>
-            <button id="fecharModal"><i class="ph ph-x"></i></button>
+  <dialog class="cadastro-de-paciente" id="myModal">
+    <button id="fecharModal"><i class="ph ph-x"></i></button>
+    <div class="conteudo-modal">
+      <p class="titulo-modal">Criar paciente</p>
+      <form class="formulario-paciente">
+        <div class="form-item">
+          <label>Nome</label>
+          <input type="text" placeholder="Ex: John Doe" />
         </div>
-        <div class="container-campos-paciente">
-            <div class="nome-paciente">
-                <label>Nome</label>
-                <br>
-                <input type="text" placeholder="Ex: John Doe" />
-            </div>
-            <div class="row-3-labels">
-                <div class="idade-paciente">
-                    <label>Idade</label>
-                    <input type="text" placeholder="Ex: 21" />
-                    <br>
-                </div>
-                <div class="peso-paciente">
-                    <label>Peso (em Kg)</label>
-                    <input type="text" placeholder="Ex: 50kg" />
-                    <br>
-                </div>
-                <div class="altura-paciente">
-                    <label>Altura (m)</label>
-                    <input type="text" placeholder="Ex: 50m" />
-                </div>
-            </div>
-            <div class="email-paciente">
-                <label>Email</label>
-                <br>
-                <input type="text" placeholder="Ex: tylerjoseph@gmail.com" />
-            </div>
-            <div class="row-2-labels">
-                <div class="cpf-paciente">
-                    <label>CPF</label>
-                    <br>
-                    <input type="text" placeholder="123.456.789-00" />
-                    <br>
-                </div>
-                <div class="whatsapp-paciente">
-                    <label>Whatsapp</label>
-                    <br>
-                    <input type="text" placeholder="(99) 99999-9999" />
-                </div>
-            </div>
+        <div class="container-inputs">
+          <div class="form-item">
+            <label>Idade</label>
+            <input type="text" placeholder="Ex: 21" />
+          </div>
+          <div class="form-item">
+            <label>Peso (em Kg)</label>
+            <input type="text" placeholder="Ex: 50kg" />
+          </div>
+          <div class="form-item">
+            <label>Altura (m)</label>
+            <input type="text" placeholder="Ex: 50m" />
+          </div>
         </div>
-        <div class="buttons-cadastrar-paciente">
-            <button id="botao-cancelar" type="Cancelar">Cancelar</button>
-            <button id="botao-salvar" type="Salvar">Salvar</button>
+        <div class="form-item">
+          <label>Email</label>
+          <input type="text" placeholder="Ex: tylerjoseph@gmail.com" />
         </div>
-    </dialog>
+        <div class="container-inputs">
+          <div class="form-item">
+            <label>CPF</label>
+            <input type="text" placeholder="123.456.789-00" />
+          </div>
+          <div class="form-item">
+            <label>Whatsapp</label>
+            <input type="text" placeholder="(99) 99999-9999" />
+          </div>
+        </div>
+      </form>
+      <div class="footer-modal-criar-paciente">
+        <button id="botao-cancelar-paciente" type="Cancelar">Cancelar</button>
+        <button id="botao-salvar-paciente" type="Salvar">Salvar</button>
+      </div>
+    </div>
+  </dialog>
 {% endblock %}
