@@ -26,6 +26,10 @@ dialog {
     font-weight: bold;
 }
 
+.cards {
+    margin: auto;
+}
+
 .titulo-modal {
     font-size: 20px;
     color: black;

@@ -9,6 +9,10 @@
     padding: 34px 54px;
 }
 
+.cards {
+    margin: auto;
+}
+
 .conteudo-modal {
     display: flex;
     flex-direction: column;
