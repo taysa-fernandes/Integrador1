@@ -46,6 +46,7 @@
 {% endblock %}
 
 {% block main %}
+<body>
   <main>
     <header>
       <nav class="breadcrumbs">
@@ -76,11 +77,11 @@
       <div class="cabecalho-conteudo-principal">
         <h1>Alimentos</h1>
 
-        <button class="botao-padrao">Novo alimento</button>
+        <button class="botao-padrao" id="abrirModal" type="button">Novo alimento</button>
       </div>
 
       <div class="nav-tipos-de-alimentos">
-        <a href="/alimentos/comuns">Comuns</a>
+        <a href="/alimentos/comuns" class="selecionado-tipo-alimento">Comuns</a>
         <a href="/alimentos/substitutos">Substitutos</a>
         <hr />
       </div>
@@ -90,4 +91,6 @@
       {% endblock %}
     </section>
   </main>
+  {% include 'core/cadastrarAlimento.html' %} 
+</body>
 {% endblock %}

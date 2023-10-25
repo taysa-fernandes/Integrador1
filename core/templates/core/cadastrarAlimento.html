@@ -1,0 +1,45 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block main %}
+    <dialog class="cadastro-alimento" id="myModal">
+        <div class="conteudo-topo-alimento">
+            <h1>Cadastrar novo alimento</h1>
+            <button id="fecharModal"><i class="ph ph-x"></i></button>
+        </div>
+        <div class="labels-iniciais">
+            <label>Nome</label>
+            <br>
+            <input type="text" placeholder="Ex: Maçã" />
+            <br>
+            <label>Tipo</label>
+            <br>
+            <input type="text" placeholder="Ex: Proteína" />
+            <br>
+        </div>
+        <div class="row">
+            <div class="porcao-alimento">
+                <label>Porção (em g)</label>
+                <br>
+                <input type="text" placeholder="Ex: 21" />
+                <br>
+            </div>
+            <div class="inputs-alimento">
+                <label>Calorias (em kcal)</label>
+                <br>
+                <input type="text" placeholder="Ex: 50kg" />
+                <br>
+            </div>
+        </div>
+        <div class="checkbox-substituto"> 
+            <input type="checkbox"/> 
+            <span>É um alimento substituto</span>
+        </div>
+        <div class="buttons-cadastrar-alimento">
+            <button id="botao-cancelar" type="Cancelar">Cancelar</button>
+            <button id="botao-salvar" type="Salvar">Salvar</button>
+        </div>
+        </div>
+    </dialog>
+</body>
+{% endblock %}

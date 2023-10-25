@@ -46,6 +46,7 @@
 {% endblock %}
 
 {% block main %}
+<body>
   <main>
     <header>
       <nav class="breadcrumbs">
@@ -69,7 +70,7 @@
       <div class="cabecalho-conteudo-principal">
         <h1>Seus pacientes</h1>
 
-        <button class="botao-padrao">
+        <button class="botao-padrao" id="abrirModal">
           <i class="ph ph-user-circle-plus"></i>
           Novo paciente
         </button>
@@ -80,4 +81,6 @@
       {% endblock %}
     </section>
   </main>
+  {% include 'core/cadastrarPaciente.html' %} 
+</body>
 {% endblock %}

@@ -21,5 +21,17 @@ def meus_formularios(request):
 def novo_formulario(request):
     return render(request, 'core/novo-formulario.html')
 
+def cadastrar_alimento(request):
+    return render(request, 'core/cadastrarAlimento.html')
+
 def alimentos(request):
     return render(request, 'core/alimentos.html')
+
+def tipo_questao(request):
+    return render(request, 'core/tipo-questao.html')
+
+def cadastrar_dieta(request):
+    return render(request, 'core/cadastrar-dieta.html')
+
+def cadastrar_paciente(request):
+    return render(request, 'core/cadastrarPaciente.html')

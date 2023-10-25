@@ -1,0 +1,68 @@
+.topo-questao{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 52px;
+    margin-top: 28px;
+    margin-bottom: 32px;
+    margin-right: 26px;
+}
+.tipo-questao{
+    max-width: 640px;
+    max-height: 373px;
+    border: none;
+}
+.topo-questao button{
+    border: none;
+    background-color: #FFFFFF;
+}
+.topo-questao .ph-x{
+    color: #000000;
+}
+.questoes{
+    display: flex;
+    flex-direction: column;
+    margin-left: 46px;
+    margin-right: 46px;
+}
+.questoes label{
+    color: #000;
+    font-family: 'Roboto', sans-serif;  
+    font-size: 14px;
+}
+.questoes select{
+    width: 548px;
+    height: 44px;
+    border-radius: 8px 8px 0px 0px;
+    border: 1px solid  #F4F3F3;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    margin-top: 8px;
+    margin-bottom: 36px;
+    padding-left: 16px;
+}
+.buttons-tipo-questao{
+    float: right;
+    margin-right: 46px;
+    display: flex;
+    gap: 20px;
+}
+.buttons-tipo-questao #botao-salvar{
+    border-radius: 10px;
+    background:  #0C9A61;
+    border: none;
+    color:  #FFFFFF;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    width: 103px;
+    height: 43px;
+}
+.buttons-tipo-questao #botao-cancelar{
+    border-radius: 10px;
+    border: 1px solid #F4F3F3;
+    background:  #FFFFFF;
+    width: 103px;
+    height: 43px;
+    color:  #141623;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+}
