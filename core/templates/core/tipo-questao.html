@@ -1,24 +1,24 @@
 {% extends 'core/base.html' %}
-{% load static%}
+{% load static %}
 
-{% block main%}
-    <dialog class="tipo-questao" id="myModal">
-        <div class="topo-questao">
-            <h1>Tipo da questão</h1>
-            <button id="fecharModal"><i class="ph ph-x"></i></button>
-        </div>
-        <div class="questoes">
-            <label>Nome</label>
-            <select>
-                <option value="default">Ex: John Doe</option>
-                <option>Aberta</option>
-                <option>Opção única</option>
-                <option>Múltipla escolha</option>
-              </select>
-        </div>
-        <div class="buttons-tipo-questao">
-            <button id="botao-cancelar" type="button">Cancelar</button>
-            <button id="botao-salvar" type="button">Salvar</button>
-        </div>
-    </dialog>
-{% endblock%}
+{% block main %}
+  <dialog class="tipo-questao" id="myModal">
+    <div class="topo-questao">
+      <h1>Tipo da questão</h1>
+      <button id="fecharModal"><i class="ph ph-x"></i></button>
+    </div>
+    <div class="questoes">
+      <label>Nome</label>
+      <select>
+        <option value="default">Ex: John Doe</option>
+        <option>Aberta</option>
+        <option>Opção única</option>
+        <option>Múltipla escolha</option>
+      </select>
+    </div>
+    <div class="footer-modal-questao">
+      <button id="botao-cancelar-paciente" type="button">Cancelar</button>
+      <button id="botao-salvar-paciente" type="button">Salvar</button>
+    </div>
+  </dialog>
+{% endblock %}
