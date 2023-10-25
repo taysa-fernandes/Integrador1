@@ -22,7 +22,7 @@
 }
 
 #main-diario {
-    max-width: 824px;
+    max-width: 1024px;
 }
 
 #main-diario p {
@@ -35,7 +35,7 @@
     border-radius: 10px;
     border: 1px solid #F4F3F3;
     background: #FFFFFF;
-    max-width: 824px;
+    max-width: 1024px;
     padding-top: 31px;
     display: flex;
     flex-direction: column;
@@ -46,7 +46,7 @@
 
 .dia {
     display: flex;
-    max-width: 740px;
+    max-width: 940px;
     padding: 12px 20px;
     border-radius: 10px;
     border: 1px solid #F4F3F3;
@@ -136,8 +136,13 @@
 }
 
 .mes {
-    margin-left: 42px;
     font-family: 'Inter', sans-serif;
-    font-size: 14px;
-    padding-bottom: 20px;
+    font-size: 16px;
+    max-width: 940px;
+    width: 100%;
+}
+
+.mes p {
+    color: #000;
+    font-weight: bold;
 }
