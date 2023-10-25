@@ -1,108 +1,105 @@
-.cadastro-alimento{
+.cadastro-alimento {
     max-width: 640px;
+    max-height: 559px;
     border: none;
+    position: relative;
+    padding: 28px 52px;
+    margin: auto;
 }
-.conteudo-topo-alimento{
-    display: flex;
-    justify-content: space-between;
-    margin-left: 52px;
-    margin-top: 36px;
-    margin-right: 26px;
+
+#fechar-modal {
+    position: absolute;
 }
-.conteudo-topo-alimento button{
-    border: none;
-    background-color: #FFFFFF;
-}
-.conteudo-topo-alimento .ph-x{
-    color: #000000;
-}
-.conteudo-topo-alimento h1{
+
+.titulo-modal-cadastrar-alimento {
+    color: #000;
     font-family: 'Roboto', sans-serif;
-    font-size: 28px;
-    padding-bottom: 40px;
+    font-size: 24px;
+    font-weight: bold;
 }
-.labels-iniciais,
-.row,
-.checkbox-substituto{
-    padding-left: 46px;
+
+.titulo-modal-cadastrar-alimento,
+.formulario-cadastrar-alimento,
+.footer-modal-cadastrar-alimento {
+    width: 100%;
 }
-.cadastro-alimento label{
+
+.conteudo-modal-cadastrar-alimento {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 32px;
+}
+
+.formulario-cadastrar-alimento {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.formulario-cadastrar-alimento label {
     color: #000;
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
 }
-.cadastro-alimento span{
-    color: #0C9A61;
-    font-family: 'Roboto', sans-serif;
-    font-size: 14px;
-}
-.buttons-cadastrar-alimento{
-    float: right;
-    margin-right: 46px;
-    display: flex;
-    gap: 20px;
-}
-#botao-cancelar{
-    border-radius: 10px;
-    border: 1px solid #F4F3F3;
-    background:  #FFFFFF;
-    width: 103px;
-    height: 43px;
-    color:  #141623;
-    font-family: 'Roboto', sans-serif;
-    font-size: 20px;
-}
-#botao-salvar{
-    border-radius: 10px;
-    background:  #0C9A61;
-    border: none;
-    color:  #FFFFFF;
-    font-family: 'Roboto', sans-serif;
-    font-size: 20px;
-    width: 103px;
-    height: 43px;
-}
-.labels-iniciais{
-    padding-right: 46px;
-}
-.labels-iniciais input{
-    width: 548px;
-    height: 44px;
+
+.form-item input {
     border-radius: 8px;
     border: 1px solid #F4F3F3;
-    margin-bottom: 32px;
-    margin-top: 8px;
+    width: 100%;
+    padding: 12px 16px;
+    margin-right: 1px;
+    font-size: 14px;
 }
-.row{
+
+.container-inputs {
     display: flex;
     justify-content: space-between;
-    padding-bottom: 46px;
+    width: 100%;
+    gap: 46px;
 }
-.row input{
-    width: 246px;
-    height: 40px;
-    border-radius: 8px;
-    border: 1px solid  #F4F3F3;
-}
-.row input::placeholder,
-.labels-iniciais input::placeholder{
-    color: #A8A8A8;
-    font-family: 'Roboto', sans-serif;
-    font-size: 14px;
-    padding-left: 16px;
-}
-.checkbox-substituto{
-    padding-bottom: 38px;
+
+#checkbox-substituto {
+    width: 100%;
     display: flex;
-    gap: 6px;
     align-items: center;
+    justify-content: start;
+    gap: 8px;
+    color: #0C9A61;
+    font-weight: 500;
+    font-size: 16px;
 }
-.porcao-alimento{
-    display: flex;
-    flex-direction:column;
+
+#checkbox-substituto:hover {
+    cursor: pointer;
 }
-.inputs-alimento{
+
+.footer-modal-cadastrar-alimento {
     display: flex;
-    flex-direction:column;
-    margin-right: 46px;
+    align-items: center;
+    justify-content: end;
+    gap: 20px;
+}
+
+.footer-modal-cadastrar-alimento button {
+    border: none;
+    padding: 10px 24px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.footer-modal-cadastrar-alimento button:hover {
+    cursor: pointer;
+}
+
+#botao-salvar-alimento {
+    color: #FFFFFF;
+    background-color: #0C9A61;
+}
+
+#botao-cancelar-alimento {
+    background-color: transparent;
+    color: black;
 }
