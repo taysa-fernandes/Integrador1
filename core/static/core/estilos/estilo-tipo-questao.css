@@ -10,9 +10,12 @@
 }
 
 .tipo-questao {
-    max-width: 640px;
-    max-height: 373px;
+    max-height: 559px;
     border: none;
+    position: relative;
+    padding: 28px 52px;
+    margin: auto;
+    border-radius: 10px;
 }
 
 .topo-questao button {
