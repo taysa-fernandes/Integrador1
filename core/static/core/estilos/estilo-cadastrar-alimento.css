@@ -5,6 +5,7 @@
     position: relative;
     padding: 28px 52px;
     margin: auto;
+    border-radius: 10px
 }
 
 #fechar-modal {
