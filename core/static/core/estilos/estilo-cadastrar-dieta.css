@@ -3,6 +3,12 @@ dialog.cadastrar-dieta {
     position: relative;
     padding: 27px 40px;
     border: none;
+    max-height: 559px;
+    border: none;
+    position: relative;
+    margin: auto;
+    border-radius: 10px;
+    width: 50%;
 }
 
 #fecharModal2 {
