@@ -2,11 +2,12 @@
     max-width: 715px;
     width: fit-content;
     border: none;
-    margin: auto;
+    margin: 28px auto;
     border-radius: 10px;
     position: relative;
     width: 100%;
     padding: 34px 54px;
+    overflow-y: auto;
 }
 
 .cards {
@@ -61,7 +62,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 20px 0;
     width: 100%;
 }
 
