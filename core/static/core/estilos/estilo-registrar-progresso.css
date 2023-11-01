@@ -11,7 +11,8 @@
 }
 
 .cards {
-    margin: auto;
+    margin: 0;
+    width: 100%;
 }
 
 .conteudo-modal {
@@ -27,6 +28,10 @@
     right: 0;
     margin: 24px 29px;
     background-color: transparent;
+}
+
+#fecharModal:hover {
+    cursor: pointer;
 }
 
 .topo-progresso-h1 {
@@ -107,7 +112,6 @@
 
 .card {
     width: 100%;
-    max-width: 572px;
     padding: 22px 20px;
     border-radius: 10px;
     border: 1px solid #F4F3F3;
@@ -179,13 +183,17 @@
     border: none;
     color: #FFFFFF;
     font-family: 'Roboto', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
 }
 
 .footer-modal {
     display: flex;
     align-items: center;
     justify-content: end;
-
+    width: 100%;
+    gap: 24px;
 }
 
 .footer-modal button {
@@ -196,12 +204,18 @@
     padding: 8px 20px;
 }
 
+.footer-modal button:hover {
+    cursor: pointer;
+}
+
 #botao-cancelar {
     border-radius: 10px;
     border: 1px solid #F4F3F3;
     background: #FFFFFF;
     color: #141623;
-    margin-right: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .ph-coffee {
