@@ -1,3 +1,4 @@
 from django.shortcuts import render
 
-# Create your views here.
+def cadastrar_paciente(request):
+    return render(request, 'paciente/cadastrarPaciente.html')

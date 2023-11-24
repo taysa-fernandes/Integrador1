@@ -32,6 +32,3 @@ def tipo_questao(request):
 
 def cadastrar_dieta(request):
     return render(request, 'core/cadastrar-dieta.html')
-
-def cadastrar_paciente(request):
-    return render(request, 'nutricionista/cadastrarPaciente.html')
