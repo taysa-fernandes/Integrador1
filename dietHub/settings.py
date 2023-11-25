@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'paciente',
     'pergunta',
     'refeicao',
+    'alimento',
 ]
 
 MIDDLEWARE = [
