@@ -5,15 +5,16 @@
     <button id="fecharModal"><i class="ph ph-x"></i></button>
     <div class="conteudo-modal">
       <p class="titulo-modal">Criar paciente</p>
-      <form class="formulario-paciente">
+      <form class="formulario-paciente" method="post">
+        {% csrf_token %}
         <div class="form-item">
           <label>Nome</label>
           <input type="text" placeholder="Ex: John Doe" />
         </div>
         <div class="container-inputs">
           <div class="form-item">
-            <label>Idade</label>
-            <input type="text" placeholder="Ex: 21" />
+            <label for="idade">Idade:</label>
+            {{ form.idade }}
           </div>
           <div class="form-item">
             <label>Peso (em Kg)</label>
