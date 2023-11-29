@@ -12,17 +12,16 @@
         <i class="ph ph-caret-down"></i>
       </label>
       <input type="radio" name="collapse" id="first" checked />
-
       <div class="content">
         <div class="informacoes-gerais-do-paciente">
           <div class="detalhes-collapse">
             <span class="titulo-collapse">Nome</span>
-            <span class="dados-do-cliente">Paciente 1</span>
+            <span class="dados-do-cliente">{{form.nome}}</span>
           </div>
 
           <div class="detalhes-collapse">
             <span class="titulo-collapse">Email</span>
-            <span class="dados-do-cliente">paciente1@gmail.com</span>
+            <span class="dados-do-cliente">{{form.email}}</span>
           </div>
 
           <div class="detalhes-collapse">
@@ -71,7 +70,6 @@
         </div>
       </div>
     </li>
-
     <li>
       <label for="second">
         <div class="informacoes-do-paciente">
@@ -199,11 +197,11 @@
         <div class="footer-collapse-pacientes">
           <button id="botao-editar">
             <i class="ph ph-pencil-simple-line"></i>
-            Editar
+            <a href="{% url 'editar-paciente' id=1 %}">Editar</a>
           </button>
           <button id="botao-excluir">
             <i class="ph ph-trash"></i>
-            Excluir
+            <a href="{% url 'deletar-paciente' id=1 %}">Excluir</a>
           </button>
         </div>
       </div>
