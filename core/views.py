@@ -3,9 +3,6 @@ from django.shortcuts import render
 def index(request):
     return render(request, 'core/index.html')
 
-def dieta(request):
-    return render(request, 'core/visualizar-dieta.html')
-
 def home(request):
     return render(request, 'core/home.html')
 
@@ -30,5 +27,4 @@ def alimentos(request):
 def tipo_questao(request):
     return render(request, 'core/tipo-questao.html')
 
-def cadastrar_dieta(request):
-    return render(request, 'core/cadastrar-dieta.html')
+
