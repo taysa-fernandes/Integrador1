@@ -12,12 +12,6 @@ def meus_formularios(request):
 def novo_formulario(request):
     return render(request, 'core/novo-formulario.html')
 
-def progresso(request):
-    return render(request, 'core/registrarProgresso.html')
-
-def diario(request):
-    return render(request, 'core/diarioAlimentar.html')
-
 
 def tipo_questao(request):
     return render(request, 'core/tipo-questao.html')
