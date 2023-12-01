@@ -22,4 +22,5 @@ urlpatterns = [
     path('', include('core.urls'), name='home'),
     path('',include('nutricionista.urls'),name='nutricionista'),
     path('',include('dieta.urls'),name='dieta'),
+    path('',include('alimento.urls'),name='alimento'),
 ]
