@@ -16,22 +16,22 @@
         <div class="informacoes-gerais-do-paciente">
           <div class="detalhes-collapse">
             <span class="titulo-collapse">Nome</span>
-            <span class="dados-do-cliente">{{form.nome}}</span>
+            <span class="dados-do-cliente">{{paciente.nome}}</span>
           </div>
 
           <div class="detalhes-collapse">
             <span class="titulo-collapse">Email</span>
-            <span class="dados-do-cliente">{{form.email}}</span>
+            <span class="dados-do-cliente">{{paciente.email}}</span>
           </div>
 
           <div class="detalhes-collapse">
             <span class="titulo-collapse">CPF</span>
-            <span class="dados-do-cliente">123.456.789-00</span>
+            <span class="dados-do-cliente">{{paciente.cpf}}</span>
           </div>
 
           <div class="detalhes-collapse">
             <span class="titulo-collapse">Whatsapp</span>
-            <a href="#" class="dados-do-cliente" id="botao-entrar-em-contato"><img src="{% static 'imagens/icone-whatsapp.svg' %}" alt="icone-whatsapp" /> Entrar em contato</a>
+            <a href="{{paciente.contato}}" class="dados-do-cliente" id="botao-entrar-em-contato"><img src="{% static 'imagens/icone-whatsapp.svg' %}" alt="icone-whatsapp" /> Entrar em contato</a>
           </div>
         </div>
 
@@ -40,7 +40,7 @@
         <div class="informacoes-gerais-do-paciente">
           <div class="detalhes-collapse">
             <span class="titulo-collapse">Dieta</span>
-            <span class="aguardando-acao">Aguardando resposta do formulário de pré-consulta</span>
+            <span class="aguardando-acao">{{paciente.status}}</span>
           </div>
 
           <button class="botao-criar-dieta" id="abrirModal2">
@@ -129,10 +129,12 @@
         <div class="footer-collapse-pacientes">
           <button id="botao-editar">
             <i class="ph ph-pencil-simple-line"></i>
+            {% comment %} <a href="{% url 'editar-paciente' id=paciente.id %}">Editar</a> {% endcomment %}
             Editar
           </button>
           <button id="botao-excluir">
             <i class="ph ph-trash"></i>
+            {% comment %} <a href="{% url 'deletar-paciente' id=paciente.id %}">Excluir</a> {% endcomment %}
             Excluir
           </button>
         </div>
@@ -197,11 +199,13 @@
         <div class="footer-collapse-pacientes">
           <button id="botao-editar">
             <i class="ph ph-pencil-simple-line"></i>
-            <a href="{% url 'editar-paciente' id=1 %}">Editar</a>
+            {% comment %} <a href="{% url 'editar-paciente'%}">Editar</a> {% endcomment %}
+            Editar
           </button>
           <button id="botao-excluir">
             <i class="ph ph-trash"></i>
-            <a href="{% url 'deletar-paciente' id=1 %}">Excluir</a>
+            {% comment %} <a href="{% url 'deletar-paciente' %}">Excluir</a> {% endcomment %}
+            Excluir
           </button>
         </div>
       </div>

@@ -32,6 +32,6 @@ class PacienteCriar(CreateView):
     
 class PacienteListar(ListView):
     model = Paciente
-    template_name = 'core/home.html'
+    template_name = 'paciente/collapse.html'
     context_object_name = 'pacientes'
 
