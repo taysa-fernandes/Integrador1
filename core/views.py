@@ -6,14 +6,4 @@ def index(request):
 def home(request):
     return render(request, 'core/home.html')
 
-def meus_formularios(request):
-    return render(request, 'core/meus-formularios.html')
-
-def novo_formulario(request):
-    return render(request, 'core/novo-formulario.html')
-
-
-def tipo_questao(request):
-    return render(request, 'core/tipo-questao.html')
-
 

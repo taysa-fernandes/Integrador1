@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'pergunta',
     'refeicao',
     'alimento',
+    'formulario'
 ]
 
 MIDDLEWARE = [
