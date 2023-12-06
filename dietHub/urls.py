@@ -25,4 +25,5 @@ urlpatterns = [
     path('',include('alimento.urls'),name='alimento'),
     path('',include('diario.urls'),name='diario'),
     path('',include('formulario.urls'),name='formulario'),
+    path('', include('paciente.urls'), name='paciente'),
 ]

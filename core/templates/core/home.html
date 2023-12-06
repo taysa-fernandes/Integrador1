@@ -70,7 +70,7 @@
       <div class="cabecalho-conteudo-principal">
         <h1>Seus pacientes</h1>
 
-        <button class="botao-padrao" id="abrirModal">
+        <button class="botao-padrao" id="abrirModal" hx-get={% url 'cadastrar-paciente' %} hx-trigger='click' hx-target='#modal' hx-swap="innerHTML">
           <i class="ph ph-user-circle-plus"></i>
           Novo paciente
         </button>
@@ -79,8 +79,12 @@
       {% block collapse %}
         {{ block.super }}
       {% endblock %}
+      <dialog class="cadastro-de-paciente" id="myModal">
+        <button id="fecharModal"><i class="ph ph-x"></i></button>
+        <div id="modal">
+        </div>
+      </dialog>
     </section>
   </main>
-  {% include 'paciente/cadastrarPaciente.html' %} 
 </body>
 {% endblock %}

@@ -12,8 +12,8 @@ class Paciente(Usuario):
     peso =  models.DecimalField(decimal_places=2, max_digits=6)
     altura = models.DecimalField(decimal_places=2, max_digits=6)
     cpf = models.CharField(max_length=255)
-    descricao = models.CharField(max_length=100)
-    objetivo = models.CharField(max_length=20)
+    descricao = models.CharField(max_length=100,blank=True)
+    objetivo = models.CharField(max_length=20,blank=True)
     diagnostico = models.BooleanField(default=False)
-    status = models.IntegerField(choices=status_paciente,default=1)
+    status = models.IntegerField(choices=status_paciente,default=1,blank=True)
     
