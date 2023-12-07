@@ -38,11 +38,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core',
+    'diario',
+    'dieta',    
     'nutricionista',
     'paciente',
     'pergunta',
     'refeicao',
     'alimento',
+    'formulario'
 ]
 
 MIDDLEWARE = [

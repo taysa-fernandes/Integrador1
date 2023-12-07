@@ -21,5 +21,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('core.urls'), name='home'),
     path('',include('nutricionista.urls'),name='nutricionista'),
-    path('', include('paciente.urls'), name='paciente'),
+    path('',include('paciente.urls'), name='paciente'),
+    path('',include('dieta.urls'),name='dieta'),
+    path('',include('alimento.urls'),name='alimento'),
+    path('',include('diario.urls'),name='diario'),
+    path('',include('formulario.urls'),name='formulario'),
 ]
