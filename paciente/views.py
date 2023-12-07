@@ -25,13 +25,13 @@ class PacienteCriar(CreateView):
     template_name = 'paciente/cadastrarPaciente.html'
     success_url = reverse_lazy('listar-pacientes')
     
-    def form_valid(self, form):
-        form.save()
-        return super().form_valid(form)
-
+# def lista_pacientes(request):
+#     pacientes = Paciente.objects.all() 
+#     return render(request, 'core/home.html', {'pacientes': pacientes})
     
 class PacienteListar(ListView):
     model = Paciente
-    template_name = 'paciente/collapse.html'
+    template_name = 'core/home.html'
     context_object_name = 'pacientes'
+    
 
