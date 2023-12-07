@@ -1,7 +1,8 @@
 <div class="conteudo-modal-cadastrar-alimento">
   <p class="titulo-modal-cadastrar-alimento">Cadastrar novo alimento</p>
 
-  <form class="formulario-cadastrar-alimento">
+  <form class="formulario-cadastrar-alimento" method="post" action="{% url "cadastrar-alimento" %}">
+    {% csrf_token %}    
     <div class="form-item">
       <label>Nome</label>
       {{form.nome}}
