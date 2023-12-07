@@ -19,11 +19,11 @@ from django.urls import path,include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('core.urls'), name='home'),
-    path('',include('nutricionista.urls'),name='nutricionista'),
-    path('',include('dieta.urls'),name='dieta'),
-    path('',include('alimento.urls'),name='alimento'),
-    path('',include('diario.urls'),name='diario'),
-    path('',include('formulario.urls'),name='formulario'),
-    path('', include('paciente.urls'), name='paciente'),
+    path('', include('core.urls'), name='core'),
+    path('nutricionista/',include('nutricionista.urls'),name='nutricionista'),
+    path('dieta/',include('dieta.urls'),name='dieta'),
+    path('alimento/',include('alimento.urls'),name='alimento'),
+    path('diario/',include('diario.urls'),name='diario'),
+    path('formulario/',include('formulario.urls'),name='formulario'),
+    path('paciente/', include('paciente.urls'), name='paciente'),
 ]

@@ -32,6 +32,16 @@ class PacienteCriar(CreateView):
     
 class PacienteListar(ListView):
     model = Paciente
-    template_name = 'paciente/collapse.html'
+    template_name = 'core/home.html'
     context_object_name = 'pacientes'
+    
+    def get(self, request, *args, **kwargs):
+        print("Entrou no método get")  # Adicione esta linha para verificar se o método está sendo chamado
+        response = super().get(request, *args, **kwargs)
+        
+        # Imprima os pacientes
+        pacientes = self.object_list
+        print("Pacientes:", pacientes)
+
+        return response
 

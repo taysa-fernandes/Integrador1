@@ -13,4 +13,5 @@ class AlimentoCriar(CreateView):
 class AlimentoListar(ListView):
     model = Alimento
     template_name = 'alimento/alimentos.html'
+    context_object_name = 'alimentos'
 

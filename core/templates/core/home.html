@@ -1,4 +1,4 @@
-{% extends 'paciente/collapse.html' %}
+{% extends 'core/base.html' %}
 
 {% load static %}
 
@@ -76,9 +76,14 @@
         </button>
       </div>
 
-      {% block collapse %}
-        {{ block.super }}
-      {% endblock %}
+      {% comment %} {% block collapse %} {% endcomment %}
+        {% comment %} {{ block.super }} {% endcomment %}
+      {% comment %} {% endblock %} {% endcomment %}
+
+      {% for paciente in pacientes %}
+        {% include "paciente/collapse.html" %}
+      {% endfor %}      
+  
       <dialog class="cadastro-de-paciente" id="myModal">
         <button id="fecharModal"><i class="ph ph-x"></i></button>
         <div id="modal">
