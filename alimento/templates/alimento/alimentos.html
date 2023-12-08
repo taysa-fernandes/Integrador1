@@ -1,28 +1,28 @@
-{% extends 'alimento/collapse-alimentos.html' %}
+{% extends 'core/base.html' %}
 
 {% load static %}
 
 {% block sidebar %}
   <nav class="side-bar">
-    <a href="/alimentos" class="logo"><img src="{% static 'imagens/logo-diet-hub.svg' %} " alt="Logo DietHub" /></a>
+    <a href="{% url 'listar-alimentos' %}" class="logo"><img src="{% static 'imagens/logo-diet-hub.svg' %} " alt="Logo DietHub" /></a>
 
     <ul>
       <li class="opcao-do-menu">
-        <a href="/home">
+        <a href="{% url 'listar-pacientes'%}">
           <i class="ph ph-house-line"></i>
           <span>Home</span>
         </a>
       </li>
 
       <li class="opcao-do-menu">
-        <a href="/meus-formularios">
+        <a href="{% url 'meus-formularios' %}">
           <i class="ph ph-notepad"></i>
           <span>Formulários</span>
         </a>
       </li>
 
       <li class="opcao-do-menu opcao-do-menu-atual">
-        <a href="/alimentos">
+        <a href="{% url 'listar-alimentos' %}">
           <i class="ph ph-apple-logo"></i>
           <span>Alimentos</span>
         </a>
@@ -51,7 +51,7 @@
     <header>
       <nav class="breadcrumbs">
         <div class="breadcrumb">
-          <a href="/home">
+          <a href="{% url 'listar-pacientes'%}">
             <i class="ph ph-house-line"></i>
             <span>Home /</span>
           </a>
@@ -87,15 +87,15 @@
         <a href="/alimentos/substitutos">Substitutos</a>
         <hr />
       </div>
-
-      {% comment %} {% block collapse_alimentos %}
-        {{ block.super }}
-      {% endblock %} {% endcomment %}
+      {% for alimento in alimentos %}
+        {% include "alimento/collapse-alimentos.html" %}
+      {% endfor %}   
 
       <dialog class="cadastro-alimento" id="myModal">
         <button id="fecharModal"><i class="ph ph-x"></i></button>
 
-        <div id="modal"></div>
+        <div id="modal">
+        </div>
       </dialog>
     
     </section>
