@@ -44,14 +44,14 @@
     background-color: transparent;
 }
 
-.footer-collapse-pacientes #botao-editar {
+.footer-collapse-pacientes .botao-editar {
     border-radius: 10px;
     border: 1px solid #5550BC;
     color: #5550BC;
     padding: 8px 12px;
 }
 
-.footer-collapse-pacientes #botao-editar:hover {
+.footer-collapse-pacientes .botao-editar:hover {
     cursor: pointer;
     background-color: rgba(85, 80, 188, 14%);
 }
@@ -69,7 +69,7 @@
     color: #FF1E1E;
 }
 
-.footer-collapse-pacientes #botao-editar i {
+.footer-collapse-pacientes .botao-editar i {
     color: #5550BC;
 }
 

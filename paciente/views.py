@@ -7,13 +7,13 @@ from django.views.generic import CreateView,UpdateView,ListView,DeleteView
 class PacienteEditar(UpdateView):
     model = Paciente
     form_class = PacienteForm
-    template_name = 'paciente/cadastrarPaciente.html'
-    success_url = reverse_lazy('core/home.html')
+    template_name = 'paciente/editarPaciente.html'
+    success_url = reverse_lazy('listar-pacientes')
     pk_url_kwarg = 'id'
     
 class PacienteDeletar(DeleteView):
     model = Paciente
-    success_url = reverse_lazy('core/home.html')
+    success_url = reverse_lazy('listar-pacientes')
     pk_url_kwarg = 'id'
     
     def get(self, *args, **kwargs):
@@ -25,9 +25,6 @@ class PacienteCriar(CreateView):
     template_name = 'paciente/cadastrarPaciente.html'
     success_url = reverse_lazy('listar-pacientes')
     
-# def lista_pacientes(request):
-#     pacientes = Paciente.objects.all() 
-#     return render(request, 'core/home.html', {'pacientes': pacientes})
     
 class PacienteListar(ListView):
     model = Paciente
