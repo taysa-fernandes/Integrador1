@@ -1,0 +1,84 @@
+<div class="conteudo-modal-cadastrar-alimento">
+    <p class="titulo-modal-cadastrar-alimento">Editar alimento</p>
+  
+    <form class="formulario-cadastrar-alimento" method="post" action="{% url 'editar-alimento' alimento.id %}">
+      {% csrf_token %}    
+      <div class="form-item">
+        <label>Nome</label>
+        {{form.nome}}
+      </div>
+      
+      <div class="form-item">
+        <label>Tipo</label>
+        {{form.tipo}}
+      </div>
+      
+      <div class="container-inputs">
+        <div class="form-item">
+          <label>Porção (em g)</label>
+          {{form.porcao}}
+        </div>
+  
+        <div class="form-item">
+          <label>Calorias (em kcal)</label>
+          {{form.calorias}}
+        </div>
+  
+        <div class="form-item">
+          <label>Fibra alimentar</label>
+          {{form.fibra_alimentar}}
+        </div>
+  
+      </div>
+      
+      <div class="container-inputs">
+        <div class="form-item">
+          <label>Carboidratos</label>
+          {{form.carboidratos}}
+        </div>
+        <div class="form-item">
+          <label>Proteínas</label>
+          {{form.proteinas}}
+        </div>
+  
+        <div class="form-item">
+          <label>Gorduras</label>
+          {{form.gorduras}}
+        </div>
+      </div>
+  
+      <div id="checkbox-substituto">
+        <input type="checkbox"  id="substituto"/>
+        <span>É um alimento substituto</span>
+      </div>
+  
+      <div class="footer-modal-cadastrar-alimento">
+        <a href="{% url 'listar-alimentos' %}" id ="botao-cancelar-alimento"> Cancelar</a>
+        <button id="botao-salvar-alimento" type="submit">Salvar</button>
+      </div>
+    </form>
+  </div>
+  <script>
+    document.getElementById("botao-salvar-alimento").addEventListener("click", function(event) {
+      event.preventDefault();
+  
+      var checkbox = document.getElementById("substituto");
+      var eSubstituto = checkbox.checked; 
+  
+      var hiddenInput = document.createElement("input");
+      hiddenInput.setAttribute("type", "hidden");
+      hiddenInput.setAttribute("name", "e_substituto");
+      hiddenInput.setAttribute("value", eSubstituto ? "true" : "false");
+  
+      var form = document.querySelector(".formulario-cadastrar-alimento");
+      form.appendChild(hiddenInput); 
+  
+      form.submit();
+    });
+  
+    document.getElementById("botao-cancelar-alimento").addEventListener("click", function() {
+      var form = document.querySelector(".formulario-cadastrar-alimento");
+      form.reset();
+    });
+  </script>
+  
