@@ -48,7 +48,7 @@
     </div>
 
     <div id="checkbox-substituto">
-      <input type="checkbox" />
+      <input type="checkbox"  id="substituto"/>
       <span>É um alimento substituto</span>
     </div>
 
@@ -59,8 +59,25 @@
   </form>
 </div>
 <script>
+  document.getElementById("botao-salvar-alimento").addEventListener("click", function(event) {
+    event.preventDefault();
+
+    var checkbox = document.getElementById("substituto");
+    var eSubstituto = checkbox.checked; 
+
+    var hiddenInput = document.createElement("input");
+    hiddenInput.setAttribute("type", "hidden");
+    hiddenInput.setAttribute("name", "e_substituto");
+    hiddenInput.setAttribute("value", eSubstituto ? "true" : "false");
+
+    var form = document.querySelector(".formulario-cadastrar-alimento");
+    form.appendChild(hiddenInput); 
+
+    form.submit();
+  });
+
   document.getElementById("botao-cancelar-alimento").addEventListener("click", function() {
-    var form = document.getElementById("formulario");
+    var form = document.querySelector(".formulario-cadastrar-alimento");
     form.reset();
   });
 </script>

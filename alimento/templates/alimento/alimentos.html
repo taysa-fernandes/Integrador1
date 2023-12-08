@@ -83,13 +83,28 @@
       </div>
 
       <div class="nav-tipos-de-alimentos">
-        <a href="/alimentos/comuns" class="selecionado-tipo-alimento">Comuns</a>
-        <a href="/alimentos/substitutos">Substitutos</a>
+        <a href="{% url 'listar-alimentos' %}?tipo=comuns" class="{% if not request.GET.tipo or request.GET.tipo == 'comuns' %}selecionado-tipo-alimento{% endif %}">Comuns</a>
+        <a href="{% url 'listar-alimentos' %}?tipo=substitutos" class="{% if request.GET.tipo == 'substitutos' %}selecionado-tipo-alimento{% endif %}">Substitutos</a>
         <hr />
       </div>
-      {% for alimento in alimentos %}
-        {% include "alimento/collapse-alimentos.html" %}
-      {% endfor %}   
+      
+      {% if request.GET.tipo %}
+        {% for alimento in alimentos %}
+          {% if request.GET.tipo == 'comuns' and not alimento.e_substituto %}
+            {% include "alimento/collapse-alimentos.html" %}
+          {% elif request.GET.tipo == 'substitutos' and alimento.e_substituto %}
+            {% include "alimento/collapse-alimentos.html" %}
+          {% endif %}
+        {% endfor %}
+      {% else %}
+        {% for alimento in alimentos %}
+          {% if not alimento.e_substituto %}
+            {% include "alimento/collapse-alimentos.html" %}
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+
+      
 
       <dialog class="cadastro-alimento" id="myModal">
         <button id="fecharModal"><i class="ph ph-x"></i></button>
