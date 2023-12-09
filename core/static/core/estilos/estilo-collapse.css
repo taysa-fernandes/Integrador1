@@ -11,7 +11,7 @@
     background-color: #F9FAFB;
 }
 
-#collapse li label {
+.collapse-header {
     padding: 12px;
     display: flex;
     align-items: center;

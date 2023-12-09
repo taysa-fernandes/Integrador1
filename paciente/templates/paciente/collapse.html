@@ -1,7 +1,7 @@
 {% load static %}
   <ul id="collapse">
     <li>
-      <label for={{paciente.id}}>
+      <label class="collapse-header" for={{paciente.id}}>
         <div class="informacoes-do-paciente">
           <img src="{% static 'imagens/usuario.svg' %}" alt="Logo DietHub" /> {{ paciente.nome }}
         </div>

@@ -38,7 +38,6 @@
 
 dialog.cadastro-de-paciente {
     max-width: 640px;
-    max-height: 559px;
     border: none;
     position: relative;
     padding: 28px 52px;
@@ -172,4 +171,13 @@ dialog.cadastro-de-paciente {
 #botao-cancelar-paciente {
     background-color: transparent;
     color: black;
+}
+
+#fecharModal3 {
+    position: absolute;
+    margin: 22px 30px;
+    top: 0;
+    right: 0;
+    border: none;
+    background-color: transparent;
 }
