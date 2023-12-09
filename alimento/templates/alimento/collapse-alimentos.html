@@ -42,10 +42,10 @@
         </div>
 
         <div class="footer-collapse-pacientes">
-          <button id="botao-editar">
+          <button id="abrirModal2" hx-get={% url 'editar-alimento' id=alimento.id %} hx-trigger='click' hx-target='#modal2' hx-swap="innerHTML" class="botao-editar">
             <i class="ph ph-pencil-simple-line"></i>
-            <a id="abrirModal2" hx-get={% url 'editar-alimento' id=alimento.id %} hx-trigger='click' hx-target='#modal2' hx-swap="innerHTML">Editar</a>
-          <button id="botao-excluir">
+            <a>Editar</a>
+          <button class="botao-excluir">
             <i class="ph ph-trash"></i>
             <a href="{% url 'deletar-alimento' id=alimento.id %}">Excluir</a>
           </button>
