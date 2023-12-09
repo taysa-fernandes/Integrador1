@@ -1,41 +1,83 @@
-{% extends 'core/base.html' %}
-{% load static %}
+<div class="conteudo-modal-cadastrar-alimento">
+  <p class="titulo-modal-cadastrar-alimento">Cadastrar novo alimento</p>
 
-{% block main %}
-  <dialog class="cadastro-alimento" id="myModal">
-    <button id="fecharModal"><i class="ph ph-x"></i></button>
-    <div class="conteudo-modal-cadastrar-alimento">
-      <p class="titulo-modal-cadastrar-alimento">Cadastrar novo alimento</p>
+  <form class="formulario-cadastrar-alimento" method="post" action="{% url "cadastrar-alimento" %}">
+    {% csrf_token %}    
+    <div class="form-item">
+      <label>Nome</label>
+      {{form.nome}}
+    </div>
+    
+    <div class="form-item">
+      <label>Tipo</label>
+      {{form.tipo}}
+    </div>
+    
+    <div class="container-inputs">
+      <div class="form-item">
+        <label>Porção (em g)</label>
+        {{form.porcao}}
+      </div>
 
-      <form class="formulario-cadastrar-alimento">
-        <div class="form-item">
-          <label>Nome</label>
-          <input type="text" placeholder="Ex: Maçã" />
-        </div>
-        <div class="form-item">
-          <label>Tipo</label>
-          <input type="text" placeholder="Ex: Proteína" />
-        </div>
-        <div class="container-inputs">
-          <div class="form-item">
-            <label>Calorias (em kcal)</label>
-            <input type="text" placeholder="Ex: 21" />
-          </div>
-          <div class="form-item">
-            <label>Porção (em g)</label>
-            <input type="text" placeholder="(Ex: 50kg)" />
-          </div>
-        </div>
-        <div id="checkbox-substituto">
-          <input type="checkbox" />
-          <span>É um alimento substituto</span>
-        </div>
-      </form>
+      <div class="form-item">
+        <label>Calorias (em kcal)</label>
+        {{form.calorias}}
+      </div>
+
+      <div class="form-item">
+        <label>Fibra alimentar</label>
+        {{form.fibra_alimentar}}
+      </div>
+
+    </div>
+    
+    <div class="container-inputs">
+      <div class="form-item">
+        <label>Carboidratos</label>
+        {{form.carboidratos}}
+      </div>
+      <div class="form-item">
+        <label>Proteínas</label>
+        {{form.proteinas}}
+      </div>
+
+      <div class="form-item">
+        <label>Gorduras</label>
+        {{form.gorduras}}
+      </div>
+    </div>
+
+    <div id="checkbox-substituto">
+      <input type="checkbox"  id="substituto"/>
+      <span>É um alimento substituto</span>
     </div>
 
     <div class="footer-modal-cadastrar-alimento">
       <button id="botao-cancelar-alimento" type="Cancelar">Cancelar</button>
-      <button id="botao-salvar-alimento" type="Salvar">Salvar</button>
+      <button id="botao-salvar-alimento" type="submit">Salvar</button>
     </div>
-  </dialog>
-{% endblock %}
+  </form>
+</div>
+<script>
+  document.getElementById("botao-salvar-alimento").addEventListener("click", function(event) {
+    event.preventDefault();
+
+    var checkbox = document.getElementById("substituto");
+    var eSubstituto = checkbox.checked; 
+
+    var hiddenInput = document.createElement("input");
+    hiddenInput.setAttribute("type", "hidden");
+    hiddenInput.setAttribute("name", "e_substituto");
+    hiddenInput.setAttribute("value", eSubstituto ? "true" : "false");
+
+    var form = document.querySelector(".formulario-cadastrar-alimento");
+    form.appendChild(hiddenInput); 
+
+    form.submit();
+  });
+
+  document.getElementById("botao-cancelar-alimento").addEventListener("click", function() {
+    var form = document.querySelector(".formulario-cadastrar-alimento");
+    form.reset();
+  });
+</script>

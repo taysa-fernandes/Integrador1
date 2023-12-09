@@ -1,8 +1,8 @@
-from django.contrib import admin
-from django.urls import path
-from  alimento.views import alimentos,cadastrar_alimento
 
+from django.urls import path
+from  alimento.views import AlimentoCriar,AlimentoDeletar,AlimentoEditar
 urlpatterns = [
-    path('cadastrar-alimento',cadastrar_alimento, name='cadastrar-alimento'),
-    path('alimentos/', alimentos, name='listar-alimentos'),
+    path('cadastrar-alimento',AlimentoCriar.as_view(), name='cadastrar-alimento'),
+    path('alimentos/deletar/<int:id>',AlimentoDeletar.as_view(), name='deletar-alimento'),
+    path('alimentos/editar/<int:id>',AlimentoEditar.as_view(), name='editar-alimento'),
 ]

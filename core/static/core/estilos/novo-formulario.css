@@ -164,7 +164,7 @@ input[type="checkbox"]:checked::after {
     display: block;
 }
 
-.botao-excluir {
+.botao-excluir-formulario {
     padding: 9px 11px;
     color: #FF1E1E;
     font-family: 'Roboto', sans-serif;
@@ -179,11 +179,11 @@ input[type="checkbox"]:checked::after {
     justify-content: center;
 }
 
-.botao-excluir:hover {
+.botao-excluir-formulario:hover {
     cursor: pointer;
 }
 
-.botao-excluir i {
+.botao-excluir-formulario i {
     color: #FF1E1E;
     font-size: 20px;
 }

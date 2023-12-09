@@ -1,3 +1,5 @@
 from django.db import models
 
-# Create your models here.
+class Dieta(models.Model):
+    numero_de_refeicoes = models.IntegerField()
+

@@ -1,28 +1,28 @@
-{% extends 'alimento/collapse-alimentos.html' %}
+{% extends 'core/base.html' %}
 
 {% load static %}
 
 {% block sidebar %}
   <nav class="side-bar">
-    <a href="/alimentos" class="logo"><img src="{% static 'imagens/logo-diet-hub.svg' %} " alt="Logo DietHub" /></a>
+    <a href="{% url 'listar-alimentos' %}" class="logo"><img src="{% static 'imagens/logo-diet-hub.svg' %} " alt="Logo DietHub" /></a>
 
     <ul>
       <li class="opcao-do-menu">
-        <a href="/home">
+        <a href="{% url 'listar-pacientes'%}">
           <i class="ph ph-house-line"></i>
           <span>Home</span>
         </a>
       </li>
 
       <li class="opcao-do-menu">
-        <a href="/meus-formularios">
+        <a href="{% url 'meus-formularios' %}">
           <i class="ph ph-notepad"></i>
           <span>Formulários</span>
         </a>
       </li>
 
       <li class="opcao-do-menu opcao-do-menu-atual">
-        <a href="/alimentos">
+        <a href="{% url 'listar-alimentos' %}">
           <i class="ph ph-apple-logo"></i>
           <span>Alimentos</span>
         </a>
@@ -51,7 +51,7 @@
     <header>
       <nav class="breadcrumbs">
         <div class="breadcrumb">
-          <a href="/home">
+          <a href="{% url 'listar-pacientes'%}">
             <i class="ph ph-house-line"></i>
             <span>Home /</span>
           </a>
@@ -77,20 +77,43 @@
       <div class="cabecalho-conteudo-principal">
         <h1>Alimentos</h1>
 
-        <button class="botao-padrao" id="abrirModal" type="button">Novo alimento</button>
+        <button class="botao-padrao" id="abrirModal" type="button" hx-get={% url 'cadastrar-alimento' %} hx-trigger='click' hx-target='#modal' hx-swap="innerHTML">
+          Novo alimento
+        </button>
       </div>
 
       <div class="nav-tipos-de-alimentos">
-        <a href="/alimentos/comuns" class="selecionado-tipo-alimento">Comuns</a>
-        <a href="/alimentos/substitutos">Substitutos</a>
+        <a href="{% url 'listar-alimentos' %}?tipo=comuns" class="{% if not request.GET.tipo or request.GET.tipo == 'comuns' %}selecionado-tipo-alimento{% endif %}">Comuns</a>
+        <a href="{% url 'listar-alimentos' %}?tipo=substitutos" class="{% if request.GET.tipo == 'substitutos' %}selecionado-tipo-alimento{% endif %}">Substitutos</a>
         <hr />
       </div>
+      
+      {% if request.GET.tipo %}
+        {% for alimento in alimentos %}
+          {% if request.GET.tipo == 'comuns' and not alimento.e_substituto %}
+            {% include "alimento/collapse-alimentos.html" %}
+          {% elif request.GET.tipo == 'substitutos' and alimento.e_substituto %}
+            {% include "alimento/collapse-alimentos.html" %}
+          {% endif %}
+        {% endfor %}
+      {% else %}
+        {% for alimento in alimentos %}
+          {% if not alimento.e_substituto %}
+            {% include "alimento/collapse-alimentos.html" %}
+          {% endif %}
+        {% endfor %}
+      {% endif %}
 
-      {% block collapse_alimentos %}
-        {{ block.super }}
-      {% endblock %}
+      
+
+      <dialog class="cadastro-alimento" id="myModal">
+        <button id="fecharModal"><i class="ph ph-x"></i></button>
+
+        <div id="modal">
+        </div>
+      </dialog>
+    
     </section>
   </main>
-  {% include 'alimento/cadastrarAlimento.html' %} 
 </body>
 {% endblock %}

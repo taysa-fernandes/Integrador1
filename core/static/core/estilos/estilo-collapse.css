@@ -11,7 +11,7 @@
     background-color: #F9FAFB;
 }
 
-#collapse li label {
+.collapse-header {
     padding: 12px;
     display: flex;
     align-items: center;
@@ -36,32 +36,44 @@
 }
 
 .footer-collapse-pacientes button {
-    border: none;
     display: flex;
     align-items: center;
     gap: 4px;
     font-weight: bold;
     background-color: transparent;
+    padding: 8px 12px;
+    border-radius: 10px;
 }
 
-.footer-collapse-pacientes #botao-editar {
-    border-radius: 10px;
+.botao-editar {
     border: 1px solid #5550BC;
     color: #5550BC;
-    padding: 8px 12px;
 }
 
-.footer-collapse-pacientes #botao-editar:hover {
+.botao-editar a {
+    color: #5550BC;
+}
+
+.botao-editar i, .botao-excluir i { 
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.botao-editar:hover {
     cursor: pointer;
     background-color: rgba(85, 80, 188, 14%);
 }
 
-
-.footer-collapse-pacientes #botao-excluir {
+.botao-excluir {
+    border: 1px solid #FF1E1E;
     color: #FF1E1E;
 }
 
-.footer-collapse-pacientes #botao-excluir:hover {
+.botao-excluir a, .botao-excluir i {
+    color: #FF1E1E;
+}
+
+.botao-excluir:hover {
     cursor: pointer;
 }
 
@@ -69,7 +81,7 @@
     color: #FF1E1E;
 }
 
-.footer-collapse-pacientes #botao-editar i {
+.botao-editar i {
     color: #5550BC;
 }
 
