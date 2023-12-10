@@ -94,7 +94,12 @@ label {
     color: #000;
     border-radius: 10px;
 }
-
+.links-cadastro{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width:100%;
+}
 #input-esqueci-senha {
     margin-top: 8px;
     font-size: 16px;
@@ -102,7 +107,17 @@ label {
     text-decoration: none;
     float: right;
 }
-
+#input-cadastrar-se{
+    color:#0C9A61;
+    font-size: 16px;
+    font-weight: 800;
+    text-decoration: none;
+    order: -1;
+    margin-top: 8px;
+}
+#cadastro{
+    max-height: 650px !important;
+}
 /* login-main */
 #login-main {
     display: flex;

@@ -10,3 +10,5 @@ class Usuario(models.Model):
         return self.nome
     class Meta:
         abstract = True
+class Nutricionista(Usuario):
+    crn = models.CharField(max_length=10)

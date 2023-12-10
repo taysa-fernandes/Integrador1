@@ -13,22 +13,31 @@
     </div>
     <div id="login" class="login-container">
       <div class="conteudo-login-container">
-        <h2>Login</h2>
-        <h3>Faça login para continuar</h3>
-        <form action="../index.html">
+        <h2>Cadastro</h2>
+        <h3>Faça o seu cadastro</h3>
+        <form method="POST">
+          {% csrf_token %}
+          <div class="form-item">
+            <label for="" id="label-email">Nome:</label>
+            {{form.nome}}
+          </div>
           <div class="form-item">
             <label for="" id="label-email">Email:</label>
-            <input type="email" placeholder="user@gmail.com" />
+            {{form.email}}
+          </div>
+          <div class="form-item">
+            <label for="" id="label-email">Contato:</label>
+            {{form.contato}}
           </div>
           <div class="form-item">
             <label for="" id="label-senha">Senha:</label>
-            <input type="password" />
+            {{form.senha}}
           </div>
-          <div class="links-cadastro"> 
-            <a id="input-esqueci-senha" href="#">Esqueci a senha</a>
-            <a id="input-cadastrar-se" href={% url 'cadastrar-se' %}>Cadastrar-se</a>
+          <div class="form-item">
+            <label for="" id="label-email">CRN:</label>
+            {{form.crn}}
           </div>
-          <a id="botao-entrar" href="/home">Entrar</a>
+          <button type="submit"><a id="botao-entrar">Cadastrar</a></button>
         </form>
       </div>
     </div>
