@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import CreateView,UpdateView,ListView,DeleteView
-from .models import Pergunta,Resposta
+from .models import Pergunta,Resposta,Formulario
 from .forms import PerguntaForm,RespostaForm
 from django.urls import reverse_lazy
 
@@ -10,10 +10,20 @@ from django.urls import reverse_lazy
 # def novo_formulario(request):
 #     return render(request, 'formulario/novo-formulario.html')
 class FormularioCriar(CreateView):
-    model = Pergunta
-    form_class = PerguntaForm
+    model = Formulario
     template_name = 'formulario/novo-formulario.html'
+    form_class = PerguntaForm
     success_url = reverse_lazy('listar-formularios')
+
+    def form_valid(self, form):
+        formulario = form.save()  # Salva o formulário principal
+
+        perguntas = self.request.POST.getlist('pergunta')
+        for pergunta_texto in perguntas:
+            pergunta = Pergunta(pergunta=pergunta_texto, formulario=formulario)
+            pergunta.save()
+
+        return super().form_valid(form)
 class FormularioListar(ListView):
     model = Pergunta
     template_name = 'formulario/meus-formularios.html'

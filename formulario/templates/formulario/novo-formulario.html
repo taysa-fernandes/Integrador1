@@ -45,6 +45,8 @@
       <div class="novo-formulario">
         <form method="post" class="formulario-formulario" action="{% url 'cadastrar-formulario' %}">
           {% csrf_token %}
+          <input type="hidden" name="formulario_id" value="{{ formulario.id }}">
+
           <div id="container-tipo-formulario">
             {% for radio in form.tipo %}
               {{ radio.tag }} 
@@ -52,22 +54,22 @@
             {% endfor %}
           </div>
 
-          <div class="container-pergunta" id="pergunta-1">
-            <div class="form-item">
-              <label for="id_pergunta_1">Pergunta:</label>
-              {{form.pergunta}}
-            </div>
-
-            <div class="footer-pergunta">
-              <div class="checkbox">
-                <input type="checkbox" name="tipo-pergunta_1" id="tipo-pergunta_1" />
-                <label for="tipo-pergunta_1">Pergunta obrigatória</label>
+          <div id="perguntas-container">
+            <div class="container-pergunta" id="pergunta-1">
+              <div class="form-item">
+                {{ form.pergunta.label_tag }}
+                {{ form.pergunta }}
               </div>
-
-              <button class="botao-excluir" onclick="excluirPergunta(this)">
-                <i class="ph ph-trash"></i>
-                Excluir
-              </button>
+              <div class="footer-pergunta">
+                <div class="checkbox">
+                  <label for="{{ form.obrigatorio.id_for_label }}">Pergunta obrigatória</label>
+                  {{ form.obrigatorio }}
+                </div>
+                <button class="botao-excluir" onclick="excluirPergunta(this)">
+                  <i class="ph ph-trash"></i>
+                  Excluir
+                </button>
+              </div>
             </div>
           </div>
 
@@ -88,38 +90,29 @@
   function adicionarPergunta() {
     contadorPerguntas++;
 
-    const containerOriginal = document.getElementById(`pergunta-${contadorPerguntas - 1}`);
-    const novoContainer = containerOriginal.cloneNode(true);
-
+    const novoContainer = document.createElement('div');
+    novoContainer.classList.add('container-pergunta');
     novoContainer.id = `pergunta-${contadorPerguntas}`;
 
-    const formItems = novoContainer.querySelectorAll('.form-item');
-    formItems.forEach((item) => {
-      const label = item.querySelector('label');
-      const input = item.querySelector('input[type="text"]');
+    novoContainer.innerHTML = `
+      <div class="form-item">
+        <label for="id_formulario-${contadorPerguntas}-pergunta">Pergunta:</label>
+        <input type="text" name="formulario-${contadorPerguntas}-pergunta" id="id_formulario-${contadorPerguntas}-pergunta">
+      </div>
+      <div class="footer-pergunta">
+        <div class="checkbox">
+          <label for="id_formulario-${contadorPerguntas}-obrigatorio">Pergunta obrigatória</label>
+          <input type="checkbox" name="formulario-${contadorPerguntas}-obrigatorio" id="id_formulario-${contadorPerguntas}-obrigatorio">
+        </div>
+        <button class="botao-excluir" onclick="excluirPergunta(this)">
+          <i class="ph ph-trash"></i>
+          Excluir
+        </button>
+      </div>
+    `;
 
-      const newLabelFor = label.getAttribute('for').replace(`_1`, `_${contadorPerguntas}`);
-      label.setAttribute('for', newLabelFor);
-
-      const newInputId = input.getAttribute('id').replace(`id_pergunta_1`, `id_pergunta_${contadorPerguntas}`);
-      input.setAttribute('id', newInputId);
-
-      const newInputName = input.getAttribute('name').replace(`pergunta_1`, `pergunta_${contadorPerguntas}`);
-      input.setAttribute('name', newInputName);
-      input.value = ''; // Limpa o valor do campo ao clonar
-    });
-
-    const checkbox = novoContainer.querySelector('input[type="checkbox"]');
-    const newCheckboxId = checkbox.getAttribute('id').replace(`tipo-pergunta_1`, `tipo-pergunta_${contadorPerguntas}`);
-    checkbox.setAttribute('id', newCheckboxId);
-    const newCheckboxName = checkbox.getAttribute('name').replace(`tipo-pergunta_1`, `tipo-pergunta_${contadorPerguntas}`);
-    checkbox.setAttribute('name', newCheckboxName);
-
-    const botaoNovaQuestao = document.querySelector('.botao-nova-questao');
-    const breakLine = document.createElement('br');
-
-    botaoNovaQuestao.parentNode.insertBefore(breakLine, botaoNovaQuestao);
-    botaoNovaQuestao.parentNode.insertBefore(novoContainer, botaoNovaQuestao);
+    const perguntasContainer = document.getElementById('perguntas-container');
+    perguntasContainer.appendChild(novoContainer);
   }
 
   function excluirPergunta(button) {
@@ -127,4 +120,5 @@
     perguntaParaExcluir.parentNode.removeChild(perguntaParaExcluir);
   }
 </script>
+
 {% endblock %}
