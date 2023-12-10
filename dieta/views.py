@@ -1,7 +1,7 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import get_object_or_404, render, redirect
 from django.http import HttpResponseRedirect
 from django.views import View
-from django.urls import reverse
+from django.urls import reverse_lazy
 from alimento.models import Alimento
 from .models import Refeicao, Dieta, AlimentoRefeicao
 from django.views.generic import CreateView,UpdateView,ListView,DeleteView
@@ -9,12 +9,15 @@ from django.views.generic import CreateView,UpdateView,ListView,DeleteView
 # Create your views here.
 
 class CadastrarDieta(View):
-    template_name = 'dieta/cadastrar-dieta.html' 
+    # template_name = 'dieta/cadastrar-dieta.html' 
     
     def post(self, request):
         dados_formulario = request.POST
+        dieta_id = dados_formulario.get('dieta_id')
+        dieta = get_object_or_404(Dieta, id=dieta_id)
+        # dieta = get_object_or_404(Dieta, id=dieta_id)
         
-        for refeicao in Refeicao.objects.all():
+        for refeicao in dieta.refeicoes.all():
                 nome_opcao = f'opcao_{refeicao.id}'
                 nome_substituto = f'substituto_{refeicao.id}'
 
@@ -39,8 +42,8 @@ class ListarDietas(ListView):
     context_object_name = 'dietas'
     
 class DefinirNumeroRefeicoes(View):
-    template_name = 'dieta/definir-numero-refeicoes.html'  # Adjust the template name as needed
-    success_url = 'cadastrar-dieta'  # Adjust the success URL as needed
+    template_name = 'dieta/definir-numero-refeicoes.html' 
+    success_url = 'cadastrar-dieta'
 
     def get(self, request):
         return render(request, self.template_name)
@@ -65,5 +68,18 @@ class DefinirNumeroRefeicoes(View):
 
         return render(request, self.template_name)
 
+class EditarDieta(UpdateView):
+    model = Refeicao
+    template_name = 'dieta/cadastrar-dieta.html'
+    pk_url_kwarg = 'id'
+
+    def get_success_url(self):
+        return reverse_lazy('listar-dietas') 
+
 def dieta(request):
     return render(request, 'dieta/visualizar-dieta.html')
+
+class DeletarDieta(DeleteView):
+    model = Dieta
+    pk_url_kwarg = 'id'
+    success_url = reverse_lazy('listar-dietas') 

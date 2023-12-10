@@ -37,21 +37,16 @@
 
         {% endfor %}
 
-        {% comment %} <div class="footer-collapse-pacientes">
-          <button id="abrirModal4" hx-get={% url 'editar-dieta' id=dieta.id %} hx-trigger='click' hx-target='#modal4' hx-swap="innerHTML" class="botao-editar">
+        <div class="footer-collapse-pacientes">
+          <button class="botao-editar">
             <i class="ph ph-pencil-simple-line"></i>
-            <a>Editar</a>
+            <a href="{% url 'editar-dieta' id=dieta.id %}">Editar</a>
           </button>
           <button class="botao-excluir">
             <i class="ph ph-trash"></i>
-            <a href="{% url 'deletar-paciente' id=dieta.id %}">Excluir</a>
+            <a href="{% url 'deletar-dieta' id=dieta.id %}">Excluir</a>
           </button>
-        </div> {% endcomment %}
-      </div>
-      {% comment %} <dialog class="cadastro-de-dieta" id="myModal4">
-        <button id="fecharModal4"><i class="ph ph-x"></i></button>
-        <div id="modal4">
         </div>
-      </dialog> {% endcomment %}
+      </div>
     </li>
   </ul>
