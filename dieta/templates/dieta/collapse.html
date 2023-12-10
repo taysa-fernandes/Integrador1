@@ -16,14 +16,19 @@
             </div>
 
 
-            {% for alimento in alimentos %}
+            {% for alimento_refeicao in refeicao.alimentos.all %}
               <div class="detalhes-collapse">
-                <span class="titulo-collapse">Opção: </span>
-                <span class="dados-do-cliente">{{alimento.nome}}</span>
+                {% if not alimento_refeicao.alimento.e_substituto %}
+                  <span class="titulo-collapse">Opção: </span>
+                  <span class="dados-do-cliente">{{alimento_refeicao.alimento.nome}}</span>
+                {% endif %}
               </div>
+
               <div class="detalhes-collapse">
-                <span class="titulo-collapse">Substituto: </span>
-                <span class="dados-do-cliente">{{alimento.substituto}}</span>
+                {% if alimento_refeicao.alimento.e_substituto %}
+                  <span class="titulo-collapse">Substituto: </span>
+                  <span class="dados-do-cliente">{{alimento.substituto}}</span>
+                {% endif %}
               </div>
             {% endfor %}
           </div>
@@ -32,7 +37,7 @@
 
         {% endfor %}
 
-        <div class="footer-collapse-pacientes">
+        {% comment %} <div class="footer-collapse-pacientes">
           <button id="abrirModal4" hx-get={% url 'editar-dieta' id=dieta.id %} hx-trigger='click' hx-target='#modal4' hx-swap="innerHTML" class="botao-editar">
             <i class="ph ph-pencil-simple-line"></i>
             <a>Editar</a>
@@ -41,12 +46,12 @@
             <i class="ph ph-trash"></i>
             <a href="{% url 'deletar-paciente' id=dieta.id %}">Excluir</a>
           </button>
-        </div>
+        </div> {% endcomment %}
       </div>
-      <dialog class="cadastro-de-dieta" id="myModal4">
+      {% comment %} <dialog class="cadastro-de-dieta" id="myModal4">
         <button id="fecharModal4"><i class="ph ph-x"></i></button>
         <div id="modal4">
         </div>
-      </dialog>
+      </dialog> {% endcomment %}
     </li>
   </ul>

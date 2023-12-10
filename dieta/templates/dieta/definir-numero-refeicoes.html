@@ -4,6 +4,10 @@
       <form class="formulario-paciente" id="formulario" method="post" action="{% url 'definir-numero-refeicoes' %}">
         {% csrf_token %}
         <div class="form-item">
+          <label>Nome da dieta: </label>
+          <input placeholder="ex.: Dieta para perda de gordura" name="nome-dieta" id="nome-dieta">
+        </div>
+        <div class="form-item">
           <label>Quantidade de refeições: </label>
           <input type="number" name="numero-refeicoes" id="numero-refeicoes">
         </div>

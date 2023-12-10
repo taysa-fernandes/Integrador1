@@ -45,10 +45,10 @@
         </button>
       </div>
 
-      {% for paciente in pacientes %}
-        {% include "paciente/collapse.html" %}
+      {% for dieta in dietas %}
+        {% include "dieta/collapse.html" %}
       {% endfor %}      
-  
+
       <dialog class="cadastro-de-paciente" id="myModal">
         <button id="fecharModal"><i class="ph ph-x"></i></button>
         <div id="modal">

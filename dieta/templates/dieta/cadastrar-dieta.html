@@ -30,33 +30,39 @@
         <h1>Dietas</h1>
       </div>
 
-      {% for refeicao in numero_refeicoes %}
-        <div class="refeicao">
-            <p>Refeição {{refeicao}}</p>
 
-            <div class="item-dieta">
-                <div class="alimento">
-                    <label class="titulo-alimento">Opção 1:</label>
-                    <select class="input-nome-alimento">
-                        {% for alimento in alimentos %}
-                            {% if alimento.e_substituto %}
-                                <option value="{{alimento.nome}}">{{alimento.nome}}</option>
-                            {% endif %}
-                        {% endfor %}
-                    </select>
-                </div>
-                <div class="alimento">
-                    <label class="titulo-alimento">Substituto:</label>
-                    <select class="input-nome-alimento">
-                        {% for alimento in alimentos %}
-                            {% if not alimento.e_substituto %}
-                                <option value="{{alimento.nome}}">{{alimento.nome}}</option>
-                            {% endif %}
-                        {% endfor %}
-                    </select>
-                </div>
-            </div>
-        </div>
-      {% endfor %}
+      <form method="post" action="{% url "cadastrar-dieta" %}">
+        {% csrf_token %}
+        {% for refeicao in refeicoes %}
+          <div class="refeicao">
+              <p>{{refeicao.nome}}</p>
+  
+              <div class="item-dieta">
+                  <div class="alimento">
+                      <label class="titulo-alimento">Opção 1:</label>
+                      <select name=f"opcao_{{alimento.id}}" class="input-nome-alimento">
+                          {% for alimento in alimentos %}
+                              {% if not alimento.e_substituto %}
+                                  <option value="{{alimento.nome}}">{{alimento.nome}}</option>
+                              {% endif %}
+                          {% endfor %}
+                      </select>
+                  </div>
+                  <div class="alimento">
+                      <label class="titulo-alimento">Substituto:</label>
+                      <select name=f"substituto_{{alimento.id}}" class="input-nome-alimento">
+                          {% for alimento in alimentos %}
+                              {% if alimento.e_substituto %}
+                                  <option value="{{alimento.nome}}">{{alimento.nome}}</option>
+                              {% endif %}
+                          {% endfor %}
+                      </select>
+                  </div>
+              </div>
+          </div>
+        {% endfor %}
+
+        <button id="botao-salvar" type="submit">Salvar alterações</button>
+      </form>
     </main>
 {% endblock %}
