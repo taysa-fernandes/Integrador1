@@ -1,0 +1,17 @@
+{% load static %}
+<section class="dia">
+    <div class="datas">
+      <div class="container-datas">
+        <h1 class="dia-semana" id="selecionado-semana">{{dia_da_semana}}</h1>
+        <h1 class="data" id="selecionado-dia"> {{dia_do_mes}} </h1>
+      </div>
+    </div>
+    <div class="registros">
+      <i class="ph ph-notepad"></i>
+      <p>Ainda não há registros para esse dia</p>
+    </div>
+    <button class="button-registrar" id="abrirModal" type="button">
+      <i class="ph ph-plus"></i>
+      Registrar
+    </button>
+</section>

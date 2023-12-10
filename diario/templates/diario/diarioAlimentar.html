@@ -18,105 +18,14 @@
       <section id="main-diario">
         <h1>Diário alimentar</h1>
         <p>Faça seu registro no diário alimentar. Clique no dia desejado</p>
-      </section>
-      <div id="conteudo-diario">
-        <section class="dia">
-          <div class="datas">
-            <div class="container-datas">
-              <h1 class="dia-semana" id="selecionado-semana">Terça</h1>
-              <h1 class="data" id="selecionado-dia">26</h1>
-            </div>
-            {% comment %} <hr class="linha-vertical" /> {% endcomment %}
-          </div>
-          <div class="registros">
-            <i class="ph ph-notepad"></i>
-            <p>Ainda não há registros para esse dia</p>
-          </div>
-          <button class="button-registrar" id="abrirModal" type="button">
-            <i class="ph ph-plus"></i>
-            Registrar
-          </button>
-        </section>
-        <section class="dia">
-          <div class="datas">
-            <div class="container-datas">
-              <h1 class="dia-semana">Terça</h1>
-              <h1 class="data">26</h1>
-            </div>
-            {% comment %} <hr class="linha-vertical" /> {% endcomment %}
-          </div>
-          <div class="container-registros">
-            <div class="registros">
-              <i class="ph ph-notepad"></i>
-              <p>Ainda não há registros para esse dia</p>
-            </div>
-            <button class="button-registrar" id="abrirModal" type="button">
-              <i class="ph ph-plus"></i>
-              Registrar
-            </button>
-          </div>
-        </section>
-        <section class="dia">
-          <div class="datas">
-            <div class="container-datas">
-              <h1 class="dia-semana">Terça</h1>
-              <h1 class="data">26</h1>
-            </div>
-            {% comment %} <hr class="linha-vertical" /> {% endcomment %}
-          </div>
-          <div class="container-registros">
-            <div class="registros">
-              <i class="ph ph-notepad"></i>
-              <p>Ainda não há registros para esse dia</p>
-            </div>
-            <button class="button-registrar" id="abrirModal" type="button">
-              <i class="ph ph-plus"></i>
-              Registrar
-            </button>
-          </div>
-        </section>
         <div class="mes">
-          <p>Setembro</p>
+          <p>{{mes}}</p>
         </div>
-        <section class="dia">
-          <div class="datas">
-            <div class="container-datas">
-              <h1 class="dia-semana">Terça</h1>
-              <h1 class="data">26</h1>
-            </div>
-            {% comment %} <hr class="linha-vertical" /> {% endcomment %}
-          </div>
-          <div class="container-registros">
-            <div class="registros">
-              <i class="ph ph-notepad"></i>
-              <p>Ainda não há registros para esse dia</p>
-            </div>
-            <button class="button-registrar" id="abrirModal" type="button">
-              <i class="ph ph-plus"></i>
-              Registrar
-            </button>
-          </div>
-        </section>
-        <section class="dia">
-          <div class="datas">
-            <div class="container-datas">
-              <h1 class="dia-semana">Terça</h1>
-              <h1 class="data">26</h1>
-            </div>
-            {% comment %} <hr class="linha-vertical" /> {% endcomment %}
-          </div>
-          <div class="container-registros">
-            <div class="registros">
-              <i class="ph ph-notepad"></i>
-              <p>Ainda não há registros para esse dia</p>
-            </div>
+      </section>
 
-            <button class="button-registrar" id="abrirModal" type="button">
-              <i class="ph ph-plus"></i>
-              Registrar
-            </button>
-          </div>
-        </section>
+
+      <div id="conteudo-diario">
+        {% include "diario/dia.html" with dia_do_mes=dia_do_mes dia_da_semana=dia_da_semana %}
       </div>
     </main>
     {% include 'diario/registrarProgresso.html' %}
