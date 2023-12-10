@@ -8,21 +8,21 @@
     <header>
       <nav class="breadcrumbs">
         <div class="breadcrumb">
-          <a href="/home">
+          <a href="{% url 'listar-pacientes'%}">
             <i class="ph ph-house-line"></i>
             <span>Home /</span>
           </a>
         </div>
 
         <div class="breadcrumb">
-          <a href="/meus-formularios">
+          <a href="{% url 'listar-formularios' %}">
             <i class="ph ph-notepad"></i>
             <span>Meus formulários /</span>
           </a>
         </div>
 
         <div class="breadcrumb">
-          <a href="/novo-formulario">
+          <a href="{% url 'cadastrar-formulario' %}">
             <i class="ph ph-notepad"></i>
             <span>Novo formulário /</span>
           </a>
@@ -43,51 +43,88 @@
       </div>
 
       <div class="novo-formulario">
-        <div id="container-tipo-formulario">
-          <div class="tipo-formulario">
-            <input type="radio" name="pre-consulta" id="pre-consulta" />
-            <label for="pre-consulta">Pré-consulta</label>
+        <form method="post" class="formulario-formulario" action="{% url 'cadastrar-formulario' %}">
+          {% csrf_token %}
+          <div id="container-tipo-formulario">
+            {% for radio in form.tipo %}
+              {{ radio.tag }} 
+              <label for="{{ radio.id_for_label }}">{{ radio.choice_label }}</label><br>
+            {% endfor %}
           </div>
 
-          <div class="tipo-formulario">
-            <input type="radio" name="pos-consulta" id="pos-consulta" />
-            <label for="pos-consulta">Pós-consulta</label>
-          </div>
-        </div>
-
-        <div class="container-pergunta">
-          <div class="form-item">
-            <label for="pergunta">Pergunta:</label>
-            <input type="text" placeholder="Ex: Você tem alguma restrição alimentar?" name="pergunta" />
-          </div>
-
-          <div class="form-item">
-            <label for="resposta">Resposta:</label>
-            <textarea name="resposta" placeholder="A resposta do paciente será inserida aqui" id="resposta" cols="30" rows="10"></textarea>
-          </div>
-
-          <div class="footer-pergunta">
-            <div class="checkbox">
-              <input type="checkbox" name="tipo-pergunta" id="tipo-pergunta" />
-              <label for="tipo-pergunta">Pergunta obrigatória</label>
+          <div class="container-pergunta" id="pergunta-1">
+            <div class="form-item">
+              <label for="id_pergunta_1">Pergunta:</label>
+              {{form.pergunta}}
             </div>
 
-            <button class="botao-excluir">
-              <i class="ph ph-trash"></i>
-              Excluir
-            </button>
+            <div class="footer-pergunta">
+              <div class="checkbox">
+                <input type="checkbox" name="tipo-pergunta_1" id="tipo-pergunta_1" />
+                <label for="tipo-pergunta_1">Pergunta obrigatória</label>
+              </div>
+
+              <button class="botao-excluir" onclick="excluirPergunta(this)">
+                <i class="ph ph-trash"></i>
+                Excluir
+              </button>
+            </div>
           </div>
+
+          <button class="botao-nova-questao" type="button" onclick="adicionarPergunta()">
+            <i class="ph ph-plus"></i>
+            Nova questão
+          </button>
+
+          <button id="botao-salvar" type="submit">Salvar alterações</button>
+        </form>
         </div>
-
-        <button class="botao-nova-questao" id="abrirModal">
-          <i class="ph ph-plus"></i>
-          Nova questão
-        </button>
-
-        <button id="botao-salvar">Salvar alterações</button>
-      </div>
     </section>
   </main>
-  {% include 'formulario/tipo-questao.html' %} 
 </body>
+<script>
+  let contadorPerguntas = 1;
+
+  function adicionarPergunta() {
+    contadorPerguntas++;
+
+    const containerOriginal = document.getElementById(`pergunta-${contadorPerguntas - 1}`);
+    const novoContainer = containerOriginal.cloneNode(true);
+
+    novoContainer.id = `pergunta-${contadorPerguntas}`;
+
+    const formItems = novoContainer.querySelectorAll('.form-item');
+    formItems.forEach((item) => {
+      const label = item.querySelector('label');
+      const input = item.querySelector('input[type="text"]');
+
+      const newLabelFor = label.getAttribute('for').replace(`_1`, `_${contadorPerguntas}`);
+      label.setAttribute('for', newLabelFor);
+
+      const newInputId = input.getAttribute('id').replace(`id_pergunta_1`, `id_pergunta_${contadorPerguntas}`);
+      input.setAttribute('id', newInputId);
+
+      const newInputName = input.getAttribute('name').replace(`pergunta_1`, `pergunta_${contadorPerguntas}`);
+      input.setAttribute('name', newInputName);
+      input.value = ''; // Limpa o valor do campo ao clonar
+    });
+
+    const checkbox = novoContainer.querySelector('input[type="checkbox"]');
+    const newCheckboxId = checkbox.getAttribute('id').replace(`tipo-pergunta_1`, `tipo-pergunta_${contadorPerguntas}`);
+    checkbox.setAttribute('id', newCheckboxId);
+    const newCheckboxName = checkbox.getAttribute('name').replace(`tipo-pergunta_1`, `tipo-pergunta_${contadorPerguntas}`);
+    checkbox.setAttribute('name', newCheckboxName);
+
+    const botaoNovaQuestao = document.querySelector('.botao-nova-questao');
+    const breakLine = document.createElement('br');
+
+    botaoNovaQuestao.parentNode.insertBefore(breakLine, botaoNovaQuestao);
+    botaoNovaQuestao.parentNode.insertBefore(novoContainer, botaoNovaQuestao);
+  }
+
+  function excluirPergunta(button) {
+    const perguntaParaExcluir = button.parentNode.parentNode;
+    perguntaParaExcluir.parentNode.removeChild(perguntaParaExcluir);
+  }
+</script>
 {% endblock %}

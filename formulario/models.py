@@ -2,11 +2,11 @@ from django.db import models
 
 class Pergunta(models.Model):
     TIPOS_FORMULARIO = (
-        ('pre', 'Pré-consulta'),
-        ('pos', 'Pós-consulta'),
+        ('pre-consulta', 'Pré-consulta'),
+        ('pos-consulta', 'Pós-consulta'),
     )
 
-    tipo = models.CharField(max_length=3, choices=TIPOS_FORMULARIO)
+    tipo = models.CharField(max_length=15, choices=TIPOS_FORMULARIO,default='pre-consulta')
     pergunta = models.CharField(max_length=255)
     obrigatorio = models.BooleanField(default=False)
 
