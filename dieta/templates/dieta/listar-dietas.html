@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block sidebar %}
-  {% include "core/sidebar.html" with opcao_menu_atual='listar-pacientes' %}
+  {% include "core/sidebar.html" with opcao_menu_atual='listar-dietas' %}
 {% endblock %}
 
 
@@ -18,6 +18,13 @@
             <span>Home /</span>
           </a>
         </div>
+
+        <div class="breadcrumb">
+            <a href="{% url 'listar-dietas'%}">
+              <i class="ph ph-house-line"></i>
+              <span>Dietas /</span>
+            </a>
+          </div>
       </nav>
 
       <div class="informacoes-do-usuario">
@@ -30,11 +37,11 @@
     </header>
     <section class="conteudo-principal">
       <div class="cabecalho-conteudo-principal">
-        <h1>Seus pacientes</h1>
+        <h1>Dietas</h1>
 
-        <button class="botao-padrao" id="abrirModal" hx-get={% url 'cadastrar-paciente' %} hx-trigger='click' hx-target='#modal' hx-swap="innerHTML">
-          <i class="ph ph-user-circle-plus"></i>
-          Novo paciente
+        <button class="botao-padrao" id="abrirModal" hx-get={% url 'definir-numero-refeicoes' %} hx-trigger='click' hx-target='#modal' hx-swap="innerHTML">
+          <i class="ph ph-plus"></i>
+          Nova dieta
         </button>
       </div>
 

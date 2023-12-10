@@ -1,0 +1,44 @@
+    <div class="conteudo-modal">
+        <p class="titulo-modal">Editar paciente</p>
+        {% if paciente %}
+            <form class="formulario-paciente" id="formulario" method="post" action="{% url 'editar-paciente' paciente.id %}">
+            {% csrf_token %}
+            <div class="form-item">
+                <label>Nome</label>
+                {{form.nome}}
+            </div>
+            <div class="container-inputs">
+                <div class="form-item">
+                <label for="idade">Idade:</label>
+                    {{form.idade}}
+                </div>
+                <div class="form-item">
+                <label for="peso">Peso (em Kg)</label>
+                {{form.peso}}
+                </div>
+                <div class="form-item">
+                <label>Altura (m)</label>
+                {{form.altura}}
+                </div>
+            </div>
+            <div class="form-item">
+                <label>Email</label>
+                {{form.email}}
+            </div>
+            <div class="container-inputs">
+                <div class="form-item">
+                <label>CPF</label>
+                {{form.cpf}}
+                </div>
+                <div class="form-item">
+                <label>Whatsapp</label>
+                    {{form.contato}}
+                </div>
+            </div>
+            <div class="footer-modal-criar-paciente">
+                <a href="{% url 'listar-pacientes' %}" id="botao-cancelar-paciente">Cancelar</a>
+                <button id="botao-salvar-paciente" type="submit">Salvar</button>
+            </div>
+            </form>
+        {% endif %}
+    </div>

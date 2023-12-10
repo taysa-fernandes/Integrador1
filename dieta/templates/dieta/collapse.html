@@ -1,0 +1,52 @@
+{% load static %}
+  <ul id="collapse">
+    <li>
+      <label class="collapse-header" for={{dieta.id}}>
+        <div class="informacoes-do-paciente">
+          <i class="ph ph-cookie"></i> {{ dieta.nome }}
+        </div>
+        <i class="ph ph-caret-down"></i>
+      </label>
+      <input type="radio" name="collapse" id="{{dieta.id}}" {% if forloop.first %}checked{% endif %} />
+      <div class="content">
+        {% for refeicao in refeicoes %}
+          <div class="informacoes-gerais-do-paciente">
+            <div class="detalhes-collapse">
+              <span class="titulo-collapse">{{refeicao.nome}}</span>
+            </div>
+
+
+            {% for alimento in alimentos %}
+              <div class="detalhes-collapse">
+                <span class="titulo-collapse">Opção: </span>
+                <span class="dados-do-cliente">{{alimento.nome}}</span>
+              </div>
+              <div class="detalhes-collapse">
+                <span class="titulo-collapse">Substituto: </span>
+                <span class="dados-do-cliente">{{alimento.substituto}}</span>
+              </div>
+            {% endfor %}
+          </div>
+
+          <hr class="solid" />
+
+        {% endfor %}
+
+        <div class="footer-collapse-pacientes">
+          <button id="abrirModal4" hx-get={% url 'editar-dieta' id=dieta.id %} hx-trigger='click' hx-target='#modal4' hx-swap="innerHTML" class="botao-editar">
+            <i class="ph ph-pencil-simple-line"></i>
+            <a>Editar</a>
+          </button>
+          <button class="botao-excluir">
+            <i class="ph ph-trash"></i>
+            <a href="{% url 'deletar-paciente' id=dieta.id %}">Excluir</a>
+          </button>
+        </div>
+      </div>
+      <dialog class="cadastro-de-dieta" id="myModal4">
+        <button id="fecharModal4"><i class="ph ph-x"></i></button>
+        <div id="modal4">
+        </div>
+      </dialog>
+    </li>
+  </ul>

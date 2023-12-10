@@ -1,62 +1,62 @@
 {% extends 'core/base.html' %}
 {% load static %}
 
+{% block sidebar %}
+  {% include "core/sidebar.html" with opcao_menu_atual='listar-dietas' %}
+{% endblock %}
+
 {% block main %}
-  <dialog class="cadastrar-dieta" id="myModal2">
-    <button id="fecharModal2"><i class="ph ph-x"></i></button>
-    <div class="conteudo-modal-criar-dieta">
-      <p class="titulo-modal-criar-dieta">Criar dieta</p>
-      <div class="menu-refeicoes">
-        <div class="refeicao" id="refeicao-atual">
-          <p>Refeição I</p>
+<main>
+    <header>
+      <nav class="breadcrumbs">
+        <div class="breadcrumb">
+          <a href="{% url 'listar-pacientes'%}">
+            <i class="ph ph-house-line"></i>
+            <span>Home /</span>
+          </a>
         </div>
+      </nav>
+
+      <div class="informacoes-do-usuario">
+        <div class="texto-informacoes-do-usuario">
+          <span class="nome-do-usuario">Claudinei Camilo</span>
+          <span class="tipo-de-usuario">Nutricionista</span>
+        </div>
+        <img src="{% static 'imagens/usuario.svg' %}" alt="Logo DietHub" />
+      </div>
+    </header>
+    <section class="conteudo-principal">
+      <div class="cabecalho-conteudo-principal">
+        <h1>Dietas</h1>
+      </div>
+
+      {% for refeicao in numero_refeicoes %}
         <div class="refeicao">
-          <p>Refeição II</p>
+            <p>Refeição {{refeicao}}</p>
+
+            <div class="item-dieta">
+                <div class="alimento">
+                    <label class="titulo-alimento">Opção 1:</label>
+                    <select class="input-nome-alimento">
+                        {% for alimento in alimentos %}
+                            {% if alimento.e_substituto %}
+                                <option value="{{alimento.nome}}">{{alimento.nome}}</option>
+                            {% endif %}
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="alimento">
+                    <label class="titulo-alimento">Substituto:</label>
+                    <select class="input-nome-alimento">
+                        {% for alimento in alimentos %}
+                            {% if not alimento.e_substituto %}
+                                <option value="{{alimento.nome}}">{{alimento.nome}}</option>
+                            {% endif %}
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
         </div>
-        <div class="refeicao">
-          <p>Refeição III</p>
-        </div>
-      </div>
-      <div class="container-opcoes">
-        <div class="item-dieta">
-          <div class="alimento">
-            <label class="titulo-alimento">Opção 1:</label>
-            <input class="input-nome-alimento" type="text" value="Salada de frutas" />
-          </div>
-          <div class="alimento">
-            <label class="titulo-alimento">Substituto:</label>
-            <input class="input-nome-alimento" type="text" value="Vitamina" />
-          </div>
-        </div>
-        <div class="item-dieta">
-          <div class="alimento">
-            <label class="titulo-alimento">Opção 2:</label>
-            <input class="input-nome-alimento" type="text" value="Salada de frutas" />
-          </div>
-          <div class="alimento">
-            <label class="titulo-alimento">Substituto:</label>
-            <input class="input-nome-alimento" type="text" value="Vitamina" />
-          </div>
-        </div>
-        <div class="item-dieta">
-          <div class="alimento">
-            <label class="titulo-alimento">Opção 1:</label>
-            <input class="input-nome-alimento" type="text" value="Salada de frutas" />
-          </div>
-          <div class="alimento">
-            <label class="titulo-alimento">Substituto:</label>
-            <input class="input-nome-alimento" type="text" value="Vitamina" />
-          </div>
-        </div>
-      </div>
-      <button type="button" id="adicionar-alimento">
-        <i class="ph ph-plus"></i>
-        Adicionar alimento
-      </button>
-      <div class="footer-modal-dieta">
-        <button id="botao-cancelar-dieta" type="Cancelar">Cancelar</button>
-        <button id="botao-salvar-dieta" type="Salvar">Salvar</button>
-      </div>
-    </div>
-  </dialog>
+      {% endfor %}
+    </main>
 {% endblock %}
