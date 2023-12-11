@@ -47,17 +47,18 @@ dialog.cadastrar-dieta {
 }
 
 .refeicao {
+    color: #0C9A61;
+    width: 100%;
+    margin-bottom: 28px;
     display: flex;
     flex-direction: column;
-    gap: 7px;
-    border-bottom: 4px solid #A8A8A8;
-    color: #A8A8A8;
-    width: 130px;
-    align-items: start;
+    gap: 24px;
 }
 
-.refeicao:hover {
-    cursor: pointer;
+.refeicao p {
+    font-size: 14px;
+    font-weight: bold;
+    font-family: 'Inter', sans-serif;
 }
 
 #refeicao-atual {
@@ -138,6 +139,7 @@ dialog.cadastrar-dieta {
     font-weight: 400;
     border: 1px solid #F4F3F3;
     border-radius: 10px;
+    padding: 12px;
 }
 
 .adicionar-alimento .ph-plus {

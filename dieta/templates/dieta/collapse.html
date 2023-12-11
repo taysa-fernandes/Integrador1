@@ -1,0 +1,52 @@
+{% load static %}
+  <ul id="collapse">
+    <li>
+      <label class="collapse-header" for={{dieta.id}}>
+        <div class="informacoes-do-paciente">
+          <i class="ph ph-cookie"></i> {{ dieta.nome }}
+        </div>
+        <i class="ph ph-caret-down"></i>
+      </label>
+      <input type="radio" name="collapse" id="{{dieta.id}}" {% if forloop.first %}checked{% endif %} />
+      <div class="content">
+        {% for refeicao in refeicoes %}
+          <div class="informacoes-gerais-do-paciente">
+            <div class="detalhes-collapse">
+              <span class="titulo-collapse">{{refeicao.nome}}</span>
+            </div>
+
+
+            {% for alimento_refeicao in refeicao.alimentos.all %}
+              <div class="detalhes-collapse">
+                {% if not alimento_refeicao.alimento.e_substituto %}
+                  <span class="titulo-collapse">Opção: </span>
+                  <span class="dados-do-cliente">{{alimento_refeicao.alimento.nome}}</span>
+                {% endif %}
+              </div>
+
+              <div class="detalhes-collapse">
+                {% if alimento_refeicao.alimento.e_substituto %}
+                  <span class="titulo-collapse">Substituto: </span>
+                  <span class="dados-do-cliente">{{alimento.substituto}}</span>
+                {% endif %}
+              </div>
+            {% endfor %}
+          </div>
+
+          <hr class="solid" />
+
+        {% endfor %}
+
+        <div class="footer-collapse-pacientes">
+          <button class="botao-editar">
+            <i class="ph ph-pencil-simple-line"></i>
+            <a href="{% url 'editar-dieta' id=dieta.id %}">Editar</a>
+          </button>
+          <button class="botao-excluir">
+            <i class="ph ph-trash"></i>
+            <a href="{% url 'deletar-dieta' id=dieta.id %}">Excluir</a>
+          </button>
+        </div>
+      </div>
+    </li>
+  </ul>

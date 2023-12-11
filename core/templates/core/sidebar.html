@@ -1,0 +1,49 @@
+{% load static %}
+
+<nav class="side-bar">
+  <a href="{% url 'listar-pacientes'%}" class="logo"><img src="{% static 'imagens/logo-diet-hub.svg' %}" alt="Logo DietHub" /></a>
+
+  <ul>
+      <li class="opcao-do-menu {% if opcao_menu_atual == 'listar-pacientes' %}opcao-do-menu-atual{% endif %}">
+          <a href="{% url 'listar-pacientes'%}">
+              <i class="ph ph-house-line"></i>
+              <span>Home</span>
+          </a>
+      </li>
+
+      <li class="opcao-do-menu {% if opcao_menu_atual == 'meus-formularios' %}opcao-do-menu-atual{% endif %}">
+          <a href="{% url 'meus-formularios' %}">
+              <i class="ph ph-notepad"></i>
+              <span>Formulários</span>
+          </a>
+      </li>
+
+      <li class="opcao-do-menu {% if opcao_menu_atual == 'listar-alimentos' %}opcao-do-menu-atual{% endif %}">
+          <a href="{% url 'listar-alimentos' %}">
+              <i class="ph ph-apple-logo"></i>
+              <span>Alimentos</span>
+          </a>
+      </li>
+
+      <li class="opcao-do-menu {% if opcao_menu_atual == 'listar-dietas' %}opcao-do-menu-atual{% endif %}">
+          <a href="{% url 'listar-dietas' %}">
+              <i class="ph ph-heartbeat"></i>
+              <span>Dietas</span>
+          </a>
+      </li>
+
+      <li class="opcao-do-menu {% if opcao_menu_atual == 'configuracoes' %}opcao-do-menu-atual{% endif %}">
+          <a href="#">
+              <i class="ph ph-gear-six"></i>
+              <span>Configurações</span>
+          </a>
+      </li>
+
+      <li class="opcao-do-menu">
+          <a href="#">
+              <i class="ph ph-moon-stars"></i>
+              <span>Tema dark</span>
+          </a>
+      </li>
+  </ul>
+</nav>
