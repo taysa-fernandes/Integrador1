@@ -10,7 +10,7 @@
       <i class="ph ph-notepad"></i>
       <p>Ainda não há registros para esse dia</p>
     </div>
-    <button class="button-registrar" id="abrirModal" type="button">
+    <button hx-get={% url 'atualizar-diario' id=id_diario %} hx-trigger='click' hx-target='#modal' hx-swap="innerHTML" class="button-registrar" id="abrirModal" type="button">
       <i class="ph ph-plus"></i>
       Registrar
     </button>

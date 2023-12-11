@@ -3,7 +3,7 @@ from django.http import HttpResponseRedirect
 from django.views import View
 from django.urls import reverse_lazy
 from alimento.models import Alimento
-from .models import Refeicao, Dieta, AlimentoRefeicao
+from .models import Refeicao, Dieta
 from django.views.generic import CreateView,UpdateView,ListView,DeleteView
 
 # Create your views here.
@@ -29,8 +29,7 @@ class CadastrarDieta(View):
                     alimento_opcao = Alimento.objects.get(nome=opcao_selecionada)
                     alimento_substituto = Alimento.objects.get(nome=substituto_selecionado)
 
-                    AlimentoRefeicao.objects.create(alimento=alimento_opcao, refeicao=refeicao)
-                    AlimentoRefeicao.objects.create(alimento=alimento_substituto, refeicao=refeicao)
+                    refeicao.alimentos.set([alimento_opcao, alimento_substituto])
             
             
         return redirect('listar-dietas')

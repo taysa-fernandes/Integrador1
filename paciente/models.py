@@ -16,4 +16,5 @@ class Paciente(Usuario):
     objetivo = models.CharField(max_length=20,blank=True)
     diagnostico = models.BooleanField(default=False)
     status = models.IntegerField(choices=status_paciente,default=1,blank=True)
+    data_criacao = models.DateTimeField(auto_now_add=True, editable=False)
     

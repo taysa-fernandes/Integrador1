@@ -25,10 +25,18 @@
 
 
       <div id="conteudo-diario">
-        {% include "diario/dia.html" with dia_do_mes=dia_do_mes dia_da_semana=dia_da_semana %}
+        {% for diario in diarios %}
+         {% include "diario/dia.html" with dia_do_mes=diario.dia_do_mes dia_da_semana=diario.dia_da_semana id_diario=diario.id %}    
+        {% endfor %}
+
       </div>
     </main>
-    {% include 'diario/registrarProgresso.html' %}
+    <dialog class="main-progresso" id="myModal">
+      <button id="fecharModal"><i class="ph ph-x"></i></button>
+      <div id="modal" class="conteudo-modal">
+          
+      </div>
+    </dialog>
     <script>
       document.addEventListener('DOMContentLoaded', function () {
         const openModal = document.getElementById('abrirModal')

@@ -1,108 +1,62 @@
-{% extends 'core/base.html' %}
-{% load static %}
+<div class="topo-progresso-h1">
+  <h1>Registrar progresso</h1>
+  <h3>Faça seu registro de hoje no diário alimentar</h3>
+</div>
+<div class="informacao">
+  <p id="data">26/09</p>
+  <button class="botao-adicionar-info">
+    <i class="ph ph-plus"></i>
+    Adicionar informação
+  </button>
+</div>
 
-{% block main %}
-  <dialog class="main-progresso" id="myModal">
-    <div class="conteudo-modal">
-      <div class="topo-progresso-h1">
-        <h1>Registrar progresso</h1>
-        <h3>Faça seu registro de hoje no diário alimentar</h3>
-      </div>
-      <div class="informacao">
-        <p id="data">26/09</p>
-        <button class="botao-adicionar-info">
-          <i class="ph ph-plus"></i>
-          Adicionar informação
-        </button>
-      </div>
+<form action="{% url 'atualizar-diario' diario.id %}" method="post">
+  {% csrf_token %}
 
-      <div class="cards">
-        <div class="card">
-          <div class="titulo-card">
-            <i class="ph ph-coffee"></i>
-            <p id="label-de-cafe">Café da manhã</p>
-          </div>
-          <div class="conteudo-card">
-            <div class="container-opcao">
-              <div class="opcao-alimento">
-                <input type="radio" name="opcao-1" value="Salada de frutas (50kcal)" />
-                <label>
-                  <span class="titulo-opcao">Opção 1:</span>
-                  <span class="alimento">Salada de frutas (50kcal)</span>
-                </label>
-              </div>
-              <div class="opcao-alimento">
-                <input type="radio" name="opcao-2" value="Vitamina (50kcal)" />
-                <label>
-                  <span class="titulo-opcao">Opção 2:</span>
-                  <span class="alimento">Vitamina (50kcal)</span>
-                </label>
-              </div>
-            </div>
-            <div class="container-opcao">
-              <div class="opcao-alimento">
-                <input type="radio" name="substituto-2" value="Salada de frutas (50kcal)" />
-                <label>
-                  <span class="titulo-opcao">Substituto:</span>
-                  <span class="alimento">Salada de frutas (50kcal)</span>
-                </label>
-              </div>
-              <div class="opcao-alimento">
-                <input type="radio" name="substituto-1" value="Vitamina (50kcal)" />
-                <label>
-                  <span class="titulo-opcao">Substituto:</span>
-                  <span class="alimento">Vitamina (50kcal)</span>
-                </label>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="titulo-card">
-            <i class="ph ph-coffee"></i>
-            <p id="label-de-almoco">Almoço</p>
-          </div>
-          <div class="conteudo-card">
-            <div class="container-opcao">
-              <div class="opcao-alimento">
-                <input type="radio" name="opcao-1" value="Salada de frutas (50kcal)" />
-                <label>
-                  <span class="titulo-opcao">Opção 1:</span>
-                  <span class="alimento">Salada de frutas (50kcal)</span>
-                </label>
-              </div>
-              <div class="opcao-alimento">
-                <input type="radio" name="opcao-2" value="Vitamina (50kcal)" />
-                <label>
-                  <span class="titulo-opcao">Opção 2:</span>
-                  <span class="alimento">Vitamina (50kcal)</span>
-                </label>
-              </div>
-            </div>
-            <div class="container-opcao">
-              <div class="opcao-alimento">
-                <input type="radio" name="substituto-1" value="Vitamina (50kcal)" />
-                <label>
-                  <span class="titulo-opcao">Substituto:</span>
-                  <span class="alimento">Vitamina (50kcal)</span>
-                </label>
-              </div>
-              <div class="opcao-alimento">
-                <input type="radio" name="substituto-2" value="Salada de frutas (50kcal)" />
-                <label>
-                  <span class="titulo-opcao">Substituto:</span>
-                  <span class="alimento">Salada de frutas (50kcal)</span>
-                </label>
-              </div>
-            </div>
-          </div>
-        </div>
+  <div class="cards">
+  {% for refeicao in dieta.refeicoes.all %}
+    <div class="card">
+      <div class="titulo-card">
+        <i class="ph ph-coffee"></i>
+        <p id="label-de-cafe"> {{refeicao.nome}} </p>
       </div>
-      <div class="footer-modal">
-        <button id="botao-cancelar" type="button">Cancelar</button>
-        <button id="botao-salvar-progresso" type="button">Salvar</button>
+      <div class="conteudo-card">
+        <div class="container-opcao">
+
+          {% for alimento in refeicao.alimentos.all %}
+            {% if not alimento.e_substituto %}
+              <div class="opcao-alimento">
+                  <input type="radio" name="{{form.alimentos.html_name}}" value="{{alimento.id}}" />
+                  <label>
+                    <span class="titulo-opcao">Opção {{forloop.counter}}:</span>
+                    <span class="alimento">{{alimento.nome}} ({{alimento.calorias}}kcal)</span>
+                  </label>
+                </div>
+            {% else %}
+
+              <div class="opcao-alimento">
+                <input type="radio" name="{{form.alimentos.html_name}}" value="{{alimento.id}}" />
+                <label>
+                  <span class="titulo-opcao">Substituto {{forloop.counter}}:</span>
+                  <span class="alimento">{{alimento.nome}} ({{alimento.calorias}}kcal)</span>
+                </label>
+              </div>
+            {%endif%}
+          
+
+          {% endfor %}
+
+        </div>
       </div>
     </div>
-    <button id="fecharModal"><i class="ph ph-x"></i></button>
-  </dialog>
-{% endblock %}
+  </div>
+  {% endfor %}
+  
+  <div class="footer-modal">
+    <button id="botao-cancelar" type="button">Cancelar</button>
+    <button id="botao-salvar-progresso" type="submit">Salvar</button>
+  </div>
+  
+</form>
+
+
