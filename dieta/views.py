@@ -52,7 +52,7 @@ class DefinirNumeroRefeicoes(View):
         nome_dieta = request.POST.get('nome-dieta')
 
         if numero_refeicoes and nome_dieta:
-            numero_refeicoes_int = range(1, int(numero_refeicoes) + 1)
+            numero_refeicoes_int = range(1, int(numero_refeicoes) + 1)            
             dieta = Dieta.objects.create(nome=nome_dieta)
             refeicoes = [Refeicao.objects.create(nome=f'Refeição {num_refeicao}', dieta=dieta)
                          for num_refeicao in numero_refeicoes_int]

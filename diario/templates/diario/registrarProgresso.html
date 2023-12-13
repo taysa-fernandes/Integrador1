@@ -23,7 +23,7 @@
       <div class="conteudo-card">
         <div class="container-opcao">
 
-          {% for alimento in refeicao.alimentos.all %}
+          {% comment %} {% for alimento in refeicao.alimentos.all %}
             {% if not alimento.e_substituto %}
               <div class="opcao-alimento">
                   <input type="radio" name="{{form.alimentos.html_name}}" value="{{alimento.id}}" />
@@ -44,7 +44,20 @@
             {%endif%}
           
 
-          {% endfor %}
+          {% endfor %} {% endcomment %}
+
+          <ul>
+            {% for refeicao in refeicoes_do_dia %}
+              <li>
+                <strong>{{ refeicao.nome }}</strong>:
+                <ul>
+                  {% for alimento in refeicao.alimentos.all %}
+                    <li>{{ alimento.nome }}</li>
+                  {% endfor %}
+                </ul>
+              </li>
+            {% endfor %}
+          </ul>
 
         </div>
       </div>
