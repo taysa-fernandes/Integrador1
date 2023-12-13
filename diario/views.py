@@ -11,11 +11,12 @@ from django.urls import reverse_lazy
 from .models import Diario
 from django.core.serializers import serialize
 
+locale.setlocale(locale.LC_TIME, 'pt_BR.utf-8')
+
 # Create your views here.
 class CriarDiario(View):
     
     def get(self, request): 
-        locale.setlocale(locale.LC_TIME, 'pt_BR.utf-8')
 
         data_atual = datetime.now()
         
@@ -93,6 +94,6 @@ class ListarDiarios(ListView):
 
         for diario in context['diarios']:
             diario.dia_do_mes = diario.data.day
-            diario.dia_da_semana = diario.data.strftime('%A').capitalize()
+            diario.dia_da_semana = diario.data.strftime('%A').capitalize().replace("-feira", "")
 
         return context
