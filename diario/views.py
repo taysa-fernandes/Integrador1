@@ -17,8 +17,7 @@ class CriarDiario(View):
     def get(self, request): 
         locale.setlocale(locale.LC_TIME, 'pt_BR.utf-8')
 
-        # data_atual = datetime.now()
-        data_atual = datetime(2023, 12, 13)
+        data_atual = datetime.now()
         
         dia_do_mes = data_atual.day
         mes = data_atual.strftime("%B").capitalize()  # Nome do mês em português
