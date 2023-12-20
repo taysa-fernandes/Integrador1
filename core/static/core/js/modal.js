@@ -1,15 +1,22 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const openModal = document.getElementById("abrirModal");
-    const modal = document.getElementById("myModal");
-    const closeButton = document.getElementById("fecharModal")
-    openModal.addEventListener("click", () => {
-        console.log("modal")
-        modal.showModal();
+    const botoesAbrirModal = document.querySelectorAll(".abrirModal");
 
+    botoesAbrirModal.forEach(botao => {
+        botao.addEventListener("click", () => {
+            modal.showModal();    
+        });
+        
     });
-    closeButton.addEventListener("click", () => {
-        modal.close();
-    });
+
+    const modal = document.getElementById("myModal");
+    const botoesFecharModal = document.querySelectorAll(".fecharModal")
+
+    botoesFecharModal.forEach((button) => {
+        button.addEventListener("click", () => {
+            modal.close();
+        });
+    })
+
 });
 document.addEventListener("DOMContentLoaded", function() {
     const openModal = document.getElementById("abrirModal2");

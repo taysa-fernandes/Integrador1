@@ -1,0 +1,17 @@
+{% load static %}
+<section class="dia">
+    <div class="datas">
+      <div class="container-datas">
+        <h1 class="dia-semana" id="selecionado-semana">{{ diario.data|date:"l"|cut:"-feira" }}</h1>
+        <h1 class="data" id="selecionado-dia"> {{diario.data.day}} </h1>
+      </div>
+    </div>
+    <div class="registros">
+      <i class="ph ph-notepad"></i>
+      <p>Ainda não há registros para esse dia</p>
+    </div>
+    <button hx-get={% url 'atualizar-diario' id=id_diario %} hx-trigger='click' hx-target='#modal' hx-swap="innerHTML" class="abrirModal button-registrar" type="button">
+      <i class="ph ph-plus"></i>
+      Registrar
+    </button>
+</section>

@@ -6,3 +6,4 @@ class PacienteForm(ModelForm):
     class Meta:
         model = Paciente
         fields = '__all__'
+        exclude = ['data_criacao']
