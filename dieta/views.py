@@ -15,21 +15,20 @@ class CadastrarDieta(View):
         dados_formulario = request.POST
         dieta_id = dados_formulario.get('dieta_id')
         dieta = get_object_or_404(Dieta, id=dieta_id)
-        # dieta = get_object_or_404(Dieta, id=dieta_id)
         
         for refeicao in dieta.refeicoes.all():
-                nome_opcao = f'opcao_{refeicao.id}'
-                nome_substituto = f'substituto_{refeicao.id}'
+            nome_opcao = f'opcao_{refeicao.id}'
+            nome_substituto = f'substituto_{refeicao.id}'
 
-                opcao_selecionada = dados_formulario.get(nome_opcao)
-                substituto_selecionado = dados_formulario.get(nome_substituto)
+            opcao_selecionada = dados_formulario.get(nome_opcao)
+            substituto_selecionado = dados_formulario.get(nome_substituto)
 
-                # opção e substituto foram selecionados
-                if opcao_selecionada and substituto_selecionado:
-                    alimento_opcao = Alimento.objects.get(nome=opcao_selecionada)
-                    alimento_substituto = Alimento.objects.get(nome=substituto_selecionado)
+            # opção e substituto foram selecionados
+            if opcao_selecionada and substituto_selecionado:
+                alimento_opcao = Alimento.objects.get(nome=opcao_selecionada)
+                alimento_substituto = Alimento.objects.get(nome=substituto_selecionado)
 
-                    refeicao.alimentos.set([alimento_opcao, alimento_substituto])
+                refeicao.alimentos.set([alimento_opcao, alimento_substituto])
             
             
         return redirect('listar-dietas')
@@ -57,10 +56,11 @@ class DefinirNumeroRefeicoes(View):
             refeicoes = [Refeicao.objects.create(nome=f'Refeição {num_refeicao}', dieta=dieta)
                          for num_refeicao in numero_refeicoes_int]
             alimentos = Alimento.objects.all()
-
+            
             context = {
                 'refeicoes': refeicoes,
                 'alimentos': alimentos,
+                'dieta': dieta
             }
 
             return render(request, 'dieta/cadastrar-dieta.html', context)
