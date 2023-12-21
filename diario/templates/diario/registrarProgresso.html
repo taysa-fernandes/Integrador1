@@ -14,55 +14,43 @@
   {% csrf_token %}
 
   <div class="cards">
-  {% for refeicao in dieta.refeicoes.all %}
-    <div class="card">
-      <div class="titulo-card">
-        <i class="ph ph-coffee"></i>
-        <p id="label-de-cafe"> {{refeicao.nome}} </p>
-      </div>
-      <div class="conteudo-card">
-        <div class="container-opcao">
+    {% for refeicao in dieta.refeicoes.all %}
+      <div class="card">
+        <div class="titulo-card">
+          <i class="ph ph-coffee"></i>
+          <p id="label-de-cafe"> {{refeicao.nome}} </p>
+        </div>
+        <div class="conteudo-card">
+          <div class="container-opcao">
 
-          {% comment %} {% for alimento in refeicao.alimentos.all %}
-            {% if not alimento.e_substituto %}
-              <div class="opcao-alimento">
-                  <input type="radio" name="{{form.alimentos.html_name}}" value="{{alimento.id}}" />
+
+            {% for alimento .all %}
+              {% if not alimento.e_substituto %}
+                <div class="opcao-alimento">
+                  <input type="radio" name="{{form.alimentos.html_name}}" value="{{alimento.id}}" {% if alimento in object.alimentos.all  %}checked{% endif %} />
+                   {% comment %} {{form.alimentos}} {% endcomment %}
+                  {% comment %} {{form.alimentos}} {% endcomment %}
                   <label>
                     <span class="titulo-opcao">Opção {{forloop.counter}}:</span>
                     <span class="alimento">{{alimento.nome}} ({{alimento.calorias}}kcal)</span>
                   </label>
                 </div>
-            {% else %}
+              {% else %}
 
-              <div class="opcao-alimento">
-                <input type="radio" name="{{form.alimentos.html_name}}" value="{{alimento.id}}" />
-                <label>
-                  <span class="titulo-opcao">Substituto {{forloop.counter}}:</span>
-                  <span class="alimento">{{alimento.nome}} ({{alimento.calorias}}kcal)</span>
-                </label>
-              </div>
-            {%endif%}
-          
-
-          {% endfor %} {% endcomment %}
-
-          <ul>
-            {% for refeicao in refeicoes_do_dia %}
-              <li>
-                <strong>{{ refeicao.nome }}</strong>:
-                <ul>
-                  {% for alimento in refeicao.alimentos.all %}
-                    <li>{{ alimento.nome }}</li>
-                  {% endfor %}
-                </ul>
-              </li>
-            {% endfor %}
-          </ul>
-
+                <div class="opcao-alimento">
+                  <input type="radio" name="{{form.alimentos.html_name}}" value="{{alimento.id}}" {% if alimento in object.alimentos.all  %}checked{% endif %}/>
+                  <label>
+                    <span class="titulo-opcao">Substituto {{forloop.counter}}:</span>
+                    <span class="alimento">{{alimento.nome}} ({{alimento.calorias}}kcal)</span>
+                  </label> 
+                  {% comment %} {{form.alimentos}} {% endcomment %}
+                </div>
+              {%endif%}
+            {% endfor %} 
+          </div>
         </div>
       </div>
     </div>
-  </div>
   {% endfor %}
   
   <div class="footer-modal">
@@ -72,6 +60,6 @@
   
 </form>
 
-{{ form.errors}}
+{{form.errors}}
 
 

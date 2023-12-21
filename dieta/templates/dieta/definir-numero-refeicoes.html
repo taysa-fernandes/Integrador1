@@ -1,7 +1,7 @@
 
     <div class="conteudo-modal">
       <p class="titulo-modal-cadastrar-alimento">Defina o número de refeições</p>
-      <form class="formulario-paciente" id="formulario" method="post" action="{% url 'definir-numero-refeicoes' %}">
+      <form class="formulario-paciente" id="formulario" method="post" action="{% url 'cadastrar-dieta' %}">
         {% csrf_token %}
         <div class="form-item">
           <label>Nome da dieta: </label>

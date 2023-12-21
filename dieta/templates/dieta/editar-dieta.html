@@ -1,0 +1,71 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block sidebar %}
+  {% include "core/sidebar.html" with opcao_menu_atual='listar-dietas' %}
+{% endblock %}
+
+{% block main %}
+<main>
+    <header>
+      <nav class="breadcrumbs">
+        <div class="breadcrumb">
+          <a href="{% url 'listar-pacientes'%}">
+            <i class="ph ph-house-line"></i>
+            <span>Home /</span>
+          </a>
+        </div>
+      </nav>
+
+      <div class="informacoes-do-usuario">
+        <div class="texto-informacoes-do-usuario">
+          <span class="nome-do-usuario">Claudinei Camilo</span>
+          <span class="tipo-de-usuario">Nutricionista</span>
+        </div>
+        <img src="{% static 'imagens/usuario.svg' %}" alt="Logo DietHub" />
+      </div>
+    </header>
+    <section class="conteudo-principal">
+      <div class="cabecalho-conteudo-principal">
+        <h1>Dietas</h1>
+      </div>
+
+
+      <form method="post" action="{% url 'editar-dieta' dieta.id %}">
+        {% csrf_token %}
+        
+        {% for informacao_refeicao in informacoes_refeicoes %}
+          <div class="refeicao">
+            <p>{{ informacao_refeicao.refeicao.nome }}</p>
+
+            <div class="item-dieta">
+              <div class="alimento">
+                <label class="titulo-alimento">Opção 1:</label>
+                <select name="opcao_{{ informacao_refeicao.refeicao.id }}" class="input-nome-alimento">
+                  {% for alimento in informacao_refeicao.alimentos %}
+                    {% if not alimento.e_substituto %}
+                      <option value="{{ alimento.nome}}">{{ alimento.nome }}</option>
+                    {% endif %}
+                  {% endfor %}
+                </select>
+              </div>
+              <div class="alimento">
+                <label class="titulo-alimento">Substituto:</label>
+                <select name="substituto_{{ informacao_refeicao.refeicao.id  }}" class="input-nome-alimento">
+                  {% for alimento in informacao_refeicao.alimentos %}
+                    {% if alimento.e_substituto %}
+                      <option value="{{ alimento.nome }}">{{ alimento.nome }}</option>
+                    {% endif %}
+                  {% endfor %}
+                </select>
+              </div>
+            </div>
+          </div>
+      {% endfor %}
+
+        <input type="number" style="display: none;" value="{{ dieta.id }}" name="dieta_id">
+
+        <button id="botao-salvar" type="submit">Salvar alterações</button>
+      </form>
+    </main>
+{% endblock %}

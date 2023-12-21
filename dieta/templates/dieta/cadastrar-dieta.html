@@ -40,7 +40,7 @@
               <div class="item-dieta">
                   <div class="alimento">
                       <label class="titulo-alimento">Opção 1:</label>
-                      <select name=f"opcao_{{alimento.id}}" class="input-nome-alimento">
+                      <select name="opcao_{{refeicao.id}}" class="input-nome-alimento">
                           {% for alimento in alimentos %}
                               {% if not alimento.e_substituto %}
                                   <option value="{{alimento.nome}}">{{alimento.nome}}</option>
@@ -50,7 +50,7 @@
                   </div>
                   <div class="alimento">
                       <label class="titulo-alimento">Substituto:</label>
-                      <select name=f"substituto_{{alimento.id}}" class="input-nome-alimento">
+                      <select name="substituto_{{refeicao.id}}" class="input-nome-alimento">
                           {% for alimento in alimentos %}
                               {% if alimento.e_substituto %}
                                   <option value="{{alimento.nome}}">{{alimento.nome}}</option>
@@ -62,7 +62,7 @@
           </div>
         {% endfor %}
 
-        <input type="number" style="display: none;" value="{{dieta.id}}">
+        <input type="number" style="display: none;" value="{{dieta.id}}" name="dieta_id">
 
         <button id="botao-salvar" type="submit">Salvar alterações</button>
       </form>

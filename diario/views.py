@@ -10,6 +10,7 @@ from dieta.models import Dieta
 from django.urls import reverse_lazy
 from .models import Diario
 from django.core.serializers import serialize
+from django.contrib.messages.views import SuccessMessageMixin
 
 locale.setlocale(locale.LC_TIME, 'pt_BR.utf-8')
 
@@ -44,7 +45,7 @@ class CriarDiario(View):
             novo_diario.paciente = paciente
             
             refeicoes_serializadas = serialize('json', dieta_do_dia.refeicoes.all())
-            novo_diario.refeicoes_do_dia = refeicoes_serializadas
+            novo_diario.refeicoes = refeicoes_serializadas
             
             novo_diario.save()
             
@@ -62,12 +63,13 @@ class RegistrarProgressoNoDiario(CreateView):
          
         return context
     
-class AtualizarDiario(UpdateView):
+class AtualizarDiario(SuccessMessageMixin,  UpdateView):
     model = Diario
     form_class = DiarioForm
     template_name = 'diario/registrarProgresso.html'
     success_url = reverse_lazy('listar-diarios')
     pk_url_kwarg = 'id'
+    success_message = 'Diário registrado!'
     
     def get_context_data(self, **kwargs: Any) -> dict[str, Any]:      
         context = super().get_context_data(**kwargs)
@@ -80,8 +82,10 @@ class AtualizarDiario(UpdateView):
         
         context['dieta'] = paciente.dietas.filter(status='andamento').first()
         
-        context['refeicoes_do_dia'] = diario.refeicoes_do_dia
-            
+        context['refeicoes'] = diario.refeicoes.all()
+        
+        print('alimentos aqui: ', self.get_object().alimentos.all())
+                    
         return context
     
 class ListarDiarios(ListView):
@@ -92,8 +96,8 @@ class ListarDiarios(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
 
-        for diario in context['diarios']:
-            diario.dia_do_mes = diario.data.day
-            diario.dia_da_semana = diario.data.strftime('%A').capitalize().replace("-feira", "")
+        # for diario in context['diarios']:
+        #     diario.dia_do_mes = diario.data.day
+        #     diario.dia_da_semana = diario.data.strftime('%A').capitalize().replace("-feira", "").encode('utf-8').decode('utf-8')
 
         return context
