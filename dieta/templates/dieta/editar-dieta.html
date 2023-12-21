@@ -34,15 +34,15 @@
       <form method="post" action="{% url 'editar-dieta' dieta.id %}">
         {% csrf_token %}
         
-        {% for refeicao in refeicoes %}
+        {% for informacao_refeicao in informacoes_refeicoes %}
           <div class="refeicao">
-            <p>{{ refeicao.nome }}</p>
+            <p>{{ informacao_refeicao.refeicao.nome }}</p>
 
             <div class="item-dieta">
               <div class="alimento">
                 <label class="titulo-alimento">Opção 1:</label>
-                <select name="opcao_{{ refeicao.id }}" class="input-nome-alimento">
-                  {% for alimento in alimentos %}
+                <select name="opcao_{{ informacao_refeicao.refeicao.id }}" class="input-nome-alimento">
+                  {% for alimento in informacao_refeicao.alimentos %}
                     {% if not alimento.e_substituto %}
                       <option value="{{ alimento.id }}">{{ alimento.nome }}</option>
                     {% endif %}
@@ -52,7 +52,7 @@
               <div class="alimento">
                 <label class="titulo-alimento">Substituto:</label>
                 <select name="substituto_{{ refeicao.id }}" class="input-nome-alimento">
-                  {% for alimento in alimentos %}
+                  {% for alimento in informacao_refeicao.alimentos %}
                     {% if alimento.e_substituto %}
                       <option value="{{ alimento.id }}">{{ alimento.nome }}</option>
                     {% endif %}

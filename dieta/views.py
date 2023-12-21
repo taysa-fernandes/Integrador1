@@ -21,7 +21,6 @@ class CadastrarDieta(View):
         dados_formulario = request.POST
         dieta_id = dados_formulario.get('dieta_id')
         
-
         if dieta_id is None:
             # Lógica para criar a dieta
             numero_refeicoes = dados_formulario.get('numero-refeicoes')
@@ -47,6 +46,8 @@ class CadastrarDieta(View):
         for refeicao in dieta.refeicoes.all():
             nome_opcao = f'opcao_{refeicao.id}'
             nome_substituto = f'substituto_{refeicao.id}'
+            
+            print('dados do formulario: ', dados_formulario)
 
             opcao_selecionada = dados_formulario.get(nome_opcao)
             substituto_selecionado = dados_formulario.get(nome_substituto)
@@ -75,21 +76,28 @@ class DefinirNumeroRefeicoes(View):
 class EditarDieta(UpdateView):
     model = Dieta
     template_name = 'dieta/editar-dieta.html'
-    form_class = DietaForm  # Use o seu formulário personalizado
+    form_class = DietaForm 
     pk_url_kwarg = 'dieta_id'
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         dieta = self.get_object()
-        
+          
         context['dieta'] = dieta
-        context['refeicoes'] = dieta.refeicoes.all()
         
-        alimentos =  Alimento.objects.filter(refeicoes__dieta=dieta).distinct()
+        refeicoes_da_dieta = dieta.refeicoes.all()
+                
+        informacoes_das_refeicoes = []
         
-        context['alimentos'] = alimentos
+        for refeicao in refeicoes_da_dieta:
+            alimentos_da_refeicao = refeicao.alimentos.all()
+            
+            informacoes_das_refeicoes.append({
+                'refeicao': refeicao,
+                'alimentos': alimentos_da_refeicao
+            })
         
-        print('alimentos na view: ', alimentos)
+        context['informacoes_refeicoes'] = informacoes_das_refeicoes        
 
         return context
     
