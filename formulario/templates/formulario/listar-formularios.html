@@ -18,7 +18,7 @@
         </div>
 
         <div class="breadcrumb">
-          <a href="/meus-formularios">
+          <a href="{% url 'listar-formularios'%}">
             <i class="ph ph-notepad"></i>
             <span>Meus formulários /</span>
           </a>
@@ -37,7 +37,7 @@
       <div class="cabecalho-conteudo-principal">
         <h1>Formulários</h1>
 
-        <button class="botao-padrao"><a href="/novo-formulario">Novo formulário</a></button>
+        <button class="botao-padrao"><a href="{% url 'novo-formulario' %}">Novo formulário</a></button>
       </div>
 
       {% block collapse %}

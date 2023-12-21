@@ -1,4 +1,4 @@
-{% extends 'formulario/meus-formularios.html' %}
+{% extends 'formulario/listar-formularios.html' %}
 
 {% load static %}
 
@@ -15,7 +15,7 @@
         </div>
 
         <div class="breadcrumb">
-          <a href="/meus-formularios">
+          <a href="{% url 'listar-formularios' %}">
             <i class="ph ph-notepad"></i>
             <span>Meus formulários /</span>
           </a>

@@ -3,7 +3,7 @@ from django.shortcuts import render
 # Create your views here.
 
 def meus_formularios(request):
-    return render(request, 'formulario/meus-formularios.html')
+    return render(request, 'formulario/listar-formularios.html')
 
 def novo_formulario(request):
     return render(request, 'formulario/novo-formulario.html')
