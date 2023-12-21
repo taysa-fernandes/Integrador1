@@ -1,6 +1,6 @@
 from typing import Any
 from django.shortcuts import get_object_or_404, render, redirect
-from django.http import HttpResponseRedirect
+from django.http import HttpRequest, HttpResponse, HttpResponseRedirect
 from django.views import View
 from django.urls import reverse_lazy
 from alimento.models import Alimento
@@ -47,8 +47,8 @@ class CadastrarDieta(View):
             nome_opcao = f'opcao_{refeicao.id}'
             nome_substituto = f'substituto_{refeicao.id}'
             
-            print('dados do formulario: ', dados_formulario)
-
+            print('dados do formulario de criar: ', dados_formulario)
+            
             opcao_selecionada = dados_formulario.get(nome_opcao)
             substituto_selecionado = dados_formulario.get(nome_substituto)
 
@@ -82,6 +82,8 @@ class EditarDieta(UpdateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         dieta = self.get_object()
+        
+        alimentos_do_sistema = Alimento.objects.all()
           
         context['dieta'] = dieta
         
@@ -94,13 +96,35 @@ class EditarDieta(UpdateView):
             
             informacoes_das_refeicoes.append({
                 'refeicao': refeicao,
-                'alimentos': alimentos_da_refeicao
-            })
+                'alimentos': alimentos_do_sistema,
+            })  
         
         context['informacoes_refeicoes'] = informacoes_das_refeicoes        
 
         return context
     
+    def post(self, request: HttpRequest, *args: str, **kwargs: Any) -> HttpResponse:
+        dados_formulario = request.POST
+        dieta_id = dados_formulario.get('dieta_id')
+        dieta = get_object_or_404(Dieta, id=dieta_id)
+        print('dados do form de edit: ', dados_formulario)
+        # Lógica para processar o formulário da dieta existente
+        for refeicao in dieta.refeicoes.all():
+            nome_opcao = f'opcao_{refeicao.id}'
+            nome_substituto = f'substituto_{refeicao.id}'
+            
+            opcao_selecionada = dados_formulario.get(nome_opcao)
+            substituto_selecionado = dados_formulario.get(nome_substituto)
+
+            # opção e substituto foram selecionados
+            if opcao_selecionada and substituto_selecionado:
+                alimento_opcao = Alimento.objects.get(nome=opcao_selecionada)
+                alimento_substituto = Alimento.objects.get(nome=substituto_selecionado)
+
+                refeicao.alimentos.set([alimento_opcao, alimento_substituto])
+
+        return redirect('listar-dietas')
+            
     def get_success_url(self):
         return reverse_lazy('listar-dietas') 
 

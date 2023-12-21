@@ -44,17 +44,17 @@
                 <select name="opcao_{{ informacao_refeicao.refeicao.id }}" class="input-nome-alimento">
                   {% for alimento in informacao_refeicao.alimentos %}
                     {% if not alimento.e_substituto %}
-                      <option value="{{ alimento.id }}">{{ alimento.nome }}</option>
+                      <option value="{{ alimento.nome}}">{{ alimento.nome }}</option>
                     {% endif %}
                   {% endfor %}
                 </select>
               </div>
               <div class="alimento">
                 <label class="titulo-alimento">Substituto:</label>
-                <select name="substituto_{{ refeicao.id }}" class="input-nome-alimento">
+                <select name="substituto_{{ informacao_refeicao.refeicao.id  }}" class="input-nome-alimento">
                   {% for alimento in informacao_refeicao.alimentos %}
                     {% if alimento.e_substituto %}
-                      <option value="{{ alimento.id }}">{{ alimento.nome }}</option>
+                      <option value="{{ alimento.nome }}">{{ alimento.nome }}</option>
                     {% endif %}
                   {% endfor %}
                 </select>
