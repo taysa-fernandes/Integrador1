@@ -135,3 +135,10 @@ class DeletarDieta(DeleteView):
     model = Dieta
     pk_url_kwarg = 'id'
     success_url = reverse_lazy('listar-dietas') 
+    
+    def get(self, request, *args, **kwargs):
+        return self.post(request, *args, **kwargs)
+
+    def post(self, request, *args, **kwargs):
+        # Chame o método delete diretamente
+        return self.delete(request, *args, **kwargs)
