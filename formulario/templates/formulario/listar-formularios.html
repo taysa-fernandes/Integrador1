@@ -37,12 +37,18 @@
       <div class="cabecalho-conteudo-principal">
         <h1>Formulários</h1>
 
-        <button class="botao-padrao"><a href="{% url 'novo-formulario' %}">Novo formulário</a></button>
+        <button class="abrirModal botao-padrao" hx-get={% url 'definir-numero-questoes' %} hx-trigger='click' hx-target='#modal' hx-swap="innerHTML">Novo formulário</button>
       </div>
 
       {% block collapse %}
         {{ block.super }}
       {% endblock %}
+
+      <dialog class="cadastro-de-paciente" id="myModal">
+        <button id="fecharModal"><i class="ph ph-x"></i></button>
+        <div id="modal">
+        </div>
+      </dialog>
     </section>
   </main>
 {% endblock %}
