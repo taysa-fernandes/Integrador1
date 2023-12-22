@@ -20,9 +20,6 @@ class CriarFormulario(View):
         dados_formulario = request.POST
         formulario_id = dados_formulario.get('formulario_id')
         
-        print('formulario entrou no chat: ', dados_formulario)
-        print('id do formulario: ', formulario_id)
-        
         if formulario_id is None:
             # Lógica para criar formulário
             nome_formulario = dados_formulario.get('nome-formulario')
@@ -31,14 +28,11 @@ class CriarFormulario(View):
             if nome_formulario and numero_questoes:
                 numero_questoes_int = range(1, int(numero_questoes) + 1)            
                 formulario = Formulario.objects.create(nome=nome_formulario)
-                questoes = [Pergunta.objects.create(pergunta=f'Pergunta {num_questao}', formulario=formulario)
+                questoes = [Pergunta.objects.create(nome=f'Pergunta {num_questao}', formulario=formulario)
                              for num_questao in numero_questoes_int]
-                
-                print('formulario criado: ', formulario)
-                # print('perguntas criadas: ', questoes)
 
                 context = {
-                    # 'questoes': questoes,
+                    'questoes': questoes,
                     'formulario': formulario,
                 }
 
@@ -46,21 +40,20 @@ class CriarFormulario(View):
             
         formulario = get_object_or_404(Formulario, id=formulario_id)
         # Lógica para processar o formulário existente
-        print('formulario existe: ', formulario)
-        # for pergunta in formulario.perguntas.all():
-        #     nome_pergunta = f'pergunta_{{questao.id}}'
-        #     nome_resposta = f'resposta_{{questao.id}}'
+        for pergunta in formulario.perguntas.all():
+            print('tentando constultar as perguntas do forms: ', pergunta)
+            nome_pergunta = f'pergunta_{pergunta.id}'
             
-        #     print('dados do formulario de criar: ', dados_formulario)
+            print('nome da pergunta: ', nome_pergunta)
+                        
+            nome_pergunta_inserida = dados_formulario.get(nome_pergunta)
             
-        #     nome_pergunta_do_formulario = dados_formulario.get(nome_pergunta)
-        #     nome_resposta_do_formulario = dados_formulario.get(nome_resposta)
+            print('nome pergunta inserida: ', nome_pergunta_inserida)
 
-        #     if nome_pergunta_do_formulario:
-        #         pergunta = Pergunta.objects.get(nome=nome_pergunta_do_formulario)
-        #         resposta = Pergunta.objects.get(nome=nome_resposta_do_formulario)
+            if nome_pergunta_inserida:
+                pergunta_formulario = Pergunta.objects.get(nome=nome_pergunta_inserida)
 
-        #         refeicao.alimentos.set([alimento_opcao, alimento_substituto])
+                pergunta.pergunta.add(pergunta_formulario)
 
         return redirect('listar-formularios')
 

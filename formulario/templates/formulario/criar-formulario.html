@@ -43,6 +43,7 @@
       </div>
 
       <form class="novo-formulario" method="post" action="{% url "criar-formulario" %}">
+        {% csrf_token %}
         <div id="container-tipo-formulario">
           <div class="tipo-formulario">
             <input type="radio" name="pre-consulta" id="pre-consulta" />
@@ -58,13 +59,13 @@
         <div class="container-pergunta">
           {% for questao in questoes %}
             <div class="form-item">
-              <label for="pergunta_{{questao.id}}">{{questao.nome}}</label>
+              <label for="pergunta_{{questao.id}}">{{questao.pergunta}}</label>
               <input type="text" placeholder="Ex: Você tem alguma restrição alimentar?" name="pergunta_{{questao.id}}" />
             </div>
 
             <div class="form-item">
               <label for="resposta_{{questao.id}}">Resposta:</label>
-              <textarea name="resposta_{{questao.id}}" placeholder="A resposta do paciente será inserida aqui" id="resposta" cols="30" rows="10"></textarea>
+              <textarea readonly name="resposta_{{questao.id}}" placeholder="A resposta do paciente será inserida aqui" id="resposta" cols="30" rows="10"></textarea>
             </div>
 
             {% comment %} <div class="footer-pergunta">
