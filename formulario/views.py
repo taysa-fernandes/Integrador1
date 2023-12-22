@@ -1,7 +1,11 @@
+from typing import Any
 from django.shortcuts import get_object_or_404, render, redirect
+from django.urls import reverse_lazy
 from django.views import View
-from django.views.generic import ListView
+from django.views.generic import ListView, UpdateView
 from .models import Formulario, Pergunta
+from .forms import FormularioForm
+from django.http import HttpRequest, HttpResponse, HttpResponseRedirect
 # Create your views here.
 
 class DefinirNumeroQuestoes(View):
@@ -59,6 +63,48 @@ class ListarFormularios(ListView):
     model = Formulario
     template_name = 'formulario/listar-formularios.html'
     context_object_name = 'formularios'
+    
+class EditarFormulario(UpdateView):
+    model = Formulario
+    template_name = 'formulario/editar-formulario.html'
+    form_class = FormularioForm 
+    pk_url_kwarg = 'formulario_id'
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        formulario = self.get_object()
+        
+        print('formulariooo: ', formulario)
+                  
+        context['formulario'] = formulario
+        
+        perguntas_do_forms = formulario.perguntas.all()
+                                                
+        context['questoes'] = perguntas_do_forms
+
+        return context
+    
+    def post(self, request: HttpRequest, *args: str, **kwargs: Any) -> HttpResponse:
+        dados_formulario = request.POST
+        formulario_id = dados_formulario.get('formulario_id')
+        formulario = get_object_or_404(Formulario, id=formulario_id)
+        
+        perguntas_do_forms = formulario.perguntas.all()
+        
+        for pergunta in perguntas_do_forms:
+            nome_pergunta = f'pergunta_{pergunta.id}'
+                                                
+            nome_pergunta_inserida = dados_formulario.get(nome_pergunta)
+        
+            if nome_pergunta_inserida:                
+                pergunta.pergunta = nome_pergunta_inserida
+                                
+                pergunta.save()
+
+        return redirect('listar-formularios')
+            
+    def get_success_url(self):
+        return reverse_lazy('listar-dietas') 
 
 def novo_formulario(request):
     return render(request, 'formulario/criar-formulario.html')

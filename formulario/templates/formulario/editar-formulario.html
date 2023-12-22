@@ -1,0 +1,85 @@
+{% extends 'formulario/listar-formularios.html' %}
+
+{% load static %}
+
+{% block main %}
+<body>
+  <main>
+    <header>
+      <nav class="breadcrumbs">
+        <div class="breadcrumb">
+          <a href="/home">
+            <i class="ph ph-house-line"></i>
+            <span>Home /</span>
+          </a>
+        </div>
+
+        <div class="breadcrumb">
+          <a href="{% url 'listar-formularios' %}">
+            <i class="ph ph-notepad"></i>
+            <span>Meus formulários /</span>
+          </a>
+        </div>
+
+        <div class="breadcrumb">
+          <a href="/novo-formulario">
+            <i class="ph ph-notepad"></i>
+            <span>Novo formulário /</span>
+          </a>
+        </div>
+      </nav>
+
+      <div class="informacoes-do-usuario">
+        <div class="texto-informacoes-do-usuario">
+          <span class="nome-do-usuario">Claudinei Camilo</span>
+          <span class="tipo-de-usuario">Nutricionista</span>
+        </div>
+        <img src="{% static 'imagens/usuario.svg' %}" alt="Logo DietHub" />
+      </div>
+    </header>
+    <section class="conteudo-principal">
+      <div class="cabecalho-conteudo-principal">
+        <h1>Novo formulário</h1>
+      </div>
+
+      <form class="novo-formulario" method="post" action="{% url "editar-formulario" formulario.id %}">
+        {% csrf_token %}
+        <div id="container-tipo-formulario">
+          <div class="tipo-formulario">
+            <input type="radio" name="pre-consulta" id="pre-consulta" />
+            <label for="pre-consulta">Pré-consulta</label>
+          </div>
+
+          <div class="tipo-formulario">
+            <input type="radio" name="pos-consulta" id="pos-consulta" />
+            <label for="pos-consulta">Pós-consulta</label>
+          </div>
+        </div>
+
+        <div class="container-pergunta">
+          {% for questao in questoes %}
+            <div class="form-item">
+              <label for="pergunta_{{questao.id}}">{{questao.nome}}</label>
+              <input type="text" placeholder="Ex: Você tem alguma restrição alimentar?" name="pergunta_{{questao.id}}" value="{{questao.pergunta}}" />
+            </div>
+
+            <div class="form-item">
+              <label for="resposta_{{questao.id}}">Resposta:</label>
+              <textarea readonly name="resposta_{{questao.id}}" placeholder="A resposta do paciente será inserida aqui" id="resposta" cols="30" rows="10"></textarea>
+            </div>
+
+            {% comment %} <div class="footer-pergunta">
+              <div class="checkbox">
+                <input type="checkbox" name="tipo-pergunta" id="tipo-pergunta_{{questao.id}}" {% if {{questao.e_obrigatoria}} %}checked{% endif %} />
+                <label for="tipo-pergunta_{{questao.id}}">Pergunta obrigatória</label>
+              </div>
+            </div> {% endcomment %}
+          {% endfor %}
+        </div>
+        <input type="number" style="display: none;" value="{{formulario.id}}" name="formulario_id">
+
+        <button id="botao-salvar" type="submit">Salvar alterações</button>
+      </form>
+    </section>
+  </main>
+{% endblock %}

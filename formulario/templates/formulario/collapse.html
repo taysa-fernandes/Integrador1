@@ -20,13 +20,13 @@
       {% endfor %}
 
       <div class="footer-collapse-pacientes">
-        <button id="botao-editar">
+        <button class="botao-editar">
           <i class="ph ph-pencil-simple-line"></i>
-          <a href="/novo-formulario">Editar</a>
+          <a href="{% url 'editar-formulario' formulario_id=formulario.id %}">Editar</a>
         </button>
-        <button id="botao-excluir">
+        <button class="botao-excluir">
           <i class="ph ph-trash"></i>
-          Excluir
+          <a href="#">Excluir</a>
         </button>
       </div>
     </div>
