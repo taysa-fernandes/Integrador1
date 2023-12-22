@@ -1,0 +1,34 @@
+{% load static %}
+<ul id="collapse">
+  <li>
+    <label class="collapse-header" for={{formulario.id}}>
+      <div class="informacoes-do-paciente">{{ formulario.nome }}</div>
+      <i class="ph ph-caret-down"></i>
+    </label>
+    <input type="radio" name="collapse" id="{{formulario.id}}" {% if forloop.first %}checked{% endif %} />
+
+    <div class="content">
+      {% for pergunta in formulario.perguntas.all %}
+        <div class="formulario">
+          <div class="perguntas">
+            <p class="descricao-pergunta">{{pergunta.nome}}</p>
+            <p class="pergunta">{{pergunta.pergunta}}</p>
+          </div>
+        </div>
+
+        <hr class="solid" />
+      {% endfor %}
+
+      <div class="footer-collapse-pacientes">
+        <button id="botao-editar">
+          <i class="ph ph-pencil-simple-line"></i>
+          <a href="/novo-formulario">Editar</a>
+        </button>
+        <button id="botao-excluir">
+          <i class="ph ph-trash"></i>
+          Excluir
+        </button>
+      </div>
+    </div>
+  </li>
+</ul>

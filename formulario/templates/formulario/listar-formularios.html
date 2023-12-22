@@ -1,4 +1,4 @@
-{% extends 'formulario/collapse-formularios.html' %}
+{% extends 'core/base.html' %}
 
 {% load static %}
 
@@ -40,9 +40,9 @@
         <button class="abrirModal botao-padrao" hx-get={% url 'definir-numero-questoes' %} hx-trigger='click' hx-target='#modal' hx-swap="innerHTML">Novo formulário</button>
       </div>
 
-      {% block collapse %}
-        {{ block.super }}
-      {% endblock %}
+      {% for formulario in formularios %}
+        {% include "formulario/collapse.html" %}
+      {% endfor %}
 
       <dialog class="cadastro-de-paciente" id="myModal">
         <button id="fecharModal"><i class="ph ph-x"></i></button>

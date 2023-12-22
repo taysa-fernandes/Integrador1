@@ -1,5 +1,6 @@
 from django.shortcuts import get_object_or_404, render, redirect
 from django.views import View
+from django.views.generic import ListView
 from .models import Formulario, Pergunta
 # Create your views here.
 
@@ -49,13 +50,15 @@ class CriarFormulario(View):
         
             if nome_pergunta_inserida:                
                 pergunta.pergunta = nome_pergunta_inserida
-                
+                                
                 pergunta.save()
 
         return redirect('listar-formularios')
 
-def meus_formularios(request):
-    return render(request, 'formulario/listar-formularios.html')
+class ListarFormularios(ListView):
+    model = Formulario
+    template_name = 'formulario/listar-formularios.html'
+    context_object_name = 'formularios'
 
 def novo_formulario(request):
     return render(request, 'formulario/criar-formulario.html')
