@@ -31,7 +31,9 @@ class CriarDiario(View):
         
         
         if not diario_do_dia.exists():
-            id_paciente = 16 # depois trocar pelo id do usuario logado   
+            id_paciente = Paciente.objects.get(id=5) # depois trocar pelo id do usuario logado  
+            
+            print('paciente existente: ', id_paciente) 
             
             paciente = Paciente.objects.get(id= id_paciente)
             
@@ -73,7 +75,7 @@ class AtualizarDiario(SuccessMessageMixin,  UpdateView):
     
     def get_context_data(self, **kwargs: Any) -> dict[str, Any]:      
         context = super().get_context_data(**kwargs)
-        id_paciente = 16 # depois trocar pelo id do usuario logado   
+        id_paciente = 5 # depois trocar pelo id do usuario logado   
         
         paciente = Paciente.objects.get(id= id_paciente)
         
