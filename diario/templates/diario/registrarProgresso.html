@@ -28,8 +28,6 @@
               {% if not alimento.e_substituto %}
                 <div class="opcao-alimento">
                   <input type="radio" name="{{form.alimentos.html_name}}" value="{{alimento.id}}" {% if alimento in object.alimentos.all  %}checked{% endif %} />
-                   {% comment %} {{form.alimentos}} {% endcomment %}
-                  {% comment %} {{form.alimentos}} {% endcomment %}
                   <label>
                     <span class="titulo-opcao">Opção {{forloop.counter}}:</span>
                     <span class="alimento">{{alimento.nome}} ({{alimento.calorias}}kcal)</span>
@@ -43,7 +41,6 @@
                     <span class="titulo-opcao">Substituto {{forloop.counter}}:</span>
                     <span class="alimento">{{alimento.nome}} ({{alimento.calorias}}kcal)</span>
                   </label> 
-                  {% comment %} {{form.alimentos}} {% endcomment %}
                 </div>
               {%endif%}
             {% endfor %} 
