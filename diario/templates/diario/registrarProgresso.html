@@ -24,7 +24,7 @@
           <div class="container-opcao">
 
 
-            {% for alimento .all %}
+            {% for alimento in refeicao.alimentos.all %}
               {% if not alimento.e_substituto %}
                 <div class="opcao-alimento">
                   <input type="radio" name="{{form.alimentos.html_name}}" value="{{alimento.id}}" {% if alimento in object.alimentos.all  %}checked{% endif %} />
