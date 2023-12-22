@@ -30,7 +30,7 @@ class CriarFormulario(View):
                 formulario = Formulario.objects.create(nome=nome_formulario)
                 questoes = [Pergunta.objects.create(nome=f'Pergunta {num_questao}', formulario=formulario)
                              for num_questao in numero_questoes_int]
-
+                
                 context = {
                     'questoes': questoes,
                     'formulario': formulario,
@@ -39,21 +39,18 @@ class CriarFormulario(View):
                 return render(request, self.template_name_create, context)
             
         formulario = get_object_or_404(Formulario, id=formulario_id)
+        
+        perguntas_do_forms = formulario.perguntas.all()
         # Lógica para processar o formulário existente
-        for pergunta in formulario.perguntas.all():
-            print('tentando constultar as perguntas do forms: ', pergunta)
+        for pergunta in perguntas_do_forms:
             nome_pergunta = f'pergunta_{pergunta.id}'
-            
-            print('nome da pergunta: ', nome_pergunta)
-                        
+                                                
             nome_pergunta_inserida = dados_formulario.get(nome_pergunta)
-            
-            print('nome pergunta inserida: ', nome_pergunta_inserida)
-
-            if nome_pergunta_inserida:
-                pergunta_formulario = Pergunta.objects.get(nome=nome_pergunta_inserida)
-
-                pergunta.pergunta.add(pergunta_formulario)
+        
+            if nome_pergunta_inserida:                
+                pergunta.pergunta = nome_pergunta_inserida
+                
+                pergunta.save()
 
         return redirect('listar-formularios')
 
