@@ -1,5 +1,6 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import get_object_or_404, render, redirect
 from django.views import View
+from .models import Formulario, Pergunta
 # Create your views here.
 
 class DefinirNumeroQuestoes(View):
@@ -9,8 +10,8 @@ class DefinirNumeroQuestoes(View):
         return render(request, self.template_name)
 
 class CriarFormulario(View):
-    template_name_create = 'dieta/criar-formulario.html' 
-    template_name_process = 'dieta/definir-numero-questoes.html'
+    template_name_create = 'formulario/criar-formulario.html' 
+    template_name_process = 'formulario/definir-numero-questoes.html'
 
     def get(self, request, *args, **kwargs):
         return redirect('definir-numero-questoes')
@@ -19,53 +20,55 @@ class CriarFormulario(View):
         dados_formulario = request.POST
         formulario_id = dados_formulario.get('formulario_id')
         
+        print('formulario entrou no chat: ', dados_formulario)
+        print('id do formulario: ', formulario_id)
+        
         if formulario_id is None:
-            # Lógica para criar a dieta
-            numero_questoes = dados_formulario.get('numero-refeicoes')
-            nome_dieta = dados_formulario.get('nome-dieta')
+            # Lógica para criar formulário
+            nome_formulario = dados_formulario.get('nome-formulario')
+            numero_questoes = dados_formulario.get('numero-questoes')
 
-            if numero_questoes and nome_dieta:
+            if nome_formulario and numero_questoes:
                 numero_questoes_int = range(1, int(numero_questoes) + 1)            
-                dieta = Dieta.objects.create(nome=nome_dieta)
-                refeicoes = [Refeicao.objects.create(nome=f'Refeição {num_refeicao}', dieta=dieta)
-                             for num_refeicao in numero_questoes_int]
-                alimentos = Alimento.objects.all()
+                formulario = Formulario.objects.create(nome=nome_formulario)
+                questoes = [Pergunta.objects.create(pergunta=f'Pergunta {num_questao}', formulario=formulario)
+                             for num_questao in numero_questoes_int]
+                
+                print('formulario criado: ', formulario)
+                # print('perguntas criadas: ', questoes)
 
                 context = {
-                    'refeicoes': refeicoes,
-                    'alimentos': alimentos,
-                    'dieta': dieta
+                    # 'questoes': questoes,
+                    'formulario': formulario,
                 }
 
                 return render(request, self.template_name_create, context)
             
-        dieta = get_object_or_404(Dieta, id=dieta_id)
-        # Lógica para processar o formulário da dieta existente
-        for refeicao in dieta.refeicoes.all():
-            nome_opcao = f'opcao_{refeicao.id}'
-            nome_substituto = f'substituto_{refeicao.id}'
+        formulario = get_object_or_404(Formulario, id=formulario_id)
+        # Lógica para processar o formulário existente
+        print('formulario existe: ', formulario)
+        # for pergunta in formulario.perguntas.all():
+        #     nome_pergunta = f'pergunta_{{questao.id}}'
+        #     nome_resposta = f'resposta_{{questao.id}}'
             
-            print('dados do formulario de criar: ', dados_formulario)
+        #     print('dados do formulario de criar: ', dados_formulario)
             
-            opcao_selecionada = dados_formulario.get(nome_opcao)
-            substituto_selecionado = dados_formulario.get(nome_substituto)
+        #     nome_pergunta_do_formulario = dados_formulario.get(nome_pergunta)
+        #     nome_resposta_do_formulario = dados_formulario.get(nome_resposta)
 
-            # opção e substituto foram selecionados
-            if opcao_selecionada and substituto_selecionado:
-                alimento_opcao = Alimento.objects.get(nome=opcao_selecionada)
-                alimento_substituto = Alimento.objects.get(nome=substituto_selecionado)
+        #     if nome_pergunta_do_formulario:
+        #         pergunta = Pergunta.objects.get(nome=nome_pergunta_do_formulario)
+        #         resposta = Pergunta.objects.get(nome=nome_resposta_do_formulario)
 
-                refeicao.alimentos.set([alimento_opcao, alimento_substituto])
+        #         refeicao.alimentos.set([alimento_opcao, alimento_substituto])
 
-        return redirect('listar-dietas')
+        return redirect('listar-formularios')
 
 def meus_formularios(request):
     return render(request, 'formulario/listar-formularios.html')
 
-
-
 def novo_formulario(request):
-    return render(request, 'formulario/novo-formulario.html')
+    return render(request, 'formulario/criar-formulario.html')
 
 def tipo_questao(request):
     return render(request, 'core/tipo-questao.html')

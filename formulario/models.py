@@ -1,21 +1,21 @@
 from django.db import models
+from enum import Enum
 
+class TipoFormulario(Enum):
+    PRE_CONSULTA = 'Pré consulta'
+    POS_CONSULTA = 'Pós consulta'
+
+class TipoPergunta(Enum):
+    PERGUNTA_ABERTA = 'Pergunta aberta'
+
+class Formulario(models.Model):
+    tipo = [(tipo.name, tipo.value) for tipo in TipoFormulario]
+    nome = models.CharField(max_length=255)
+    
 class Pergunta(models.Model):
-    TIPOS_FORMULARIO = (
-        ('pre', 'Pré-consulta'),
-        ('pos', 'Pós-consulta'),
-    )
-
-    tipo = models.CharField(max_length=3, choices=TIPOS_FORMULARIO)
+    nome=models.CharField(max_length=255)
+    tipo_pergunta = [(tipo.name, tipo.value) for tipo in TipoPergunta]
+    e_obrigatoria = models.BooleanField(default=False)
     pergunta = models.CharField(max_length=255)
-    obrigatorio = models.BooleanField(default=False)
-
-    def __str__(self):
-        return self.pergunta
-
-class Resposta(models.Model):
-    pergunta = models.ForeignKey(Pergunta, on_delete=models.CASCADE)
-    resposta = models.TextField()
-
-    def __str__(self):
-        return f"Resposta para '{self.pergunta.pergunta}'"
+    resposta = models.TextField(blank=True)
+    formulario = models.ForeignKey(Formulario, on_delete=models.CASCADE, related_name='perguntas')
