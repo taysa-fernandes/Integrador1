@@ -59,7 +59,7 @@
         <div class="container-pergunta">
           {% for questao in questoes %}
             <div class="form-item">
-              <label for="pergunta_{{questao.id}}">{{questao.pergunta}}</label>
+              <label for="pergunta_{{questao.id}}">{{questao.nome}}</label>
               <input type="text" placeholder="Ex: Você tem alguma restrição alimentar?" name="pergunta_{{questao.id}}" />
             </div>
 
