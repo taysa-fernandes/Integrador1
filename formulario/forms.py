@@ -1,12 +1,8 @@
 from django import forms
-from .models import Pergunta,Resposta
+from django.forms import ModelForm
+from .models import Formulario
 
-class PerguntaForm(forms.ModelForm):
+class FormularioForm(ModelForm):
     class Meta:
-        model = Pergunta
-        fields = '__all__'
-        
-class RespostaForm(forms.ModelForm):
-    class Meta:
-        model = Resposta
+        model = Formulario
         fields = '__all__'
