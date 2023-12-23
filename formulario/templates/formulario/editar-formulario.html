@@ -44,7 +44,7 @@
 
       <form class="novo-formulario" method="post" action="{% url "editar-formulario" formulario.id %}">
         {% csrf_token %}
-        <div id="container-tipo-formulario">
+        {% comment %} <div id="container-tipo-formulario">
           <div class="tipo-formulario">
             <input type="radio" name="pre-consulta" id="pre-consulta" />
             <label for="pre-consulta">Pré-consulta</label>
@@ -54,7 +54,7 @@
             <input type="radio" name="pos-consulta" id="pos-consulta" />
             <label for="pos-consulta">Pós-consulta</label>
           </div>
-        </div>
+        </div> {% endcomment %}
 
         <div class="container-pergunta">
           {% for questao in questoes %}
