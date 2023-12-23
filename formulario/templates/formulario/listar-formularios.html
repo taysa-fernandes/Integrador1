@@ -1,4 +1,4 @@
-{% extends 'formulario/collapse-formularios.html' %}
+{% extends 'core/base.html' %}
 
 {% load static %}
 
@@ -18,7 +18,7 @@
         </div>
 
         <div class="breadcrumb">
-          <a href="/meus-formularios">
+          <a href="{% url 'listar-formularios'%}">
             <i class="ph ph-notepad"></i>
             <span>Meus formulários /</span>
           </a>
@@ -37,12 +37,18 @@
       <div class="cabecalho-conteudo-principal">
         <h1>Formulários</h1>
 
-        <button class="botao-padrao"><a href="/novo-formulario">Novo formulário</a></button>
+        <button class="abrirModal botao-padrao" hx-get={% url 'definir-numero-questoes' %} hx-trigger='click' hx-target='#modal' hx-swap="innerHTML">Novo formulário</button>
       </div>
 
-      {% block collapse %}
-        {{ block.super }}
-      {% endblock %}
+      {% for formulario in formularios %}
+        {% include "formulario/collapse.html" %}
+      {% endfor %}
+
+      <dialog class="cadastro-de-paciente" id="myModal">
+        <button id="fecharModal"><i class="ph ph-x"></i></button>
+        <div id="modal">
+        </div>
+      </dialog>
     </section>
   </main>
 {% endblock %}

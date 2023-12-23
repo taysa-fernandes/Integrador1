@@ -1,0 +1,24 @@
+<div class="conteudo-modal">
+    <p class="titulo-modal-cadastrar-alimento">Defina o número de questões</p>
+    <form class="formulario-paciente" id="formulario" method="post" action="{% url 'criar-formulario' %}">
+      {% csrf_token %}
+      <div class="form-item">
+        <label>Nome do formulário: </label>
+        <input placeholder="ex.: Formulário pré-consulta 1" name="nome-formulario" id="nome-formulario">
+      </div>
+      <div class="form-item">
+        <label>Número de questões: </label>
+        <input type="number" name="numero-questoes" id="numero-questoes">
+      </div>
+      <div class="footer-modal-criar-paciente">
+        <button id="botao-cancelar-paciente" type="button">Cancelar</button>
+        <button id="botao-salvar-paciente" type="submit">Salvar</button>
+      </div>
+    </form>
+  </div>
+  <script>
+    document.getElementById("botao-cancelar-paciente").addEventListener("click", function() {
+      var form = document.getElementById("formulario");
+      form.reset();
+    });
+  </script>
