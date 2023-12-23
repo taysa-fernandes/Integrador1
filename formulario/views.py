@@ -2,7 +2,7 @@ from typing import Any
 from django.shortcuts import get_object_or_404, render, redirect
 from django.urls import reverse_lazy
 from django.views import View
-from django.views.generic import ListView, UpdateView
+from django.views.generic import ListView, UpdateView, DeleteView
 from .models import Formulario, Pergunta
 from .forms import FormularioForm
 from django.http import HttpRequest, HttpResponse, HttpResponseRedirect
@@ -73,8 +73,6 @@ class EditarFormulario(UpdateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         formulario = self.get_object()
-        
-        print('formulariooo: ', formulario)
                   
         context['formulario'] = formulario
         
@@ -105,9 +103,15 @@ class EditarFormulario(UpdateView):
             
     def get_success_url(self):
         return reverse_lazy('listar-dietas') 
+    
+class DeletarFormulario(DeleteView):
+    model = Formulario
+    pk_url_kwarg = 'formulario_id'
+    success_url = reverse_lazy('listar-formularios') 
+    
+    def get(self, request, *args, **kwargs):
+        return self.post(request, *args, **kwargs)
 
-def novo_formulario(request):
-    return render(request, 'formulario/criar-formulario.html')
-
-def tipo_questao(request):
-    return render(request, 'core/tipo-questao.html')
+    def post(self, request, *args, **kwargs):
+        # Chame o método delete diretamente
+        return self.delete(request, *args, **kwargs)
