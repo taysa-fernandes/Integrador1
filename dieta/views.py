@@ -7,10 +7,11 @@ from alimento.models import Alimento
 from .models import Refeicao, Dieta
 from django.views.generic import CreateView,UpdateView,ListView,DeleteView
 from .forms import DietaForm
+from nutricionista.mixins import NutricionistaMixin
 
 # Create your views here.
 
-class CadastrarDieta(View):
+class CadastrarDieta(NutricionistaMixin, View):
     template_name_create = 'dieta/cadastrar-dieta.html' 
     template_name_process = 'dieta/definir-numero-refeicoes.html'
 
@@ -62,18 +63,18 @@ class CadastrarDieta(View):
         return redirect('listar-dietas')
 
 
-class ListarDietas(ListView):
+class ListarDietas(NutricionistaMixin, ListView):
     model = Dieta
     template_name = 'dieta/listar-dietas.html'
     context_object_name = 'dietas'
     
-class DefinirNumeroRefeicoes(View):
+class DefinirNumeroRefeicoes(NutricionistaMixin, View):
     template_name = 'dieta/definir-numero-refeicoes.html'
     
     def get(self, request, *args, **kwargs):
         return render(request, self.template_name)
 
-class EditarDieta(UpdateView):
+class EditarDieta(NutricionistaMixin, UpdateView):
     model = Dieta
     template_name = 'dieta/editar-dieta.html'
     form_class = DietaForm 
@@ -131,7 +132,7 @@ class EditarDieta(UpdateView):
 def dieta(request):
     return render(request, 'dieta/visualizar-dieta.html')
 
-class DeletarDieta(DeleteView):
+class DeletarDieta(NutricionistaMixin, DeleteView):
     model = Dieta
     pk_url_kwarg = 'id'
     success_url = reverse_lazy('listar-dietas') 

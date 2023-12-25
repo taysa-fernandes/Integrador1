@@ -11,11 +11,12 @@ from django.urls import reverse_lazy
 from .models import Diario
 from django.core.serializers import serialize
 from django.contrib.messages.views import SuccessMessageMixin
+from paciente.mixins import PacienteMixin
 
 locale.setlocale(locale.LC_TIME, 'pt_BR.utf-8')
 
 # Create your views here.
-class CriarDiario(View):
+class CriarDiario(PacienteMixin, View):
     
     def get(self, request): 
 
@@ -53,7 +54,7 @@ class CriarDiario(View):
             
         return redirect('listar-diarios')
     
-class RegistrarProgressoNoDiario(CreateView):
+class RegistrarProgressoNoDiario(PacienteMixin, CreateView):
     template_name = 'diario/registrarProgresso.html'
     form_class = DiarioForm
     success_url = reverse_lazy('diario')
@@ -65,7 +66,7 @@ class RegistrarProgressoNoDiario(CreateView):
          
         return context
     
-class AtualizarDiario(SuccessMessageMixin,  UpdateView):
+class AtualizarDiario(PacienteMixin, SuccessMessageMixin,  UpdateView):
     model = Diario
     form_class = DiarioForm
     template_name = 'diario/registrarProgresso.html'
@@ -90,7 +91,7 @@ class AtualizarDiario(SuccessMessageMixin,  UpdateView):
                     
         return context
     
-class ListarDiarios(ListView):
+class ListarDiarios(PacienteMixin, ListView):
     model = Diario
     template_name = 'diario/diarioAlimentar.html'
     context_object_name = 'diarios'
