@@ -8,6 +8,7 @@ from .models import Refeicao, Dieta
 from django.views.generic import CreateView,UpdateView,ListView,DeleteView
 from .forms import DietaForm
 from nutricionista.mixins import NutricionistaMixin
+from paciente.mixins import PacienteMixin
 
 # Create your views here.
 
@@ -129,8 +130,11 @@ class EditarDieta(NutricionistaMixin, UpdateView):
     def get_success_url(self):
         return reverse_lazy('listar-dietas') 
 
-def dieta(request):
-    return render(request, 'dieta/visualizar-dieta.html')
+class Dieta(PacienteMixin, View):
+    template_name = 'dieta/visualizar-dieta.html'
+
+    def get(self, request, *args, **kwargs):
+        return render(request, self.template_name)
 
 class DeletarDieta(NutricionistaMixin, DeleteView):
     model = Dieta

@@ -3,18 +3,32 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import authenticate, login
 from django.http import HttpResponse
 from django.contrib.auth import logout
+from django.views import View
+from nutricionista.mixins import NutricionistaMixin
+from paciente.mixins import PacienteMixin
 
-def index(request):
-    return render(request, 'core/index.html')
+class Index(NutricionistaMixin, View):
+    template_name = 'core/index.html'
 
-def home(request):
-    return render(request, 'core/home.html')
+    def get(self, request, *args, **kwargs):
+        return render(request, self.template_name)
 
-def autenticar_usuario(request):
-    if request.method == 'POST':
+class Home(NutricionistaMixin, View):
+    template_name = 'core/home.html'
+
+    def get(self, request, *args, **kwargs):
+        return render(request, self.template_name)
+
+class AutenticarUsuario(View):
+    template_name = 'core/index.html'
+
+    def get(self, request, *args, **kwargs):
+        form = AuthenticationForm()
+        return render(request, self.template_name, {'form': form})
+
+    def post(self, request, *args, **kwargs):
         form = AuthenticationForm(request, request.POST)
         if form.is_valid():
-            print('form is valid!')
             username = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password')
             user = authenticate(request, username=username, password=password)
@@ -22,15 +36,13 @@ def autenticar_usuario(request):
                 login(request, user)
                 return redirect('listar-pacientes')
             else:
-                # Retorne uma mensagem de erro.
                 return HttpResponse("Usuário ou senha inválidos.")
-        else: 
-            print('form invalido!')
-    else:
-        form = AuthenticationForm()
+        else:
+            return render(request, self.template_name, {'form': form})
 
-    return render(request, 'core/index.html', {'form': form})
+class Logout(NutricionistaMixin, PacienteMixin, View):
+    def get(self, request, *args, **kwargs):
+        logout(request)
+        return redirect('autenticar-usuario')
 
-def logout_view(request):
-    logout(request)
-    return redirect('autenticar-usuario')
+
