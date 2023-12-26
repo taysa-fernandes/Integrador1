@@ -1,0 +1,64 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block sidebar %}
+  {% include "paciente/sidebar.html" with opcao_menu_atual='diario-alimentar' %}
+{% endblock %}
+
+{% block main %}
+<body>
+  <main>
+    <header>
+      <nav class="breadcrumbs">
+        <div class="breadcrumb">
+          <a href="{% url 'listar-pacientes'%}">
+            <i class="ph ph-house-line"></i>
+            <span>Home /</span>
+          </a>
+        </div>
+
+        <div class="breadcrumb">
+          <a href="/alimentos">
+            <i class="ph ph-notebook"></i>
+            <span>Diários /</span>
+          </a>
+        </div>
+      </nav>
+
+      <div class="informacoes-do-usuario">
+        <div class="texto-informacoes-do-usuario">
+          <span class="nome-do-usuario">Claudinei Camilo</span>
+          <span class="tipo-de-usuario">Nutricionista</span>
+        </div>
+        <img src="{% static 'imagens/usuario.svg' %}" alt="Logo DietHub" />
+      </div>
+    </header>
+    <section class="conteudo-principal">
+        <main id="visualizar-diario">
+            <section id="main-diario">
+              <h1>Diário alimentar</h1>
+              <p>Faça seu registro no diário alimentar. Clique no dia desejado</p>
+              <div class="mes">
+                <p>{{mes}}</p>
+              </div>
+            </section>
+      
+            <div id="conteudo-diario">
+              {% for diario in diarios %}
+               {% include "diario/dia.html" with dia_do_mes=diario.dia_do_mes dia_da_semana=diario.dia_da_semana id_diario=diario.id %}    
+              {% endfor %}
+      
+            </div>
+        </main>
+
+        <dialog class="main-progresso" id="myModal">
+            <button class="fecharModal"><i class="ph ph-x"></i></button>
+            <div id="modal" class="conteudo-modal">
+                
+            </div>
+        </dialog>
+    </section>
+  </main>
+</body>
+{% endblock %}

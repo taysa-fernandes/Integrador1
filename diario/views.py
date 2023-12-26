@@ -92,14 +92,10 @@ class AtualizarDiario(PacienteMixin, NutricionistaMixin, SuccessMessageMixin,  U
     
 class ListarDiarios(PacienteMixin, ListView):
     model = Diario
-    template_name = 'diario/diarioAlimentar.html'
+    template_name = 'paciente/home-paciente.html'
     context_object_name = 'diarios'
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-
-        # for diario in context['diarios']:
-        #     diario.dia_do_mes = diario.data.day
-        #     diario.dia_da_semana = diario.data.strftime('%A').capitalize().replace("-feira", "").encode('utf-8').decode('utf-8')
 
         return context

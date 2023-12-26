@@ -1,0 +1,34 @@
+{% load static %}
+
+<nav class="side-bar">
+  <a href="{% url 'listar-pacientes'%}" class="logo"><img src="{% static 'imagens/logo-diet-hub.svg' %}" alt="Logo DietHub" /></a>
+
+  <ul>
+    <div class="opcao-do-menu-up">
+        <li class="opcao-do-menu {% if opcao_menu_atual == 'diario-alimentar' %}opcao-do-menu-atual{% endif %}">
+            <a href="{% url 'listar-diarios'%}">
+                <i class="ph ph-house-line"></i>
+                <span>Home</span>
+            </a>
+        </li>
+    
+        <li class="opcao-do-menu">
+            <a href="#">
+                <i class="ph ph-moon-stars"></i>
+                <span>Tema dark</span>
+            </a>
+        </li>
+    </div>
+
+
+    <div class="opcao-do-menu-down">
+        <li class="opcao-do-menu">
+            <a href={% url 'logout' %}>
+                <i class="ph ph-sign-out"></i>
+                <span>Log out</span>
+            </a>
+        </li>
+    </div>
+
+  </ul>
+</nav>

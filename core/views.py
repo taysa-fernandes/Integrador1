@@ -48,7 +48,7 @@ class AutenticarUsuario(View):
         else:
             return render(request, self.template_name, {'form': form})
 
-class Logout(NutricionistaMixin, PacienteMixin, View):
+class Logout(View):
     def get(self, request, *args, **kwargs):
         logout(request)
         return redirect('autenticar-usuario')
