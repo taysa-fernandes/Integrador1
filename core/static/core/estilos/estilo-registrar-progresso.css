@@ -218,6 +218,10 @@
     justify-content: center;
 }
 
+#botao-cancelar:hover {
+    cursor: pointer;
+}
+
 .ph-coffee {
     color: #FF8D61;
 }
