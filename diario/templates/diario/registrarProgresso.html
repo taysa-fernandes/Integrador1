@@ -10,7 +10,7 @@
   </button>
 </div>
 
-<form action="{% url 'atualizar-diario' diario.id %}" method="post">
+<form id="formulario" action="{% url 'atualizar-diario' diario.id %}" method="post">
   {% csrf_token %}
 
   <div class="cards">
@@ -58,5 +58,12 @@
 </form>
 
 {{form.errors}}
+<script>
+  botaoCancelar = document.querySelector("#botao-cancelar")
+  botaoCancelar.addEventListener("click", function() {
+    const modal = document.getElementById('myModal')
+    modal.close()
+  });
+</script>
 
 

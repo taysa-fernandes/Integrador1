@@ -10,7 +10,7 @@ from dieta.models import Dieta
 from django.urls import reverse_lazy
 from .models import Diario
 from django.core.serializers import serialize
-from django.contrib.messages.views import SuccessMessageMixin
+# from django.contrib.messages.views import SuccessMessageMixin
 from paciente.mixins import PacienteMixin
 from nutricionista.mixins import NutricionistaMixin
 
@@ -66,13 +66,13 @@ class RegistrarProgressoNoDiario(PacienteMixin, CreateView):
          
         return context
     
-class AtualizarDiario(PacienteMixin, NutricionistaMixin, SuccessMessageMixin,  UpdateView):
+class AtualizarDiario(PacienteMixin, NutricionistaMixin,  UpdateView):
     model = Diario
     form_class = DiarioForm
     template_name = 'diario/registrarProgresso.html'
     success_url = reverse_lazy('listar-diarios')
     pk_url_kwarg = 'id'
-    success_message = 'Diário registrado!'
+    # success_message = 'Diário registrado!'s
     
     def get_context_data(self, **kwargs: Any) -> dict[str, Any]:      
         context = super().get_context_data(**kwargs) 
