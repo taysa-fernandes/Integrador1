@@ -6,6 +6,7 @@ from django.contrib.auth import logout
 from django.views import View
 from nutricionista.mixins import NutricionistaMixin
 from paciente.mixins import PacienteMixin
+from django.contrib.auth.models import Group
 
 class Index(NutricionistaMixin, View):
     template_name = 'core/index.html'
@@ -34,7 +35,14 @@ class AutenticarUsuario(View):
             user = authenticate(request, username=username, password=password)
             if user is not None:
                 login(request, user)
-                return redirect('listar-pacientes')
+
+                if Group.objects.filter(user=user, name='NUTRICIONISTA').exists():
+                    return redirect('listar-pacientes')
+                elif Group.objects.filter(user=user, name='PACIENTES').exists():
+                    return redirect('diario')
+                else:
+                    return redirect('autenticar-usuario')
+
             else:
                 return HttpResponse("Usuário ou senha inválidos.")
         else:

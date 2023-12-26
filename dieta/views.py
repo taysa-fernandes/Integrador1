@@ -64,7 +64,7 @@ class CadastrarDieta(NutricionistaMixin, View):
         return redirect('listar-dietas')
 
 
-class ListarDietas(NutricionistaMixin, ListView):
+class ListarDietas(NutricionistaMixin, PacienteMixin, ListView):
     model = Dieta
     template_name = 'dieta/listar-dietas.html'
     context_object_name = 'dietas'

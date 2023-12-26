@@ -1,5 +1,5 @@
 from typing import Any
-from django.shortcuts import render, redirect
+from django.shortcuts import get_object_or_404, render, redirect
 from django.views import View
 from django.views.generic import CreateView, UpdateView, ListView
 from datetime import datetime
@@ -12,6 +12,7 @@ from .models import Diario
 from django.core.serializers import serialize
 from django.contrib.messages.views import SuccessMessageMixin
 from paciente.mixins import PacienteMixin
+from nutricionista.mixins import NutricionistaMixin
 
 locale.setlocale(locale.LC_TIME, 'pt_BR.utf-8')
 
@@ -32,20 +33,19 @@ class CriarDiario(PacienteMixin, View):
         
         
         if not diario_do_dia.exists():
-            id_paciente = Paciente.objects.get(id=5) # depois trocar pelo id do usuario logado  
             
-            print('paciente existente: ', id_paciente) 
+            paciente = get_object_or_404(Paciente, usuario=request.user)
             
-            paciente = Paciente.objects.get(id= id_paciente)
+            print('encontrei paciente', paciente)
             
             dieta_do_dia = paciente.dietas.filter(status='andamento').first()
             
             print("dieta do dia: ", dieta_do_dia)
             print("refeições da dieta: ", dieta_do_dia.refeicoes.all())
             
-            novo_diario = Diario.objects.create(data=data_atual)
+            novo_diario = Diario.objects.create(data=data_atual, paciente=paciente)
             
-            novo_diario.paciente = paciente
+            # novo_diario.paciente = paciente
             
             refeicoes_serializadas = serialize('json', dieta_do_dia.refeicoes.all())
             novo_diario.refeicoes = refeicoes_serializadas
@@ -66,7 +66,7 @@ class RegistrarProgressoNoDiario(PacienteMixin, CreateView):
          
         return context
     
-class AtualizarDiario(PacienteMixin, SuccessMessageMixin,  UpdateView):
+class AtualizarDiario(PacienteMixin, NutricionistaMixin, SuccessMessageMixin,  UpdateView):
     model = Diario
     form_class = DiarioForm
     template_name = 'diario/registrarProgresso.html'
@@ -75,10 +75,9 @@ class AtualizarDiario(PacienteMixin, SuccessMessageMixin,  UpdateView):
     success_message = 'Diário registrado!'
     
     def get_context_data(self, **kwargs: Any) -> dict[str, Any]:      
-        context = super().get_context_data(**kwargs)
-        id_paciente = 5 # depois trocar pelo id do usuario logado   
-        
-        paciente = Paciente.objects.get(id= id_paciente)
+        context = super().get_context_data(**kwargs) 
+                    
+        paciente = Paciente.objects.get(usuario__id=self.request.user.id)
         
         diario_id = self.kwargs.get(self.pk_url_kwarg)
         diario = Diario.objects.get(id=diario_id)
