@@ -53,7 +53,7 @@
     </div>
 
     <div class="footer-modal-cadastrar-alimento">
-      <button id="botao-cancelar-alimento" type="Cancelar">Cancelar</button>
+      <button id="botao-cancelar">Cancelar</button>
       <button id="botao-salvar-alimento" type="submit">Salvar</button>
     </div>
   </form>
@@ -76,8 +76,9 @@
     form.submit();
   });
 
-  document.getElementById("botao-cancelar-alimento").addEventListener("click", function() {
-    var form = document.querySelector(".formulario-cadastrar-alimento");
-    form.reset();
+  botaoCancelar = document.querySelector("#botao-cancelar")
+  botaoCancelar.addEventListener("click", function() {
+    const modal = document.getElementById('myModal')
+    modal.close()
   });
 </script>
