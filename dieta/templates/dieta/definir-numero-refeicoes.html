@@ -11,14 +11,15 @@
       <input type="number" name="numero-refeicoes" id="numero-refeicoes">
     </div>
     <div class="footer-modal-criar-paciente">
-      <button id="botao-cancelar-paciente" type="button">Cancelar</button>
+      <button id="botao-cancelar" type="button">Cancelar</button>
       <button id="botao-salvar-paciente" type="submit">Salvar</button>
     </div>
   </form>
 </div>
 <script>
-  document.getElementById("botao-cancelar-paciente").addEventListener("click", function() {
-    var form = document.getElementById("formulario");
-    form.reset();
+  botaoCancelar = document.querySelector("#botao-cancelar")
+  botaoCancelar.addEventListener("click", function() {
+    const modal = document.getElementById('myModal')
+    modal.close()
   });
 </script>
