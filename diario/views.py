@@ -35,13 +35,8 @@ class CriarDiario(PacienteMixin, View):
         if not diario_do_dia.exists():
             
             paciente = get_object_or_404(Paciente, usuario=request.user)
-            
-            print('encontrei paciente', paciente)
-            
+                        
             dieta_do_dia = paciente.dietas.filter(status='andamento').first()
-            
-            print("dieta do dia: ", dieta_do_dia)
-            print("refeições da dieta: ", dieta_do_dia.refeicoes.all())
             
             novo_diario = Diario.objects.create(data=data_atual, paciente=paciente)
             
@@ -85,9 +80,7 @@ class AtualizarDiario(PacienteMixin, NutricionistaMixin,  UpdateView):
         context['dieta'] = paciente.dietas.filter(status='andamento').first()
         
         context['refeicoes'] = diario.refeicoes.all()
-        
-        print('alimentos aqui: ', self.get_object().alimentos.all())
-                    
+                            
         return context
     
 class ListarDiarios(PacienteMixin, ListView):
@@ -99,9 +92,7 @@ class ListarDiarios(PacienteMixin, ListView):
         context = super().get_context_data(**kwargs)
         
         paciente = get_object_or_404(Paciente, usuario=self.request.user)
-        
-        print('aaaaaaaaaaa: ', paciente)
-                
+                        
         context['paciente'] = paciente
 
         return context

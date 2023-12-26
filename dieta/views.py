@@ -48,9 +48,7 @@ class CadastrarDieta(NutricionistaMixin, View):
         for refeicao in dieta.refeicoes.all():
             nome_opcao = f'opcao_{refeicao.id}'
             nome_substituto = f'substituto_{refeicao.id}'
-            
-            print('dados do formulario de criar: ', dados_formulario)
-            
+                        
             opcao_selecionada = dados_formulario.get(nome_opcao)
             substituto_selecionado = dados_formulario.get(nome_substituto)
 
@@ -109,7 +107,7 @@ class EditarDieta(NutricionistaMixin, UpdateView):
         dados_formulario = request.POST
         dieta_id = dados_formulario.get('dieta_id')
         dieta = get_object_or_404(Dieta, id=dieta_id)
-        print('dados do form de edit: ', dados_formulario)
+        
         # Lógica para processar o formulário da dieta existente
         for refeicao in dieta.refeicoes.all():
             nome_opcao = f'opcao_{refeicao.id}'
