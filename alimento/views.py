@@ -3,25 +3,25 @@ from django.urls import reverse_lazy
 from .models import Alimento
 from .forms import AlimentoForm
 from django.views.generic import CreateView,UpdateView,ListView,DeleteView
-  
-class AlimentoCriar(CreateView):
+from nutricionista.mixins import NutricionistaMixin
+class AlimentoCriar(NutricionistaMixin, CreateView):
     model = Alimento
     form_class = AlimentoForm
     template_name = 'alimento/cadastrarAlimento.html'
     success_url = reverse_lazy('listar-alimentos')
     
-class AlimentoListar(ListView):
+class AlimentoListar(NutricionistaMixin, ListView):
     model = Alimento
     template_name = 'alimento/alimentos.html'
     context_object_name = 'alimentos'
-class AlimentoEditar(UpdateView):
+class AlimentoEditar(NutricionistaMixin, UpdateView):
     model = Alimento
     form_class = AlimentoForm
     template_name = 'alimento/editaralimento.html'
     success_url = reverse_lazy('listar-alimentos')
     pk_url_kwarg = 'id'
     
-class AlimentoDeletar(DeleteView):
+class AlimentoDeletar(NutricionistaMixin, DeleteView):
     model = Alimento
     success_url = reverse_lazy('listar-alimentos')
     pk_url_kwarg = 'id'

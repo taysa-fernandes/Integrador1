@@ -5,16 +5,18 @@ from django.views import View
 from django.views.generic import ListView, UpdateView, DeleteView
 from .models import Formulario, Pergunta
 from .forms import FormularioForm
-from django.http import HttpRequest, HttpResponse, HttpResponseRedirect
+from django.http import HttpRequest, HttpResponse
+from nutricionista.mixins import NutricionistaMixin
+
 # Create your views here.
 
-class DefinirNumeroQuestoes(View):
+class DefinirNumeroQuestoes(NutricionistaMixin, View):
     template_name = 'formulario/definir-numero-questoes.html'
     
     def get(self, request, *args, **kwargs):
         return render(request, self.template_name)
 
-class CriarFormulario(View):
+class CriarFormulario(NutricionistaMixin, View):
     template_name_create = 'formulario/criar-formulario.html' 
     template_name_process = 'formulario/definir-numero-questoes.html'
 
@@ -59,12 +61,12 @@ class CriarFormulario(View):
 
         return redirect('listar-formularios')
 
-class ListarFormularios(ListView):
+class ListarFormularios(NutricionistaMixin, ListView):
     model = Formulario
     template_name = 'formulario/listar-formularios.html'
     context_object_name = 'formularios'
     
-class EditarFormulario(UpdateView):
+class EditarFormulario(NutricionistaMixin, UpdateView):
     model = Formulario
     template_name = 'formulario/editar-formulario.html'
     form_class = FormularioForm 
@@ -104,7 +106,7 @@ class EditarFormulario(UpdateView):
     def get_success_url(self):
         return reverse_lazy('listar-dietas') 
     
-class DeletarFormulario(DeleteView):
+class DeletarFormulario(NutricionistaMixin, DeleteView):
     model = Formulario
     pk_url_kwarg = 'formulario_id'
     success_url = reverse_lazy('listar-formularios') 

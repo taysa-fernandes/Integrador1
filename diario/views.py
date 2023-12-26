@@ -1,5 +1,5 @@
 from typing import Any
-from django.shortcuts import render, redirect
+from django.shortcuts import get_object_or_404, render, redirect
 from django.views import View
 from django.views.generic import CreateView, UpdateView, ListView
 from datetime import datetime
@@ -11,11 +11,13 @@ from django.urls import reverse_lazy
 from .models import Diario
 from django.core.serializers import serialize
 from django.contrib.messages.views import SuccessMessageMixin
+from paciente.mixins import PacienteMixin
+from nutricionista.mixins import NutricionistaMixin
 
 locale.setlocale(locale.LC_TIME, 'pt_BR.utf-8')
 
 # Create your views here.
-class CriarDiario(View):
+class CriarDiario(PacienteMixin, View):
     
     def get(self, request): 
 
@@ -31,20 +33,19 @@ class CriarDiario(View):
         
         
         if not diario_do_dia.exists():
-            id_paciente = Paciente.objects.get(id=5) # depois trocar pelo id do usuario logado  
             
-            print('paciente existente: ', id_paciente) 
+            paciente = get_object_or_404(Paciente, usuario=request.user)
             
-            paciente = Paciente.objects.get(id= id_paciente)
+            print('encontrei paciente', paciente)
             
             dieta_do_dia = paciente.dietas.filter(status='andamento').first()
             
             print("dieta do dia: ", dieta_do_dia)
             print("refeições da dieta: ", dieta_do_dia.refeicoes.all())
             
-            novo_diario = Diario.objects.create(data=data_atual)
+            novo_diario = Diario.objects.create(data=data_atual, paciente=paciente)
             
-            novo_diario.paciente = paciente
+            # novo_diario.paciente = paciente
             
             refeicoes_serializadas = serialize('json', dieta_do_dia.refeicoes.all())
             novo_diario.refeicoes = refeicoes_serializadas
@@ -53,7 +54,7 @@ class CriarDiario(View):
             
         return redirect('listar-diarios')
     
-class RegistrarProgressoNoDiario(CreateView):
+class RegistrarProgressoNoDiario(PacienteMixin, CreateView):
     template_name = 'diario/registrarProgresso.html'
     form_class = DiarioForm
     success_url = reverse_lazy('diario')
@@ -65,7 +66,7 @@ class RegistrarProgressoNoDiario(CreateView):
          
         return context
     
-class AtualizarDiario(SuccessMessageMixin,  UpdateView):
+class AtualizarDiario(PacienteMixin, NutricionistaMixin, SuccessMessageMixin,  UpdateView):
     model = Diario
     form_class = DiarioForm
     template_name = 'diario/registrarProgresso.html'
@@ -74,10 +75,9 @@ class AtualizarDiario(SuccessMessageMixin,  UpdateView):
     success_message = 'Diário registrado!'
     
     def get_context_data(self, **kwargs: Any) -> dict[str, Any]:      
-        context = super().get_context_data(**kwargs)
-        id_paciente = 5 # depois trocar pelo id do usuario logado   
-        
-        paciente = Paciente.objects.get(id= id_paciente)
+        context = super().get_context_data(**kwargs) 
+                    
+        paciente = Paciente.objects.get(usuario__id=self.request.user.id)
         
         diario_id = self.kwargs.get(self.pk_url_kwarg)
         diario = Diario.objects.get(id=diario_id)
@@ -90,16 +90,12 @@ class AtualizarDiario(SuccessMessageMixin,  UpdateView):
                     
         return context
     
-class ListarDiarios(ListView):
+class ListarDiarios(PacienteMixin, ListView):
     model = Diario
-    template_name = 'diario/diarioAlimentar.html'
+    template_name = 'paciente/home-paciente.html'
     context_object_name = 'diarios'
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-
-        # for diario in context['diarios']:
-        #     diario.dia_do_mes = diario.data.day
-        #     diario.dia_da_semana = diario.data.strftime('%A').capitalize().replace("-feira", "").encode('utf-8').decode('utf-8')
 
         return context

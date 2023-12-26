@@ -4,15 +4,16 @@ from django.urls import reverse_lazy
 from .models import Paciente
 from .forms import PacienteForm
 from django.views.generic import CreateView,UpdateView,ListView,DeleteView
+from nutricionista.mixins import NutricionistaMixin
 
-class PacienteEditar(UpdateView):
+class PacienteEditar(NutricionistaMixin, UpdateView):
     model = Paciente
     form_class = PacienteForm
     template_name = 'paciente/editarPaciente.html'
     success_url = reverse_lazy('listar-pacientes')
     pk_url_kwarg = 'id'
     
-class PacienteDeletar(DeleteView):
+class PacienteDeletar(NutricionistaMixin, DeleteView):
     model = Paciente
     success_url = reverse_lazy('listar-pacientes')
     pk_url_kwarg = 'id'
@@ -20,7 +21,7 @@ class PacienteDeletar(DeleteView):
     def get(self, *args, **kwargs):
         return self.delete(*args, **kwargs)
     
-class PacienteCriar(CreateView):
+class PacienteCriar(NutricionistaMixin, CreateView):
     model = Paciente
     form_class = PacienteForm
     template_name = 'paciente/cadastrarPaciente.html'
@@ -32,7 +33,7 @@ class PacienteCriar(CreateView):
         return super().form_valid(form)
     
     
-class PacienteListar(ListView):
+class PacienteListar(NutricionistaMixin, ListView):
     model = Paciente
     template_name = 'core/home.html'
     context_object_name = 'pacientes'
