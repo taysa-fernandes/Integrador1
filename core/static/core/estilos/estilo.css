@@ -92,6 +92,20 @@ a {
     color: #A8A8A8;
 }
 
+#fecharModal {
+    position: absolute;
+    border: none;
+    top: 0;
+    right: 0;
+    margin: 24px 29px;
+    background-color: transparent;
+}
+
+#fecharModal:hover {
+    cursor: pointer;
+}
+
+
 @keyframes scale-in {
     0% {
         -webkit-transform: scale(0);
