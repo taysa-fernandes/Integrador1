@@ -3,7 +3,7 @@
 <nav class="side-bar">
   <a href="{% url 'listar-pacientes'%}" class="logo"><img src="{% static 'imagens/logo-diet-hub.svg' %}" alt="Logo DietHub" /></a>
 
-  <ul>
+  <ul id='side-bar'>
     <div class="opcao-do-menu-up">
         <li class="opcao-do-menu {% if opcao_menu_atual == 'diario-alimentar' %}opcao-do-menu-atual{% endif %}">
             <a href="{% url 'listar-diarios'%}">
