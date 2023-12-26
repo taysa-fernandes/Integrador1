@@ -97,5 +97,11 @@ class ListarDiarios(PacienteMixin, ListView):
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        
+        paciente = get_object_or_404(Paciente, usuario=self.request.user)
+        
+        print('aaaaaaaaaaa: ', paciente)
+                
+        context['paciente'] = paciente
 
         return context
