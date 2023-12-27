@@ -5,7 +5,7 @@
       <div class="informacoes-do-paciente">{{ formulario.nome }}</div>
       <i class="ph ph-caret-down"></i>
     </label>
-    <input type="radio" name="collapse" id="{{formulario.id}}" {% if forloop.first %}checked{% endif %} />
+    <input type="radio" name="collapse" id="{{formulario.id}}"/>
 
     <div class="content">
       {% for pergunta in formulario.perguntas.all %}
