@@ -93,7 +93,7 @@ class EditarDieta(NutricionistaMixin, UpdateView):
         informacoes_das_refeicoes = []
         
         for refeicao in refeicoes_da_dieta:
-            alimentos_da_refeicao = refeicao.alimentos.all()
+            alimentos_da_refeicao = refeicao.alimentos.all().first()
             
             informacoes_das_refeicoes.append({
                 'refeicao': refeicao,
