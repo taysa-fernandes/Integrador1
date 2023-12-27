@@ -9,28 +9,21 @@
       </label>
       <input type="radio" name="collapse" id="{{dieta.id}}" {% if forloop.first %}checked{% endif %} />
       <div class="content">
-        {% for refeicao in refeicoes %}
+        {% for refeicao in dieta.refeicoes.all %}
           <div class="informacoes-gerais-do-paciente">
-            <div class="detalhes-collapse">
+            <div>
               <span class="titulo-collapse">{{refeicao.nome}}</span>
+              <p class="pergunta">{{pergunta.pergunta}}</p>
+              {% for alimento_refeicao in refeicao.alimentos.all %}
+                <div>
+                  {% if not alimento_refeicao.alimento.e_substituto %}
+                    <span class="dados-do-cliente">{{alimento_refeicao.nome}}</span>
+                  {% endif %}
+                </div>
+              {% endfor %}
             </div>
 
 
-            {% for alimento_refeicao in refeicao.alimentos.all %}
-              <div class="detalhes-collapse">
-                {% if not alimento_refeicao.alimento.e_substituto %}
-                  <span class="titulo-collapse">Opção: </span>
-                  <span class="dados-do-cliente">{{alimento_refeicao.alimento.nome}}</span>
-                {% endif %}
-              </div>
-
-              <div class="detalhes-collapse">
-                {% if alimento_refeicao.alimento.e_substituto %}
-                  <span class="titulo-collapse">Substituto: </span>
-                  <span class="dados-do-cliente">{{alimento.substituto}}</span>
-                {% endif %}
-              </div>
-            {% endfor %}
           </div>
 
           <hr class="solid" />

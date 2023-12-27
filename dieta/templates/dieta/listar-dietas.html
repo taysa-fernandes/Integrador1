@@ -46,7 +46,7 @@
       </div>
 
       {% for dieta in dietas %}
-        {% include "dieta/collapse.html" %}
+        {% include "dieta/collapse.html" with dieta=dieta %}
       {% endfor %}  
       
       {% include "core/paginacao.html" %}
