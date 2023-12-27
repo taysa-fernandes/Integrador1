@@ -47,7 +47,9 @@
 
       {% for dieta in dietas %}
         {% include "dieta/collapse.html" %}
-      {% endfor %}      
+      {% endfor %}  
+      
+      {% include "core/paginacao.html" %}
 
       <dialog class="cadastro-de-paciente" id="myModal">
         <button class="fecharModal"><i class="ph ph-x"></i></button>
