@@ -20,4 +20,4 @@ class Paciente(models.Model):
     diagnostico = models.BooleanField(default=False)
     status = models.IntegerField(choices=status_paciente,default=1,blank=True)
     data_criacao = models.DateTimeField(auto_now_add=True, editable=False)
-    usuario = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='pacientes', blank=True)
+    usuario = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='pacientes', blank=True) 
