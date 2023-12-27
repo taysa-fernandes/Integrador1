@@ -10,7 +10,7 @@ class Paciente(models.Model):
     )
     nome=models.CharField(max_length=255)
     email=models.EmailField()
-    whatsapp=models.CharField(max_length=11)
+    whatsapp=models.CharField(max_length=11, blank=True)
     idade = models.IntegerField()
     peso =  models.DecimalField(decimal_places=2, max_digits=6)
     altura = models.DecimalField(decimal_places=2, max_digits=6)

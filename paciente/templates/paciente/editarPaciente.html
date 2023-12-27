@@ -1,7 +1,7 @@
     <div class="conteudo-modal">
         <p class="titulo-modal">Editar paciente</p>
         {% if paciente %}
-            <form class="formulario-paciente" id="formulario" method="post" action="{% url 'editar-paciente' paciente.id %}">
+            <form class="formulario-paciente" id="formulario" method="post" action="{% url 'editar-paciente' id=paciente.id %}">
             {% csrf_token %}
             <div class="form-item">
                 <label>Nome</label>
@@ -32,7 +32,7 @@
                 </div>
                 <div class="form-item">
                 <label>Whatsapp</label>
-                    {{form.contato}}
+                    {{form.whatsapp}}
                 </div>
             </div>
             <div class="footer-modal-criar-paciente">
@@ -42,3 +42,4 @@
             </form>
         {% endif %}
     </div>
+{{form.errors}}

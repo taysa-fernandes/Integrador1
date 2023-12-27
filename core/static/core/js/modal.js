@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 });
 document.addEventListener("DOMContentLoaded", function() {
-    const botoesAbrirModal = document.querySelectorAll(".abrirModal");
+    const botoesAbrirModal = document.querySelectorAll(".abrirModal2");
     const modal = document.getElementById("myModal2");
     const botoesFecharModal = document.querySelectorAll(".fecharModal")
 
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function() {
     })
 });
 document.addEventListener("DOMContentLoaded", function() {
-    const botoesAbrirModal = document.querySelectorAll(".abrirModal");
+    const botoesAbrirModal = document.querySelectorAll(".abrirModal3");
     const modal = document.getElementById("myModal3");
     const botoesFecharModal = document.querySelectorAll(".fecharModal")
 

@@ -16,6 +16,14 @@ class PacienteEditar(NutricionistaMixin, UpdateView):
     success_url = reverse_lazy('listar-pacientes')
     pk_url_kwarg = 'id'
     
+    def get_context_data(self, **kwargs) -> dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        
+        context['paciente_id'] = self.object.id
+        
+        return context
+    
+    
 class PacienteDeletar(NutricionistaMixin, DeleteView):
     model = Paciente
     success_url = reverse_lazy('listar-pacientes')
