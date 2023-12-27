@@ -8,11 +8,11 @@ from nutricionista.mixins import NutricionistaMixin
 from paciente.mixins import PacienteMixin
 from django.contrib.auth.models import Group
 
-class Index(NutricionistaMixin, View):
+class Index(View):
     template_name = 'core/index.html'
 
     def get(self, request, *args, **kwargs):
-        return render(request, self.template_name)
+        return redirect('autenticar-usuario')
 
 class Home(NutricionistaMixin, View):
     template_name = 'core/home.html'

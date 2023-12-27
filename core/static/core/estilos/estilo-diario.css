@@ -61,6 +61,7 @@
     gap: 33px;
     max-width: 80px;
     width: 100%;
+    justify-content: center;
 }
 
 .data {
@@ -79,7 +80,10 @@
 }
 
 .container-datas {
-    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .linha-vertical {
