@@ -42,24 +42,10 @@
         <a href="{% url 'listar-alimentos' %}?tipo=substitutos" class="{% if request.GET.tipo == 'substitutos' %}selecionado-tipo-alimento{% endif %}">Substitutos</a>
         <hr />
       </div>
-      
-      {% if request.GET.tipo %}
-        {% for alimento in alimentos %}
-          {% if request.GET.tipo == 'comuns' and not alimento.e_substituto %}
-            {% include "alimento/collapse-alimentos.html" %}
-          {% elif request.GET.tipo == 'substitutos' and alimento.e_substituto %}
-            {% include "alimento/collapse-alimentos.html" %}
-          {% endif %}
-        {% endfor %}
-      {% else %}
-        {% for alimento in alimentos %}
-          {% if not alimento.e_substituto %}
-            {% include "alimento/collapse-alimentos.html" %}
-          {% endif %}
-        {% endfor %}
-      {% endif %}
 
-      {% include "core/paginacao.html" %}
+      {% for alimento in alimentos %}
+        {% include "alimento/collapse-alimentos.html" %}
+      {% endfor %}
 
       <dialog class="cadastro-alimento" id="myModal">
         <button class="fecharModal"><i class="ph ph-x"></i></button>
