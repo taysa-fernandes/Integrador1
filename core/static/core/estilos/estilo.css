@@ -38,6 +38,7 @@ ul#side-bar {
     justify-content: space-between;
     gap: 19px;
     height: 100vh;
+    padding-left: 0;
 }
 
 .opcao-do-menu {
@@ -45,6 +46,8 @@ ul#side-bar {
     border-radius: 10px;
     color: #0C9A61;
     gap: 8px;
+    display: flex;
+    align-items: center;
 }
 
 .opcao-do-menu:hover {
@@ -103,6 +106,13 @@ a {
 
 #fecharModal:hover {
     cursor: pointer;
+}
+
+.pagination-style {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: #0C9A61;
 }
 
 

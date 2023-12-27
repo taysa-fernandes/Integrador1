@@ -40,6 +40,16 @@ class PacienteListar(NutricionistaMixin, ListView):
     model = Paciente
     template_name = 'core/home.html'
     context_object_name = 'pacientes'
+    paginate_by = 3
+    
+    def get_context_data(self, **kwargs: Any) -> dict[str, Any]:      
+        context = super().get_context_data(**kwargs) 
+                    
+        nutricionista = Nutricionista.objects.get(usuario__id=self.request.user.id)
+                
+        context['nutricionista'] = nutricionista
+                            
+        return context
     
     def get_context_data(self, **kwargs: Any) -> dict[str, Any]:      
         context = super().get_context_data(**kwargs) 

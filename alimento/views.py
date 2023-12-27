@@ -14,6 +14,7 @@ class AlimentoListar(NutricionistaMixin, ListView):
     model = Alimento
     template_name = 'alimento/alimentos.html'
     context_object_name = 'alimentos'
+    paginate_by = 3
 class AlimentoEditar(NutricionistaMixin, UpdateView):
     model = Alimento
     form_class = AlimentoForm

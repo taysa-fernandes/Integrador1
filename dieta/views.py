@@ -66,6 +66,7 @@ class ListarDietas(NutricionistaMixin, PacienteMixin, ListView):
     model = Dieta
     template_name = 'dieta/listar-dietas.html'
     context_object_name = 'dietas'
+    paginate_by = 3
     
 class DefinirNumeroRefeicoes(NutricionistaMixin, View):
     template_name = 'dieta/definir-numero-refeicoes.html'

@@ -65,6 +65,7 @@ class ListarFormularios(NutricionistaMixin, ListView):
     model = Formulario
     template_name = 'formulario/listar-formularios.html'
     context_object_name = 'formularios'
+    paginate_by = 3
     
 class EditarFormulario(NutricionistaMixin, UpdateView):
     model = Formulario
