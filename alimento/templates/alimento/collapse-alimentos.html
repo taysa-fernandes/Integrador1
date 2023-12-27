@@ -42,7 +42,7 @@
         </div>
 
         <div class="footer-collapse-pacientes">
-          <button id="abrirModal2" hx-get={% url 'editar-alimento' id=alimento.id %} hx-trigger='click' hx-target='#modal2' hx-swap="innerHTML" class="botao-editar">
+          <button hx-get={% url 'editar-alimento' id=alimento.id %} hx-trigger='click' hx-target='#modal2' hx-swap="innerHTML" class="abrirModal botao-editar">
             <i class="ph ph-pencil-simple-line"></i>
             <a>Editar</a>
           <button class="botao-excluir">
@@ -52,7 +52,7 @@
         </div>
       </div>
       <dialog class="cadastro-de-paciente" id="myModal2">
-        <button id="fecharModal2"><i class="ph ph-x"></i></button>
+        <button class="fecharModal"><i class="ph ph-x"></i></button>
         <div id="modal2">
         </div>
       </dialog>
