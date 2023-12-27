@@ -4,7 +4,7 @@ from django.http import HttpRequest, HttpResponse, HttpResponseRedirect
 from django.views import View
 from django.urls import reverse_lazy
 from alimento.models import Alimento
-from .models import Refeicao, Dieta
+from dieta.models import Refeicao, Dieta
 from django.views.generic import CreateView,UpdateView,ListView,DeleteView
 from .forms import DietaForm
 from nutricionista.mixins import NutricionistaMixin
@@ -51,14 +51,14 @@ class CadastrarDieta(NutricionistaMixin, View):
                         
             opcao_selecionada = dados_formulario.get(nome_opcao)
             substituto_selecionado = dados_formulario.get(nome_substituto)
-
+            
             # opção e substituto foram selecionados
             if opcao_selecionada and substituto_selecionado:
                 alimento_opcao = Alimento.objects.get(nome=opcao_selecionada)
                 alimento_substituto = Alimento.objects.get(nome=substituto_selecionado)
-
+                
                 refeicao.alimentos.set([alimento_opcao, alimento_substituto])
-
+                
         return redirect('listar-dietas')
 
 
@@ -129,7 +129,7 @@ class EditarDieta(NutricionistaMixin, UpdateView):
     def get_success_url(self):
         return reverse_lazy('listar-dietas') 
 
-class Dieta(PacienteMixin, View):
+class VerDieta(PacienteMixin, View):
     template_name = 'dieta/visualizar-dieta.html'
 
     def get(self, request, *args, **kwargs):

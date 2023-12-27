@@ -12,7 +12,7 @@ class Dieta(models.Model):
     
     nome = models.CharField(max_length=255)
     status = models.CharField(max_length=50, choices=STATUS_DIETA, default='andamento')
-    paciente = models.ManyToManyField(Paciente, related_name='dietas')
+    paciente = models.ManyToManyField(Paciente, related_name='dietas', blank=True)
 
 class Refeicao(models.Model):
     nome = models.CharField(max_length=255)
