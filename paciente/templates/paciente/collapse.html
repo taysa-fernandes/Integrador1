@@ -55,7 +55,7 @@
         </div>
 
         <div class="footer-collapse-pacientes">
-          <button id="abrirModal3" hx-get={% url 'editar-paciente' id=paciente.id %} hx-trigger='click' hx-target='#modal3' hx-swap="innerHTML" class="botao-editar">
+          <button hx-get={% url 'editar-paciente' id=paciente.id %} hx-trigger='click' hx-target='#modal3' hx-swap="innerHTML" class="abrirModal botao-editar">
             <i class="ph ph-pencil-simple-line"></i>
             <a>Editar</a>
           </button>
