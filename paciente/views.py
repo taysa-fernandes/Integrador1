@@ -1,6 +1,9 @@
 from datetime import timezone
+from typing import Any
 from django.shortcuts import HttpResponseRedirect, render
 from django.urls import reverse_lazy
+
+from nutricionista.models import Nutricionista
 from .models import Paciente
 from .forms import PacienteForm
 from django.views.generic import CreateView,UpdateView,ListView,DeleteView
@@ -37,5 +40,14 @@ class PacienteListar(NutricionistaMixin, ListView):
     model = Paciente
     template_name = 'core/home.html'
     context_object_name = 'pacientes'
+    
+    def get_context_data(self, **kwargs: Any) -> dict[str, Any]:      
+        context = super().get_context_data(**kwargs) 
+                    
+        nutricionista = Nutricionista.objects.get(usuario__id=self.request.user.id)
+                
+        context['nutricionista'] = nutricionista
+                            
+        return context
     
 

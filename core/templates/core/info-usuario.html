@@ -1,0 +1,15 @@
+{% load static %}
+
+<div class="informacoes-do-usuario">
+    <div class="texto-informacoes-do-usuario">
+      <span class="nome-do-usuario">{{info_usuario}}</span>
+      <span class="tipo-de-usuario">
+        {% if tipo_usuario == 'nutricionista' %}
+          Nutricionista
+        {% elif tipo_usuario == 'paciente' %}
+          Paciente
+        {% endif %}
+      </span>
+    </div>
+    <img src="{% static 'imagens/usuario.svg' %}" alt="Logo DietHub" />
+</div>

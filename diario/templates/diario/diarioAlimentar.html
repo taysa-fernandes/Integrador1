@@ -7,13 +7,7 @@
       <header>
         <a href="/home" class="logo"><img src="{% static 'imagens/logo-diet-hub.svg' %} " alt="Logo DietHub" /></a>
 
-        <div class="informacoes-do-usuario">
-          <div class="texto-informacoes-do-usuario">
-            <span class="nome-do-usuario">Karla Nunes</span>
-            <span class="tipo-de-usuario">Paciente</span>
-          </div>
-          <img src="{% static 'imagens/usuario.svg' %}" alt="Logo DietHub" />
-        </div>
+        {% include "core/info-usuario.html" with info_usuario=paciente.nome tipo_usuario='paciente' %}
       </header>
       <section id="main-diario">
         <h1>Diário alimentar</h1>

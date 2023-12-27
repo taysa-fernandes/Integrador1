@@ -26,13 +26,7 @@
         </div>
       </nav>
 
-      <div class="informacoes-do-usuario">
-        <div class="texto-informacoes-do-usuario">
-          <span class="nome-do-usuario">{{paciente.nome}}</span>
-          <span class="tipo-de-usuario">Paciente</span>
-        </div>
-        <img src="{% static 'imagens/usuario.svg' %}" alt="Logo DietHub" />
-      </div>
+      {% include "core/info-usuario.html" with info_usuario=paciente.nome tipo_usuario='paciente' %}
     </header>
     <section class="conteudo-principal">
         <main id="visualizar-diario">
