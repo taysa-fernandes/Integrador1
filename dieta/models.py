@@ -16,5 +16,5 @@ class Dieta(models.Model):
 
 class Refeicao(models.Model):
     nome = models.CharField(max_length=255)
-    dieta = models.ForeignKey(Dieta, on_delete=models.CASCADE, related_name='refeicoes')
+    dieta = models.ForeignKey(Dieta, on_delete=models.CASCADE, related_name='refeicoes', blank=True)
     alimentos = models.ManyToManyField(Alimento, related_name='refeicoes')
